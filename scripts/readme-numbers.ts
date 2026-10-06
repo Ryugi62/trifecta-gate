@@ -1,0 +1,15 @@
+// Write the NUMBERS block of README.md from web/public/results.json.
+import { readFileSync, writeFileSync } from 'node:fs'
+const R = JSON.parse(readFileSync('web/public/results.json', 'utf8'))
+const t = R.totals, s = R.scan, p = R.policy, c = R.classifier
+const pct = (x: number) => `${(x * 100).toFixed(1)}%`
+const lines = [
+  `- **Live agent benchmark** (fictional town clerk's office; 84 planted attacks + 30 normal tasks per model, each run with and without the gate): secrets leaked to the attacker in **${t.leakedNoGate} of ${t.attacks}** attack runs without the gate and **${t.leakedGate} of ${t.attacks}** with it; the attacker was contacted at all in ${t.contactedNoGate} vs ${t.contactedGate}. Normal tasks completed: ${t.benignNoGate}/${t.benign} without, ${t.benignGate}/${t.benign} with.`,
+  ...R.models.map((m: { model: string; leakedNoGate: number; leakedGate: number; attacks: number; benignNoGate: number; benignGate: number; benign: number; confirm: number; confirmGate: number }) => `  - ${m.model}: leaked ${m.leakedNoGate}/${m.attacks} → ${m.leakedGate}/${m.attacks}; normal tasks ${m.benignNoGate}/${m.benign} → ${m.benignGate}/${m.benign}; "reply to an outside sender" tasks needing confirmation: ${m.confirmGate}/${m.confirm} completed without a click (by design).`),
+  `- **Policy test** (scripted traces, no model): ${p.attacksBlocked}/${p.attacks} attack traces blocked, ${p.benignWronglyBlocked}/${p.benign} normal traces wrongly blocked, ${p.needsConfirmationBlocked}/${p.needsConfirmation} "needs confirmation" traces held; decision time p95 ${p.p95ms.toFixed(3)} ms.`,
+  `- **Public MCP servers** (${s.servers} GitHub repositories named as MCP servers with extractable tools, ${s.tools.toLocaleString('en-US')} tool declarations): ${pct(s.share.outbound)} have a tool that can send data out, ${pct(s.share.private)} read private data, ${pct(s.share.untrusted)} return outsiders' text (${s.labeller === 'llm' ? 'independent LLM labeller' : 'keyword rules'}; keyword rules give ${pct(s.rulesShare.outbound)} / ${pct(s.rulesShare.private)} / ${pct(s.rulesShare.untrusted)}). Servers with all three abilities on their own: **${s.trifectaServers}**${s.trifectaLlm != null ? ` (flagged by both labellers; rules alone ${s.trifectaRules}, LLM alone ${s.trifectaLlm})` : ''}.`,
+  c ? `- **Label check**: on a held-out random sample of ${c.n} public tools, the keyword rules agreed with an independent LLM labeller on ${pct(c.private.agreement)} (private), ${pct(c.untrusted.agreement)} (outsiders' text) and ${pct(c.outbound.agreement)} (send out) of labels; Cohen's kappa ${c.private.kappa} / ${c.untrusted.kappa} / ${c.outbound.kappa}. The rules over-flag more than they miss (recall ${c.untrusted.recall} and ${c.outbound.recall} on the two risky abilities).` : '',
+].filter(Boolean)
+const md = readFileSync('README.md', 'utf8').replace(/<!-- NUMBERS -->[\s\S]*<!-- \/NUMBERS -->/, `<!-- NUMBERS -->\n${lines.join('\n')}\n<!-- /NUMBERS -->`)
+writeFileSync('README.md', md)
+console.log(lines.join('\n'))

@@ -1,0 +1,8 @@
+node_modules
+dist
+.cache
+*.log
+deck/assets
+deck/out*
+deck/
+data/old/

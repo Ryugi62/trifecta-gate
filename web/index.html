@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trifecta Gate — stop AI assistants from mailing out your files</title>
+<meta name="description" content="Check whether your AI agent's tools form the lethal trifecta, and see a provenance gate block the leak." />
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="brand">Trifecta Gate</p>
+    <h1>An AI assistant that reads your files, reads strangers' mail and can send email can be talked into leaking.</h1>
+    <p class="lead">Trifecta Gate finds that combination in an agent's tools and blocks the send when the address came from a stranger, not from you.</p>
+    <svg class="tri" viewBox="-50 0 420 236" role="img" aria-labelledby="triTitle">
+      <title id="triTitle">Three abilities form a triangle; the gate cuts the edge that sends data out.</title>
+      <line x1="160" y1="28" x2="40" y2="196" class="edge" />
+      <line x1="160" y1="28" x2="280" y2="196" class="edge" />
+      <line x1="40" y1="196" x2="280" y2="196" class="edge out" />
+      <line x1="160" y1="178" x2="160" y2="214" class="cut" />
+      <circle cx="160" cy="28" r="9" class="node" /><circle cx="40" cy="196" r="9" class="node" /><circle cx="280" cy="196" r="9" class="node" />
+      <text x="160" y="12" text-anchor="middle">Reads your private data</text>
+      <text x="40" y="226" text-anchor="middle">Reads outsiders' text</text>
+      <text x="280" y="226" text-anchor="middle">Can send data out</text>
+      <text x="172" y="190" class="cutlabel">gate</text>
+    </svg>
+    <div class="stats" id="stats" aria-live="polite"></div>
+  </header>
+
+  <section id="check" aria-labelledby="checkTitle">
+    <h2 id="checkTitle">Does your agent have all three?</h2>
+    <p>Paste the tool list of your AI agent: MCP <code>tools/list</code> JSON, or one tool per line like <code>send_email(to, body): Send an email</code>.</p>
+    <div class="presets">
+      <button type="button" class="chip" data-preset="town">Try: town office assistant</button>
+      <button type="button" class="chip" data-preset="safe">Try: read-only helper</button>
+    </div>
+    <label for="tools" class="sr">Tool list</label>
+    <textarea id="tools" rows="7" spellcheck="false" placeholder="read_inbox: Read the latest emails&#10;fetch_url(url): Fetch a web page&#10;send_email(to, subject, body): Send an email"></textarea>
+    <button type="button" id="run" class="primary">Check these tools</button>
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+  <section id="replay" aria-labelledby="replayTitle">
+    <h2 id="replayTitle">Watch one real run</h2>
+    <p id="replayIntro">Loading the recorded run…</p>
+    <div class="runs" id="runs"></div>
+  </section>
+
+  <section id="scan" aria-labelledby="scanTitle">
+    <h2 id="scanTitle">What we found in public MCP servers</h2>
+    <div id="scanBody"></div>
+  </section>
+
+  <section id="how" aria-labelledby="howTitle">
+    <h2 id="howTitle">How the gate decides</h2>
+    <p>The gate never asks a model whether text looks malicious. It checks where an outgoing message is going and where that address came from.</p>
+    <ol class="rules">
+      <li><strong>You named it:</strong> the address or site appears in your request or your allowlist. Allowed.</li>
+      <li><strong>A stranger named it, and private data is in play:</strong> the agent has read your files or mail in this run. Blocked, and the agent is told to ask you.</li>
+      <li><strong>A stranger named it, nothing private read yet:</strong> nothing to leak. Allowed, so browsing still works.</li>
+      <li><strong>Private text in the outgoing call:</strong> a 12-character piece of a private result heading to an address you did not name. Blocked, even if the earlier checks were bypassed.</li>
+    </ol>
+    <details><summary>What it does not catch</summary>
+      <p>If you name the recipient yourself, the gate lets the message go even if the agent was tricked into adding extra data. Replies to someone who emailed you look exactly like an attack, so they need one confirmation from you. The tool classifier is keyword rules; it can mislabel unusual tools, which is why you can override labels.</p>
+    </details>
+  </section>
+
+  <footer>
+    <p>Built for 2nd LaserHacks 2026 (Securing the Next 250). "Lethal trifecta" is Simon Willison's term (2025). The town, people and secrets in the demo are fictional. Source and full numbers: <a id="repo" href="https://github.com/Ryugi62/trifecta-gate">github.com/Ryugi62/trifecta-gate</a>.</p>
+  </footer>
+</main>
+<script type="module" src="./main.ts"></script>
+</body>
+</html>

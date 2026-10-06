@@ -1,0 +1,31 @@
+{
+  "name": "trifecta-gate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Trifecta Gate: stop AI agents from leaking private data by enforcing where outbound tool calls may send it (provenance policy, not content filtering).",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "layers": "node scripts/check-layers.mjs",
+    "bench:policy": "tsx scripts/bench-policy.ts",
+    "bench:agent": "tsx scripts/bench-agent.ts",
+    "scan": "tsx scripts/scan-github.ts",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4319"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "playwright": "^1.63.0",
+    "pptxgenjs": "^4.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
+  }
+}

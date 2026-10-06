@@ -1,0 +1,2490 @@
+[
+ {
+  "description": "A collection of MCP servers.",
+  "fullName": "punkpeye/awesome-mcp-servers",
+  "language": "",
+  "stargazersCount": 95852,
+  "updatedAt": "2026-10-06T04:20:22Z",
+  "url": "https://github.com/punkpeye/awesome-mcp-servers"
+ },
+ {
+  "description": "Chrome DevTools for coding agents",
+  "fullName": "ChromeDevTools/chrome-devtools-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 53013,
+  "updatedAt": "2026-10-06T02:16:42Z",
+  "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+ },
+ {
+  "description": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+  "fullName": "DeusData/codebase-memory-mcp",
+  "language": "C",
+  "stargazersCount": 45847,
+  "updatedAt": "2026-10-06T04:46:35Z",
+  "url": "https://github.com/DeusData/codebase-memory-mcp"
+ },
+ {
+  "description": "Playwright MCP server",
+  "fullName": "microsoft/playwright-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 37845,
+  "updatedAt": "2026-10-06T04:29:02Z",
+  "url": "https://github.com/microsoft/playwright-mcp"
+ },
+ {
+  "description": "GitHub's official MCP Server",
+  "fullName": "github/github-mcp-server",
+  "language": "Go",
+  "stargazersCount": 33394,
+  "updatedAt": "2026-10-06T03:19:20Z",
+  "url": "https://github.com/github/github-mcp-server"
+ },
+ {
+  "description": "Playwright MCP server undetected by anti-bots and captchas: AI agent browses the web on anti-detect stealth Firefox, Python, undetected browser automation, scraping, computer use.",
+  "fullName": "feder-cr/invisible_playwright_mcp",
+  "language": "Python",
+  "stargazersCount": 31775,
+  "updatedAt": "2026-10-06T04:18:28Z",
+  "url": "https://github.com/feder-cr/invisible_playwright_mcp"
+ },
+ {
+  "description": "Community plugin to control Blender 3D with any LLM of your choice. Not affiliated with the official Blender Foundation.",
+  "fullName": "ahujasid/mcp-for-blender",
+  "language": "Python",
+  "stargazersCount": 30041,
+  "updatedAt": "2026-10-06T04:56:43Z",
+  "url": "https://github.com/ahujasid/mcp-for-blender"
+ },
+ {
+  "description": "🚀 The fast, Pythonic way to build MCP servers and clients.",
+  "fullName": "PrefectHQ/fastmcp",
+  "language": "Python",
+  "stargazersCount": 27981,
+  "updatedAt": "2026-10-05T22:37:42Z",
+  "url": "https://github.com/PrefectHQ/fastmcp"
+ },
+ {
+  "description": "A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n8n workflows for you ",
+  "fullName": "czlonkowski/n8n-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 23040,
+  "updatedAt": "2026-10-06T02:13:06Z",
+  "url": "https://github.com/czlonkowski/n8n-mcp"
+ },
+ {
+  "description": "This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP) through real-world, cross-language examples in .NET, Java, TypeScript, JavaScript, Rust and Python. Designed for developers, it focuses on practical techniques for building modular, scalable, and secure AI workflows from session setup to service orchestration.",
+  "fullName": "microsoft/mcp-for-beginners",
+  "language": "Jupyter Notebook",
+  "stargazersCount": 17399,
+  "updatedAt": "2026-10-06T00:14:41Z",
+  "url": "https://github.com/microsoft/mcp-for-beginners"
+ },
+ {
+  "description": "MCP Toolbox for Databases is an open source MCP server for databases.",
+  "fullName": "googleapis/mcp-toolbox",
+  "language": "Go",
+  "stargazersCount": 16596,
+  "updatedAt": "2026-10-05T23:09:10Z",
+  "url": "https://github.com/googleapis/mcp-toolbox"
+ },
+ {
+  "description": "MCP for xiaohongshu.com",
+  "fullName": "xpzouying/xiaohongshu-mcp",
+  "language": "Go",
+  "stargazersCount": 16118,
+  "updatedAt": "2026-10-06T04:46:02Z",
+  "url": "https://github.com/xpzouying/xiaohongshu-mcp"
+ },
+ {
+  "description": "MCP server to provide Figma layout information to AI coding agents like Cursor",
+  "fullName": "GLips/Figma-Context-MCP",
+  "language": "TypeScript",
+  "stargazersCount": 15957,
+  "updatedAt": "2026-10-06T02:26:53Z",
+  "url": "https://github.com/GLips/Figma-Context-MCP"
+ },
+ {
+  "description": "Unity MCP acts as a bridge between AI assistants and your Unity Editor. Give your LLM tools to manage assets, control scenes, edit scripts, and automate tasks within Unity.",
+  "fullName": "CoplayDev/unity-mcp",
+  "language": "C#",
+  "stargazersCount": 14713,
+  "updatedAt": "2026-10-06T04:59:10Z",
+  "url": "https://github.com/CoplayDev/unity-mcp"
+ },
+ {
+  "description": "AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP.",
+  "fullName": "mrexodia/ida-pro-mcp",
+  "language": "Python",
+  "stargazersCount": 12483,
+  "updatedAt": "2026-10-06T04:58:31Z",
+  "url": "https://github.com/mrexodia/ida-pro-mcp"
+ },
+ {
+  "description": "Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!",
+  "fullName": "tadata-org/fastapi_mcp",
+  "language": "Python",
+  "stargazersCount": 12017,
+  "updatedAt": "2026-10-06T04:54:06Z",
+  "url": "https://github.com/tadata-org/fastapi_mcp"
+ },
+ {
+  "description": "The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude & MCP Servers for AI Agents.",
+  "fullName": "mcp-use/mcp-use",
+  "language": "TypeScript",
+  "stargazersCount": 10720,
+  "updatedAt": "2026-10-06T05:08:13Z",
+  "url": "https://github.com/mcp-use/mcp-use"
+ },
+ {
+  "description": "This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
+  "fullName": "wonderwhy-er/DesktopCommanderMCP",
+  "language": "TypeScript",
+  "stargazersCount": 9929,
+  "updatedAt": "2026-10-06T03:34:37Z",
+  "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP"
+ },
+ {
+  "description": "The Apify MCP server enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, or any other website using thousands of ready-made scrapers, crawlers, and automation tools available on the Apify Store.",
+  "fullName": "apify/apify-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 9769,
+  "updatedAt": "2026-10-06T05:03:33Z",
+  "url": "https://github.com/apify/apify-mcp-server"
+ },
+ {
+  "description": "Open source MCP Servers for AWS",
+  "fullName": "awslabs/mcp",
+  "language": "Python",
+  "stargazersCount": 9756,
+  "updatedAt": "2026-10-05T22:49:11Z",
+  "url": "https://github.com/awslabs/mcp"
+ },
+ {
+  "description": "Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real Devices)",
+  "fullName": "mobile-next/mobile-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 8708,
+  "updatedAt": "2026-10-06T04:58:10Z",
+  "url": "https://github.com/mobile-next/mobile-mcp"
+ },
+ {
+  "description": "Build effective agents using Model Context Protocol and simple workflow patterns",
+  "fullName": "lastmile-ai/mcp-agent",
+  "language": "Python",
+  "stargazersCount": 8567,
+  "updatedAt": "2026-10-05T10:45:02Z",
+  "url": "https://github.com/lastmile-ai/mcp-agent"
+ },
+ {
+  "description": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
+  "fullName": "idosal/git-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 8452,
+  "updatedAt": "2026-10-05T20:31:07Z",
+  "url": "https://github.com/idosal/git-mcp"
+ },
+ {
+  "description": "MCP 资源精选， MCP指南，Claude MCP，MCP Servers, MCP Clients",
+  "fullName": "yzfly/Awesome-MCP-ZH",
+  "language": "",
+  "stargazersCount": 7709,
+  "updatedAt": "2026-10-05T19:30:34Z",
+  "url": "https://github.com/yzfly/Awesome-MCP-ZH"
+ },
+ {
+  "description": "MCP Server for Computer Use in Windows",
+  "fullName": "CursorTouch/Windows-MCP",
+  "language": "Python",
+  "stargazersCount": 7698,
+  "updatedAt": "2026-10-06T04:10:35Z",
+  "url": "https://github.com/CursorTouch/Windows-MCP"
+ },
+ {
+  "description": "🔥 Official Firecrawl MCP Server - Adds powerful web scraping and search to Cursor, Claude and any other LLM clients.",
+  "fullName": "firecrawl/firecrawl-mcp-server",
+  "language": "JavaScript",
+  "stargazersCount": 7557,
+  "updatedAt": "2026-10-06T02:45:43Z",
+  "url": "https://github.com/firecrawl/firecrawl-mcp-server"
+ },
+ {
+  "description": "Monitor browser logs directly from Cursor and other MCP compatible IDEs.",
+  "fullName": "AgentDeskAI/browser-tools-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 7329,
+  "updatedAt": "2026-10-05T17:28:56Z",
+  "url": "https://github.com/AgentDeskAI/browser-tools-mcp"
+ },
+ {
+  "description": "Browser MCP is a Model Context Provider (MCP) server that allows AI applications to control your browser",
+  "fullName": "BrowserMCP/mcp",
+  "language": "TypeScript",
+  "stargazersCount": 7159,
+  "updatedAt": "2026-10-05T13:07:15Z",
+  "url": "https://github.com/BrowserMCP/mcp"
+ },
+ {
+  "description": "TalkToFigma: MCP integration between AI Agent (Cursor, Claude Code, Codex) and Figma, allowing Agentic AI to communicate with Figma for reading designs and modifying them programmatically.",
+  "fullName": "grab/cursor-talk-to-figma-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 7047,
+  "updatedAt": "2026-10-05T11:10:32Z",
+  "url": "https://github.com/grab/cursor-talk-to-figma-mcp"
+ },
+ {
+  "description": "A collection of MCP clients.",
+  "fullName": "punkpeye/awesome-mcp-clients",
+  "language": "",
+  "stargazersCount": 6596,
+  "updatedAt": "2026-10-05T11:08:49Z",
+  "url": "https://github.com/punkpeye/awesome-mcp-clients"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server and CLI that provides tools for agent use when working on iOS and macOS projects.",
+  "fullName": "getsentry/MobileBuildMCP",
+  "language": "TypeScript",
+  "stargazersCount": 6459,
+  "updatedAt": "2026-10-05T21:29:04Z",
+  "url": "https://github.com/getsentry/MobileBuildMCP"
+ },
+ {
+  "description": "WhatsApp MCP server",
+  "fullName": "lharries/whatsapp-mcp",
+  "language": "Go",
+  "stargazersCount": 6405,
+  "updatedAt": "2026-10-06T03:25:34Z",
+  "url": "https://github.com/lharries/whatsapp-mcp"
+ },
+ {
+  "description": "It's like v0, but in your Cursor / Claude Code / Windsurf: search 10,000+ React/Tailwind components, generate new UI with AI, and publish your own — right from your editor. Magic MCP is now the 21st MCP; this package keeps old configs working. Setup: 21st.dev/mcp",
+  "fullName": "21st-dev/magic-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 5972,
+  "updatedAt": "2026-10-06T01:17:10Z",
+  "url": "https://github.com/21st-dev/magic-mcp"
+ },
+ {
+  "description": "MCP server for Atlassian tools (Confluence, Jira)",
+  "fullName": "sooperset/mcp-atlassian",
+  "language": "Python",
+  "stargazersCount": 5969,
+  "updatedAt": "2026-10-06T05:04:54Z",
+  "url": "https://github.com/sooperset/mcp-atlassian"
+ },
+ {
+  "description": "MCP server for interfacing with Godot game engine. Provides tools for launching the editor, running projects, and capturing debug output.",
+  "fullName": "Coding-Solo/godot-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 5949,
+  "updatedAt": "2026-10-06T03:37:44Z",
+  "url": "https://github.com/Coding-Solo/godot-mcp"
+ },
+ {
+  "description": "Awesome MCP Servers - A curated list of Model Context Protocol servers",
+  "fullName": "appcypher/awesome-mcp-servers",
+  "language": "",
+  "stargazersCount": 5788,
+  "updatedAt": "2026-10-06T02:38:21Z",
+  "url": "https://github.com/appcypher/awesome-mcp-servers"
+ },
+ {
+  "description": "Zotero MCP: Connects your Zotero research library with Claude and other AI assistants via the Model Context Protocol to discuss papers, get summaries, analyze citations, and more.",
+  "fullName": "54yyyu/zotero-mcp",
+  "language": "Python",
+  "stargazersCount": 5247,
+  "updatedAt": "2026-10-06T02:39:21Z",
+  "url": "https://github.com/54yyyu/zotero-mcp"
+ },
+ {
+  "description": "UI over MCP. Create next-gen UI experiences with the protocol and SDK!",
+  "fullName": "MCP-UI-Org/mcp-ui",
+  "language": "TypeScript",
+  "stargazersCount": 5193,
+  "updatedAt": "2026-10-06T03:31:28Z",
+  "url": "https://github.com/MCP-UI-Org/mcp-ui"
+ },
+ {
+  "description": "Exa MCP for web search and web crawling!",
+  "fullName": "exa-labs/exa-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 5085,
+  "updatedAt": "2026-10-06T04:05:14Z",
+  "url": "https://github.com/exa-labs/exa-mcp-server"
+ },
+ {
+  "description": "Call MCPs via TypeScript, masquerading as simple TypeScript API. Or package them as cli.",
+  "fullName": "openclaw/mcporter",
+  "language": "TypeScript",
+  "stargazersCount": 5049,
+  "updatedAt": "2026-10-05T20:15:36Z",
+  "url": "https://github.com/openclaw/mcporter"
+ },
+ {
+  "description": "The Unofficial and Awesome Home Assistant MCP Server",
+  "fullName": "homeassistant-ai/ha-mcp",
+  "language": "Python",
+  "stargazersCount": 4952,
+  "updatedAt": "2026-10-05T22:14:31Z",
+  "url": "https://github.com/homeassistant-ai/ha-mcp"
+ },
+ {
+  "description": "TradingView MCP server — real-time market data, technical analysis, screeners & backtesting for Claude, ChatGPT, Cursor & any MCP client. Stocks, crypto, forex & futures across global exchanges. Hosted or self-host.",
+  "fullName": "atilaahmettaner/tradingview-mcp",
+  "language": "Python",
+  "stargazersCount": 4919,
+  "updatedAt": "2026-10-06T00:23:36Z",
+  "url": "https://github.com/atilaahmettaner/tradingview-mcp"
+ },
+ {
+  "description": "An AI Gateway, registry, and proxy that sits in front of any MCP, A2A, or REST/gRPC APIs, exposing a unified endpoint with centralized discovery, guardrails and management. Optimizes Agent & Tool calling, and supports plugins.",
+  "fullName": "IBM/mcp-context-forge",
+  "language": "Python",
+  "stargazersCount": 4572,
+  "updatedAt": "2026-10-05T16:13:05Z",
+  "url": "https://github.com/IBM/mcp-context-forge"
+ },
+ {
+  "description": "A simple, secure MCP-to-OpenAPI proxy server",
+  "fullName": "open-webui/mcpo",
+  "language": "Python",
+  "stargazersCount": 4390,
+  "updatedAt": "2026-10-05T11:59:36Z",
+  "url": "https://github.com/open-webui/mcpo"
+ },
+ {
+  "description": "🤖 A visualization mcp & skills contains 25+ visual charts using @antvis. Using for chart generation and data analysis.",
+  "fullName": "antvis/mcp-server-chart",
+  "language": "TypeScript",
+  "stargazersCount": 4389,
+  "updatedAt": "2026-10-06T02:48:44Z",
+  "url": "https://github.com/antvis/mcp-server-chart"
+ },
+ {
+  "description": "AI Skills, MCP Tools, and CLI for Unity Engine. Full AI develop and test loop. Use cli for quick setup. Efficient token usage, advanced tools. Any C# method may be turned into a tool by a single line. Works with Claude Code, Gemini, Copilot, Cursor and any other absolutely for free.",
+  "fullName": "IvanMurzak/Unity-MCP",
+  "language": "C#",
+  "stargazersCount": 4387,
+  "updatedAt": "2026-10-05T23:44:06Z",
+  "url": "https://github.com/IvanMurzak/Unity-MCP"
+ },
+ {
+  "description": "Ghidra MCP Server — 200+ MCP tools for AI-powered reverse engineering. GUI plugin + headless server, lazy tool loading, convention enforcement, batch operations, Ghidra Server integration, and Docker deployment.",
+  "fullName": "bethington/ghidra-mcp",
+  "language": "Java",
+  "stargazersCount": 4325,
+  "updatedAt": "2026-10-06T04:57:29Z",
+  "url": "https://github.com/bethington/ghidra-mcp"
+ },
+ {
+  "description": "A Model Context Protocol server for Excel file manipulation",
+  "fullName": "haris-musa/excel-mcp-server",
+  "language": "Python",
+  "stargazersCount": 4211,
+  "updatedAt": "2026-10-05T14:40:29Z",
+  "url": "https://github.com/haris-musa/excel-mcp-server"
+ },
+ {
+  "description": "Free SEO MCP server + open-source SEO and GEO skills for Claude: keyword research, rank tracking, audits, backlinks, AI visibility on your real GSC/GA4/ads data. claude mcp add ryze --transport http https://connector.get-ryze.ai/mcp",
+  "fullName": "Ryze-AI-Adgent/open-seo-mcp-skills",
+  "language": "Shell",
+  "stargazersCount": 4118,
+  "updatedAt": "2026-10-06T05:02:31Z",
+  "url": "https://github.com/Ryze-AI-Adgent/open-seo-mcp-skills"
+ },
+ {
+  "description": "Google Ads MCP server + Meta Ads MCP (Facebook Ads MCP) + GA4 + Search Console in one hosted remote MCP for Claude, ChatGPT, Cursor & n8n: 250+ tools, OAuth login, no API keys, approval-gated writes, free. By Ryze AI.",
+  "fullName": "irinabuht12-oss/google-ads-meta-ads-mcp",
+  "language": "",
+  "stargazersCount": 3973,
+  "updatedAt": "2026-10-06T04:55:15Z",
+  "url": "https://github.com/irinabuht12-oss/google-ads-meta-ads-mcp"
+ },
+ {
+  "description": "Open-source MCP server for LinkedIn. Give Claude and any MCP-compatible AI agent access to profiles, companies, jobs, and messages.",
+  "fullName": "stickerdaniel/linkedin-mcp-server",
+  "language": "Python",
+  "stargazersCount": 3749,
+  "updatedAt": "2026-10-06T05:00:49Z",
+  "url": "https://github.com/stickerdaniel/linkedin-mcp-server"
+ },
+ {
+  "description": "LangChain 🔌 MCP",
+  "fullName": "langchain-ai/langchain-mcp-adapters",
+  "language": "Python",
+  "stargazersCount": 3655,
+  "updatedAt": "2026-10-05T11:10:27Z",
+  "url": "https://github.com/langchain-ai/langchain-mcp-adapters"
+ },
+ {
+  "description": "Model Context Protocol(MCP) 编程极速入门",
+  "fullName": "liaokongVFX/MCP-Chinese-Getting-Started-Guide",
+  "language": "",
+  "stargazersCount": 3574,
+  "updatedAt": "2026-10-05T08:59:12Z",
+  "url": "https://github.com/liaokongVFX/MCP-Chinese-Getting-Started-Guide"
+ },
+ {
+  "description": "Allow LLMs to control a browser with Browserbase and Stagehand",
+  "fullName": "browserbase/mcp-server-browserbase",
+  "language": "TypeScript",
+  "stargazersCount": 3407,
+  "updatedAt": "2026-10-05T09:03:42Z",
+  "url": "https://github.com/browserbase/mcp-server-browserbase"
+ },
+ {
+  "description": "MCP server integration for DaVinci Resolve Studio",
+  "fullName": "samuelgursky/davinci-resolve-mcp",
+  "language": "Python",
+  "stargazersCount": 3362,
+  "updatedAt": "2026-10-06T04:46:01Z",
+  "url": "https://github.com/samuelgursky/davinci-resolve-mcp"
+ },
+ {
+  "description": "Control Gmail, Google Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Search & Drive with AI - Comprehensive Google Workspace MCP Server & CLI Tool",
+  "fullName": "taylorwilsdon/google_workspace_mcp",
+  "language": "Python",
+  "stargazersCount": 3286,
+  "updatedAt": "2026-10-05T23:37:45Z",
+  "url": "https://github.com/taylorwilsdon/google_workspace_mcp"
+ },
+ {
+  "description": "A TypeScript framework for building MCP servers.",
+  "fullName": "punkpeye/fastmcp",
+  "language": "TypeScript",
+  "stargazersCount": 3272,
+  "updatedAt": "2026-10-04T02:36:48Z",
+  "url": "https://github.com/punkpeye/fastmcp"
+ },
+ {
+  "description": "A local MCP server for agent literature work. Original-LaTeX section reads, BibTeX from arXiv metadata, and topic watches. Papers stay on disk. Search is optional.",
+  "fullName": "blazickjp/arxiv-mcp-server",
+  "language": "Python",
+  "stargazersCount": 3193,
+  "updatedAt": "2026-10-05T23:58:25Z",
+  "url": "https://github.com/blazickjp/arxiv-mcp-server"
+ },
+ {
+  "description": "Control Ableton Live with any LLM: create tracks, arrange clips & compose music via MCP",
+  "fullName": "ahujasid/ableton-mcp",
+  "language": "Python",
+  "stargazersCount": 3140,
+  "updatedAt": "2026-10-06T04:55:18Z",
+  "url": "https://github.com/ahujasid/ableton-mcp"
+ },
+ {
+  "description": "A mcp server to allow LLMS gain context about shadcn ui component structure,usage and installation,compaitable with react,svelte 5,vue & React Native",
+  "fullName": "Jpisnice/shadcn-ui-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 3024,
+  "updatedAt": "2026-10-05T16:47:23Z",
+  "url": "https://github.com/Jpisnice/shadcn-ui-mcp-server"
+ },
+ {
+  "description": "A Model Context Protocol server for converting almost anything to Markdown",
+  "fullName": "zcaceres/markdownify-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 2999,
+  "updatedAt": "2026-10-05T19:30:33Z",
+  "url": "https://github.com/zcaceres/markdownify-mcp"
+ },
+ {
+  "description": "AI Agent-first JS 逆向 MCP Server：有头 Chrome 调试、断点、网络/WebSocket 分析、Patchright 反检测，可选 CloakBrowser。",
+  "fullName": "zhizhuodemao/js-reverse-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 2889,
+  "updatedAt": "2026-10-06T03:12:16Z",
+  "url": "https://github.com/zhizhuodemao/js-reverse-mcp"
+ },
+ {
+  "description": "Plugin for JADX to integrate MCP server",
+  "fullName": "zinja-coder/jadx-ai-mcp",
+  "language": "Java",
+  "stargazersCount": 2855,
+  "updatedAt": "2026-10-06T01:02:21Z",
+  "url": "https://github.com/zinja-coder/jadx-ai-mcp"
+ },
+ {
+  "description": "A bridge between Streamable HTTP and stdio MCP transports",
+  "fullName": "sparfenyuk/mcp-proxy",
+  "language": "Python",
+  "stargazersCount": 2771,
+  "updatedAt": "2026-10-05T12:43:17Z",
+  "url": "https://github.com/sparfenyuk/mcp-proxy"
+ },
+ {
+  "description": "MCP, CLI, Skills for searching and downloading academic papers from multiple sources like arXiv, PubMed, bioRxiv, etc.",
+  "fullName": "openags/paper-search-mcp",
+  "language": "Python",
+  "stargazersCount": 2748,
+  "updatedAt": "2026-10-06T04:37:06Z",
+  "url": "https://github.com/openags/paper-search-mcp"
+ },
+ {
+  "description": "Cut AI token costs 95%+ on code exploration. The leading MCP server for precise, symbol-level GitHub code retrieval via tree-sitter AST. Works with Claude Code, Cursor & any MCP client. 313B+ tokens saved.",
+  "fullName": "jgravelle/jcodemunch-mcp",
+  "language": "Python",
+  "stargazersCount": 2733,
+  "updatedAt": "2026-10-06T02:54:42Z",
+  "url": "https://github.com/jgravelle/jcodemunch-mcp"
+ },
+ {
+  "description": "FreeCAD MCP(Model Context Protocol) server",
+  "fullName": "neka-nat/freecad-mcp",
+  "language": "Python",
+  "stargazersCount": 2703,
+  "updatedAt": "2026-10-06T05:08:30Z",
+  "url": "https://github.com/neka-nat/freecad-mcp"
+ },
+ {
+  "description": "MCP Aggregator, Orchestrator, Middleware, Gateway in one docker",
+  "fullName": "metatool-ai/metamcp",
+  "language": "TypeScript",
+  "stargazersCount": 2692,
+  "updatedAt": "2026-10-05T11:10:25Z",
+  "url": "https://github.com/metatool-ai/metamcp"
+ },
+ {
+  "description": "A powerful Model Context Protocol (MCP) server that provides an all-in-one solution for public web access.",
+  "fullName": "brightdata/brightdata-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 2660,
+  "updatedAt": "2026-10-05T10:23:34Z",
+  "url": "https://github.com/brightdata/brightdata-mcp"
+ },
+ {
+  "description": "법제처 국가법령정보를 LLM에서 바로 조회하는 MCP 서버. 법령·판례·조례 검색과 인용 검증 | MCP server for Korean law — search statutes, precedents, and ordinances, and verify citations",
+  "fullName": "chrisryugj/korean-law-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 2641,
+  "updatedAt": "2026-10-06T01:33:49Z",
+  "url": "https://github.com/chrisryugj/korean-law-mcp"
+ },
+ {
+  "description": "Brings MCP to ChatGPT, DeepSeek, Perplexity, Grok, Gemini, Google AI Studio, OpenRouter, DeepSeek, T3 Chat and more...",
+  "fullName": "srbhptl39/MCP-SuperAssistant",
+  "language": "TypeScript",
+  "stargazersCount": 2599,
+  "updatedAt": "2026-10-05T11:10:38Z",
+  "url": "https://github.com/srbhptl39/MCP-SuperAssistant"
+ },
+ {
+  "description": "Self-hosted MCP gateway and control plane for connecting, controlling, and operating MCP servers.",
+  "fullName": "samanhappy/mcphub",
+  "language": "TypeScript",
+  "stargazersCount": 2495,
+  "updatedAt": "2026-10-06T05:05:50Z",
+  "url": "https://github.com/samanhappy/mcphub"
+ },
+ {
+  "description": "⚡ 需求分析效率提升 200%！全球首个为 AI 编程时代设计的团队协作 MCP 服务器，自动分析需求自动编写前后端代码，下载切图",
+  "fullName": "dsphper/lanhu-mcp",
+  "language": "Python",
+  "stargazersCount": 2439,
+  "updatedAt": "2026-10-02T15:19:06Z",
+  "url": "https://github.com/dsphper/lanhu-mcp"
+ },
+ {
+  "description": "Your design system as an API. Connect AI to Figma for extraction, creation, and debugging.",
+  "fullName": "southleft/figma-console-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 2438,
+  "updatedAt": "2026-10-06T04:12:01Z",
+  "url": "https://github.com/southleft/figma-console-mcp"
+ },
+ {
+  "description": "Turn any MCP, OpenAPI, or GraphQL server into a CLI — at runtime, with zero codegen",
+  "fullName": "knowsuchagency/mcp2cli",
+  "language": "Python",
+  "stargazersCount": 2413,
+  "updatedAt": "2026-10-05T15:45:20Z",
+  "url": "https://github.com/knowsuchagency/mcp2cli"
+ },
+ {
+  "description": "MCP server that enables AI assistants to interact with Google Gemini CLI, leveraging Gemini's massive token window for large file analysis and codebase understanding",
+  "fullName": "jamubc/gemini-mcp-tool",
+  "language": "TypeScript",
+  "stargazersCount": 2286,
+  "updatedAt": "2026-10-05T13:40:50Z",
+  "url": "https://github.com/jamubc/gemini-mcp-tool"
+ },
+ {
+  "description": "ChatMCP is an AI chat client implementing the Model Context Protocol (MCP).",
+  "fullName": "daodao97/chatmcp",
+  "language": "Dart",
+  "stargazersCount": 2228,
+  "updatedAt": "2026-10-03T15:36:26Z",
+  "url": "https://github.com/daodao97/chatmcp"
+ },
+ {
+  "description": "x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more.  Built with Zig — zero dependencies, single-binary output, cros",
+  "fullName": "duty1g/x64dbg-mcp-server",
+  "language": "Zig",
+  "stargazersCount": 2198,
+  "updatedAt": "2026-10-06T05:05:39Z",
+  "url": "https://github.com/duty1g/x64dbg-mcp-server"
+ },
+ {
+  "description": "Stealth browser automation for AI agents over MCP and the Chrome DevTools Protocol: navigation, network hooks, DOM extraction, and pixel-accurate UI cloning.",
+  "fullName": "vibheksoni/stealth-browser-mcp",
+  "language": "Python",
+  "stargazersCount": 2197,
+  "updatedAt": "2026-10-06T04:58:13Z",
+  "url": "https://github.com/vibheksoni/stealth-browser-mcp"
+ },
+ {
+  "description": "Asynchronous coordination layer for AI coding agents: identities, inboxes, searchable threads, and advisory file leases over FastMCP + Git + SQLite",
+  "fullName": "Dicklesworthstone/mcp_agent_mail",
+  "language": "Python",
+  "stargazersCount": 2184,
+  "updatedAt": "2026-10-06T00:15:49Z",
+  "url": "https://github.com/Dicklesworthstone/mcp_agent_mail"
+ },
+ {
+  "description": "Shrimp Task Manager is a task tool built for AI Agents, emphasizing chain-of-thought, reflection, and style consistency. It converts natural language into structured dev tasks with dependency tracking and iterative refinement, enabling agent-like developer behavior in reasoning AI systems.",
+  "fullName": "cjo4m06/mcp-shrimp-task-manager",
+  "language": "JavaScript",
+  "stargazersCount": 2146,
+  "updatedAt": "2026-10-05T19:30:34Z",
+  "url": "https://github.com/cjo4m06/mcp-shrimp-task-manager"
+ },
+ {
+  "description": "MCP Router — development, support and security updates ended 2026-09-18. Historical source and final release for existing users.",
+  "fullName": "mcp-router/mcp-router",
+  "language": "TypeScript",
+  "stargazersCount": 2145,
+  "updatedAt": "2026-10-05T12:10:41Z",
+  "url": "https://github.com/mcp-router/mcp-router"
+ },
+ {
+  "description": "Enable AI assistant clients like Cursor, Windsurf and Claude Desktop to control Unreal Engine through natural language using the Model Context Protocol (MCP).",
+  "fullName": "chongdashu/unreal-mcp",
+  "language": "C++",
+  "stargazersCount": 2091,
+  "updatedAt": "2026-10-06T00:05:22Z",
+  "url": "https://github.com/chongdashu/unreal-mcp"
+ },
+ {
+  "description": "This is a 12306 ticket search server based on the Model Context Protocol (MCP).",
+  "fullName": "Joooook/12306-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 2044,
+  "updatedAt": "2026-10-06T05:08:31Z",
+  "url": "https://github.com/Joooook/12306-mcp"
+ },
+ {
+  "description": "Open-source persistent memory for AI agent pipelines (LangGraph, CrewAI, AutoGen) and Claude. REST API + knowledge graph + autonomous consolidation.",
+  "fullName": "doobidoo/mcp-memory-service",
+  "language": "Python",
+  "stargazersCount": 1985,
+  "updatedAt": "2026-10-05T21:20:56Z",
+  "url": "https://github.com/doobidoo/mcp-memory-service"
+ },
+ {
+  "description": "Model Context Protocol (MCP) plugin to connect with Unity Editor — designed for Cursor, Claude Code, Codex, Windsurf and other IDEs",
+  "fullName": "CoderGamester/mcp-unity",
+  "language": "C#",
+  "stargazersCount": 1919,
+  "updatedAt": "2026-10-05T09:30:15Z",
+  "url": "https://github.com/CoderGamester/mcp-unity"
+ },
+ {
+  "description": "Unified real-time search MCP server supporting general web search, vertical domain search, parallel batch search, and full-page URL content extraction.",
+  "fullName": "anysearch-ai/anysearch-mcp-server",
+  "language": "",
+  "stargazersCount": 1859,
+  "updatedAt": "2026-10-04T02:42:46Z",
+  "url": "https://github.com/anysearch-ai/anysearch-mcp-server"
+ },
+ {
+  "description": "The most powerful MCP Slack Server with no permission requirements, Apps support, GovSlack, DMs, Group DMs and smart history fetch logic.",
+  "fullName": "korotovsky/slack-mcp-server",
+  "language": "Go",
+  "stargazersCount": 1857,
+  "updatedAt": "2026-10-05T21:15:39Z",
+  "url": "https://github.com/korotovsky/slack-mcp-server"
+ },
+ {
+  "description": "Google Search Console Insights with Claude AI for SEOs",
+  "fullName": "AminForou/mcp-gsc",
+  "language": "Python",
+  "stargazersCount": 1853,
+  "updatedAt": "2026-10-06T04:26:37Z",
+  "url": "https://github.com/AminForou/mcp-gsc"
+ },
+ {
+  "description": "MCP Server para 70 APIs públicas brasileiras",
+  "fullName": "Mcp-Brasil/mcp-brasil",
+  "language": "Python",
+  "stargazersCount": 1805,
+  "updatedAt": "2026-10-06T02:24:10Z",
+  "url": "https://github.com/Mcp-Brasil/mcp-brasil"
+ },
+ {
+  "description": "An MCP client for Neovim that seamlessly integrates MCP servers into your editing workflow with an intuitive interface for managing, testing, and using MCP servers with your favorite chat plugins.",
+  "fullName": "ravitemer/mcphub.nvim",
+  "language": "Lua",
+  "stargazersCount": 1785,
+  "updatedAt": "2026-10-05T21:11:55Z",
+  "url": "https://github.com/ravitemer/mcphub.nvim"
+ },
+ {
+  "description": "Supports GPT Image 2, Seedance & ComfyUI, with a 1,400+ prompt library, carefully crafted hooks and a multi-task orchestration system",
+  "fullName": "jau123/MeiGen-AI-Design-MCP",
+  "language": "TypeScript",
+  "stargazersCount": 1778,
+  "updatedAt": "2026-10-05T15:35:00Z",
+  "url": "https://github.com/jau123/MeiGen-AI-Design-MCP"
+ },
+ {
+  "description": "Public Solana MCP registry metadata for Vybe Solana API",
+  "fullName": "vybenetwork/solana-mcp-vybe",
+  "language": "",
+  "stargazersCount": 1634,
+  "updatedAt": "2026-10-06T04:44:25Z",
+  "url": "https://github.com/vybenetwork/solana-mcp-vybe"
+ },
+ {
+  "description": "A command-line interface for interacting with MCP (Model Context Protocol) servers using both stdio and HTTP transport.",
+  "fullName": "f/mcptools",
+  "language": "Go",
+  "stargazersCount": 1626,
+  "updatedAt": "2026-10-05T17:53:28Z",
+  "url": "https://github.com/f/mcptools"
+ },
+ {
+  "description": "Run MATLAB® using AI applications with the official MATLAB MCP Server from MathWorks®. This MCP server for MATLAB supports a wide range of coding agents like Claude Code® and Visual Studio® Code.",
+  "fullName": "matlab/matlab-mcp-server",
+  "language": "Go",
+  "stargazersCount": 1617,
+  "updatedAt": "2026-10-05T14:51:44Z",
+  "url": "https://github.com/matlab/matlab-mcp-server"
+ },
+ {
+  "description": "Production-grade MCP server giving Claude 27 security intelligence tools across 21 APIs — CVE lookup, EPSS scoring, CISA KEV, MITRE ATT&CK, Shodan, VirusTotal, and more.",
+  "fullName": "mukul975/cve-mcp-server",
+  "language": "Python",
+  "stargazersCount": 1615,
+  "updatedAt": "2026-10-05T22:05:38Z",
+  "url": "https://github.com/mukul975/cve-mcp-server"
+ },
+ {
+  "description": "mcp-language-server gives MCP enabled clients access semantic tools like get definition, references, rename, and diagnostics.",
+  "fullName": "isaacphi/mcp-language-server",
+  "language": "Go",
+  "stargazersCount": 1605,
+  "updatedAt": "2026-10-06T02:16:42Z",
+  "url": "https://github.com/isaacphi/mcp-language-server"
+ },
+ {
+  "description": "Model Context Protocol for WinDbg.",
+  "fullName": "svnscha/mcp-windbg",
+  "language": "Python",
+  "stargazersCount": 1604,
+  "updatedAt": "2026-10-05T19:47:28Z",
+  "url": "https://github.com/svnscha/mcp-windbg"
+ },
+ {
+  "description": "Official data.gouv.fr Model Context Protocol (MCP) server that allows AI chatbots to search, explore, and analyze datasets from the French national Open Data platform, directly through conversation.",
+  "fullName": "datagouv/datagouv-mcp",
+  "language": "Python",
+  "stargazersCount": 1601,
+  "updatedAt": "2026-10-05T20:20:25Z",
+  "url": "https://github.com/datagouv/datagouv-mcp"
+ },
+ {
+  "description": "Official MiniMax Model Context Protocol (MCP) server that enables interaction with powerful Text to Speech, image generation and video generation APIs.",
+  "fullName": "MiniMax-AI/MiniMax-MCP",
+  "language": "Python",
+  "stargazersCount": 1582,
+  "updatedAt": "2026-10-04T17:23:33Z",
+  "url": "https://github.com/MiniMax-AI/MiniMax-MCP"
+ },
+ {
+  "description": "Token-efficient MCP adapter for Pi coding agent",
+  "fullName": "nicobailon/pi-mcp-adapter",
+  "language": "TypeScript",
+  "stargazersCount": 1577,
+  "updatedAt": "2026-10-06T03:48:58Z",
+  "url": "https://github.com/nicobailon/pi-mcp-adapter"
+ },
+ {
+  "description": "Connect your favorite AI agents directly to Cheat Engine via MCP. Automate reverse engineering, pointer scanning, and memory analysis using natural language.",
+  "fullName": "miscusi-peek/cheatengine-mcp-bridge",
+  "language": "Lua",
+  "stargazersCount": 1566,
+  "updatedAt": "2026-10-06T02:47:30Z",
+  "url": "https://github.com/miscusi-peek/cheatengine-mcp-bridge"
+ },
+ {
+  "description": "An official Qdrant Model Context Protocol (MCP) server implementation",
+  "fullName": "qdrant/mcp-server-qdrant",
+  "language": "Python",
+  "stargazersCount": 1542,
+  "updatedAt": "2026-10-05T15:17:08Z",
+  "url": "https://github.com/qdrant/mcp-server-qdrant"
+ },
+ {
+  "description": "Connect AI models like Claude & GPT with robots using MCP and ROS.",
+  "fullName": "robotmcp/ros-mcp-server",
+  "language": "Python",
+  "stargazersCount": 1484,
+  "updatedAt": "2026-10-05T00:52:06Z",
+  "url": "https://github.com/robotmcp/ros-mcp-server"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases",
+  "fullName": "designcomputer/mysql_mcp_server",
+  "language": "Python",
+  "stargazersCount": 1399,
+  "updatedAt": "2026-10-05T11:31:41Z",
+  "url": "https://github.com/designcomputer/mysql_mcp_server"
+ },
+ {
+  "description": "MCP server for Apple Developer Documentation - Search iOS/macOS/SwiftUI/UIKit docs, WWDC videos, Swift/Objective-C APIs & code examples in Claude, Cursor & AI assistants",
+  "fullName": "kimsungwhee/apple-docs-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 1382,
+  "updatedAt": "2026-10-04T20:37:52Z",
+  "url": "https://github.com/kimsungwhee/apple-docs-mcp"
+ },
+ {
+  "description": "文颜 MCP Server 可以让 AI 自动将 Markdown 文章排版后发布至微信公众号。",
+  "fullName": "caol64/wenyan-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 1333,
+  "updatedAt": "2026-10-05T19:56:11Z",
+  "url": "https://github.com/caol64/wenyan-mcp"
+ },
+ {
+  "description": "🪐 🔧 Model Context Protocol (MCP) Server for Jupyter.",
+  "fullName": "datalayer/jupyter-mcp-server",
+  "language": "Python",
+  "stargazersCount": 1296,
+  "updatedAt": "2026-10-05T11:18:57Z",
+  "url": "https://github.com/datalayer/jupyter-mcp-server"
+ },
+ {
+  "description": "Meta Ads (Facebook/Instagram) MCP server for Claude, ChatGPT, Perplexity & Cursor — the Meta node of Pipeboard’s 5-platform family (+ Google, TikTok, Snap, Reddit). Hosted remote MCP, badged Meta Business Partner, free plan — no self-hosting required.",
+  "fullName": "pipeboard-co/meta-ads-mcp",
+  "language": "Python",
+  "stargazersCount": 1292,
+  "updatedAt": "2026-10-05T00:53:59Z",
+  "url": "https://github.com/pipeboard-co/meta-ads-mcp"
+ },
+ {
+  "description": "One place to manage & connect to all your MCP servers",
+  "fullName": "mcpjungle/MCPJungle",
+  "language": "Go",
+  "stargazersCount": 1288,
+  "updatedAt": "2026-10-05T19:45:52Z",
+  "url": "https://github.com/mcpjungle/MCPJungle"
+ },
+ {
+  "description": "Private web search for AI assistants via SearXNG — supports Claude, Cursor, and any MCP client",
+  "fullName": "ihor-sokoliuk/mcp-searxng",
+  "language": "TypeScript",
+  "stargazersCount": 1284,
+  "updatedAt": "2026-10-06T00:34:11Z",
+  "url": "https://github.com/ihor-sokoliuk/mcp-searxng"
+ },
+ {
+  "description": "It's a plugin extension in Zotero.  Zotero MCP Plugin enables integration between AI assistants and Zotero through MCP. Zotero MCP Plugin 是一个 Zotero 插件，通过 MCP协议实现 AI 助手与 Zotero深度集成。插件支持文献检索、元   数据管理、全文分析和智能问答等功能，让 Claude、ChatGPT 等 AI 工具能够直接访问和操作您的文献库。",
+  "fullName": "cookjohn/zotero-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 1209,
+  "updatedAt": "2026-10-06T05:02:26Z",
+  "url": "https://github.com/cookjohn/zotero-mcp"
+ },
+ {
+  "description": "Give any AI agent the ability to code",
+  "fullName": "xyTom/coding-tools-mcp",
+  "language": "Python",
+  "stargazersCount": 1177,
+  "updatedAt": "2026-10-06T04:51:51Z",
+  "url": "https://github.com/xyTom/coding-tools-mcp"
+ },
+ {
+  "description": "Helping coding agents never make mistakes working with public or private libraries without wasting the context window.",
+  "fullName": "ref-tools/ref-tools-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 1176,
+  "updatedAt": "2026-10-06T01:53:52Z",
+  "url": "https://github.com/ref-tools/ref-tools-mcp"
+ },
+ {
+  "description": "A Model Context Protocol server to connect to MongoDB databases and MongoDB Atlas Clusters.",
+  "fullName": "mongodb-js/mongodb-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 1140,
+  "updatedAt": "2026-10-05T16:09:11Z",
+  "url": "https://github.com/mongodb-js/mongodb-mcp-server"
+ },
+ {
+  "description": "🚀MCP server for accessing RedNote(XiaoHongShu, xhs).",
+  "fullName": "iFurySt/RedNote-MCP",
+  "language": "TypeScript",
+  "stargazersCount": 1117,
+  "updatedAt": "2026-10-05T01:26:31Z",
+  "url": "https://github.com/iFurySt/RedNote-MCP"
+ },
+ {
+  "description": "Official remote MCP server for Atlassian. Securely connect Jira, Confluence, Jira Service Management, Bitbucket, and Compass to Claude, ChatGPT, Cursor, VS Code, and other AI tools using OAuth 2.1 or API tokens.",
+  "fullName": "atlassian/atlassian-mcp-server",
+  "language": "JavaScript",
+  "stargazersCount": 1083,
+  "updatedAt": "2026-10-05T21:15:52Z",
+  "url": "https://github.com/atlassian/atlassian-mcp-server"
+ },
+ {
+  "description": "A curated list of Model Context Protocol (MCP) servers ",
+  "fullName": "YuzeHao2023/Awesome-MCP-Servers",
+  "language": "",
+  "stargazersCount": 1066,
+  "updatedAt": "2026-10-03T04:18:10Z",
+  "url": "https://github.com/YuzeHao2023/Awesome-MCP-Servers"
+ },
+ {
+  "description": "MCP server and CLI tool for searching and downloading documents from Anna's Archive",
+  "fullName": "iosifache/annas-mcp",
+  "language": "Go",
+  "stargazersCount": 1065,
+  "updatedAt": "2026-10-05T23:03:31Z",
+  "url": "https://github.com/iosifache/annas-mcp"
+ },
+ {
+  "description": "MCP Server Framework and Tool Development library for building custom capabilities into agents. ",
+  "fullName": "ArcadeAI/arcade-mcp",
+  "language": "Python",
+  "stargazersCount": 1046,
+  "updatedAt": "2026-10-05T23:27:15Z",
+  "url": "https://github.com/ArcadeAI/arcade-mcp"
+ },
+ {
+  "description": "Query and Summarize your chat messages.",
+  "fullName": "chatmcp/mcp-server-chatsum",
+  "language": "TypeScript",
+  "stargazersCount": 1026,
+  "updatedAt": "2026-09-27T10:04:53Z",
+  "url": "https://github.com/chatmcp/mcp-server-chatsum"
+ },
+ {
+  "description": "This MCP server integrates with your Google Drive and Google Sheets, to enable creating and modifying spreadsheets.",
+  "fullName": "xing5/mcp-google-sheets",
+  "language": "Python",
+  "stargazersCount": 1011,
+  "updatedAt": "2026-10-05T14:44:01Z",
+  "url": "https://github.com/xing5/mcp-google-sheets"
+ },
+ {
+  "description": "Alpaca’s official MCP Server lets you trade stocks, ETFs, crypto, and options, run data analysis, and build strategies in plain English directly from your favorite LLM tools and IDEs",
+  "fullName": "alpacahq/alpaca-mcp-server",
+  "language": "Python",
+  "stargazersCount": 1006,
+  "updatedAt": "2026-10-06T01:22:46Z",
+  "url": "https://github.com/alpacahq/alpaca-mcp-server"
+ },
+ {
+  "description": "Neo4j Labs Model Context Protocol servers",
+  "fullName": "neo4j-contrib/mcp-neo4j",
+  "language": "Python",
+  "stargazersCount": 987,
+  "updatedAt": "2026-10-04T20:03:56Z",
+  "url": "https://github.com/neo4j-contrib/mcp-neo4j"
+ },
+ {
+  "description": "The most compatible MCP CLI client. mcpc supports persistent sessions, stdio/HTTP, OAuth 2.1, Tasks and Skills extensions, --json for code mode, proxy for AI sandboxes, x402, and more.",
+  "fullName": "apify/mcpc",
+  "language": "TypeScript",
+  "stargazersCount": 975,
+  "updatedAt": "2026-10-05T23:02:28Z",
+  "url": "https://github.com/apify/mcpc"
+ },
+ {
+  "description": "Published in CNCF Landscape: A MCP server for Kubernetes.",
+  "fullName": "rohitg00/kubectl-mcp-server",
+  "language": "Python",
+  "stargazersCount": 962,
+  "updatedAt": "2026-10-05T17:09:08Z",
+  "url": "https://github.com/rohitg00/kubectl-mcp-server"
+ },
+ {
+  "description": "A model context protocol server to work with JetBrains IDEs: IntelliJ, PyCharm, WebStorm, etc. Also, works with Android Studio",
+  "fullName": "JetBrains/mcp-jetbrains",
+  "language": "JavaScript",
+  "stargazersCount": 962,
+  "updatedAt": "2026-10-05T19:43:24Z",
+  "url": "https://github.com/JetBrains/mcp-jetbrains"
+ },
+ {
+  "description": "Local MCP work notes with persistent sessions, decisions, evidence and resumable tasks.",
+  "fullName": "arben-adm/mcp-sequential-thinking",
+  "language": "Python",
+  "stargazersCount": 953,
+  "updatedAt": "2026-10-05T09:03:45Z",
+  "url": "https://github.com/arben-adm/mcp-sequential-thinking"
+ },
+ {
+  "description": "Open-source, self-hosted MCP gateway: turn any REST/OpenAPI, SOAP, GraphQL, OData or SQL API into MCP tools for Claude, ChatGPT & Copilot. 262 connectors incl. SAP S/4HANA & Business One, ERP, e-commerce.",
+  "fullName": "HelpCode-ai/anythingmcp",
+  "language": "TypeScript",
+  "stargazersCount": 940,
+  "updatedAt": "2026-10-05T20:46:40Z",
+  "url": "https://github.com/HelpCode-ai/anythingmcp"
+ },
+ {
+  "description": "A middleware to provide an openAI compatible endpoint that can call MCP tools",
+  "fullName": "SecretiveShell/MCP-Bridge",
+  "language": "Python",
+  "stargazersCount": 927,
+  "updatedAt": "2026-10-05T11:10:19Z",
+  "url": "https://github.com/SecretiveShell/MCP-Bridge"
+ },
+ {
+  "description": "MCP server for the Cloudflare API",
+  "fullName": "cloudflare/mcp",
+  "language": "TypeScript",
+  "stargazersCount": 922,
+  "updatedAt": "2026-10-05T06:43:44Z",
+  "url": "https://github.com/cloudflare/mcp"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server implementation for remote memory bank management, inspired by Cline Memory Bank.",
+  "fullName": "alioshr/memory-bank-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 921,
+  "updatedAt": "2026-10-04T16:29:03Z",
+  "url": "https://github.com/alioshr/memory-bank-mcp"
+ },
+ {
+  "description": "A Model Context Protocol server for connecting Notion to MCP-compatible clients",
+  "fullName": "suekou/mcp-notion-server",
+  "language": "TypeScript",
+  "stargazersCount": 920,
+  "updatedAt": "2026-10-05T17:48:16Z",
+  "url": "https://github.com/suekou/mcp-notion-server"
+ },
+ {
+  "description": "A comprehensive Model Context Protocol (MCP) server that enables AI assistants to control Unreal Engine through the native C++ Automation Bridge plugin. Built with TypeScript and C++.",
+  "fullName": "ChiR24/Unreal_mcp",
+  "language": "C++",
+  "stargazersCount": 903,
+  "updatedAt": "2026-10-05T16:54:11Z",
+  "url": "https://github.com/ChiR24/Unreal_mcp"
+ },
+ {
+  "description": "📦️ A fast, secure MCP server that extends its capabilities through WebAssembly plugins.",
+  "fullName": "hyper-mcp-rs/hyper-mcp",
+  "language": "Rust",
+  "stargazersCount": 881,
+  "updatedAt": "2026-10-03T16:50:39Z",
+  "url": "https://github.com/hyper-mcp-rs/hyper-mcp"
+ },
+ {
+  "description": "MCP Server for interacting with Android Devices.",
+  "fullName": "CursorTouch/Android-MCP",
+  "language": "Python",
+  "stargazersCount": 881,
+  "updatedAt": "2026-10-05T14:53:01Z",
+  "url": "https://github.com/CursorTouch/Android-MCP"
+ },
+ {
+  "description": "A comprehensive collection of Model Context Protocol (MCP) servers",
+  "fullName": "TensorBlock/awesome-mcp-servers",
+  "language": "TypeScript",
+  "stargazersCount": 879,
+  "updatedAt": "2026-10-05T23:04:50Z",
+  "url": "https://github.com/TensorBlock/awesome-mcp-servers"
+ },
+ {
+  "description": "Official Jina AI Remote MCP Server",
+  "fullName": "jina-ai/MCP",
+  "language": "TypeScript",
+  "stargazersCount": 872,
+  "updatedAt": "2026-10-05T12:59:40Z",
+  "url": "https://github.com/jina-ai/MCP"
+ },
+ {
+  "description": "MCP servers & Graph API for the UniFi suite of applications, Network, Protect, and Access",
+  "fullName": "sirkirby/unifi-mcp",
+  "language": "Python",
+  "stargazersCount": 868,
+  "updatedAt": "2026-10-04T21:34:23Z",
+  "url": "https://github.com/sirkirby/unifi-mcp"
+ },
+ {
+  "description": "这是一个金融领域相关的mcp,本项目通过集成 Tushare API 和 Binance API 为语言模型（如Claude）提供全面的实时金融数据访问能力，支持股票、基金、债券、宏观经济指标、稳定币、虚拟货币等多维度金融数据分析。其中也包含了金融数据查询、财经新闻查询、国家统计局数据查询等",
+  "fullName": "guangxiangdebizi/FinanceMCP",
+  "language": "TypeScript",
+  "stargazersCount": 857,
+  "updatedAt": "2026-10-05T10:38:39Z",
+  "url": "https://github.com/guangxiangdebizi/FinanceMCP"
+ },
+ {
+  "description": "Headless IDA Pro MCP Server",
+  "fullName": "blacktop/ida-mcp-rs",
+  "language": "Rust",
+  "stargazersCount": 852,
+  "updatedAt": "2026-10-06T05:03:28Z",
+  "url": "https://github.com/blacktop/ida-mcp-rs"
+ },
+ {
+  "description": "MCP-NixOS - Model Context Protocol Server for NixOS resources",
+  "fullName": "utensils/mcp-nixos",
+  "language": "Python",
+  "stargazersCount": 851,
+  "updatedAt": "2026-10-05T18:01:16Z",
+  "url": "https://github.com/utensils/mcp-nixos"
+ },
+ {
+  "description": "Browse the web, directly from Cursor etc.",
+  "fullName": "kontext-security/browser-use-mcp-server",
+  "language": "Python",
+  "stargazersCount": 848,
+  "updatedAt": "2026-10-04T20:27:09Z",
+  "url": "https://github.com/kontext-security/browser-use-mcp-server"
+ },
+ {
+  "description": "Clean, LLM-optimized Reddit MCP server. Browse posts, search content, analyze users. No fluff, just Reddit data.",
+  "fullName": "karanb192/reddit-mcp-buddy",
+  "language": "TypeScript",
+  "stargazersCount": 845,
+  "updatedAt": "2026-10-05T14:05:08Z",
+  "url": "https://github.com/karanb192/reddit-mcp-buddy"
+ },
+ {
+  "description": "MCP configuration to connect AI agent to a Linux machine.",
+  "fullName": "Wh0am123/MCP-Kali-Server",
+  "language": "Python",
+  "stargazersCount": 835,
+  "updatedAt": "2026-10-05T14:53:30Z",
+  "url": "https://github.com/Wh0am123/MCP-Kali-Server"
+ },
+ {
+  "description": "Query MCP enables end-to-end management of Supabase via chat interface: read & write query executions, management API support, automatic migration versioning, access to logs and much more.",
+  "fullName": "alexander-zuev/supabase-mcp-server",
+  "language": "Python",
+  "stargazersCount": 830,
+  "updatedAt": "2026-10-05T08:09:56Z",
+  "url": "https://github.com/alexander-zuev/supabase-mcp-server"
+ },
+ {
+  "description": "Add Obsidian integrations like semantic search and custom Templater prompts to Claude or any MCP client.",
+  "fullName": "jacksteamdev/obsidian-mcp-tools",
+  "language": "TypeScript",
+  "stargazersCount": 829,
+  "updatedAt": "2026-10-02T22:35:11Z",
+  "url": "https://github.com/jacksteamdev/obsidian-mcp-tools"
+ },
+ {
+  "description": "Harness the power of local LLMs with this TUI MCP Client for Ollama. Featuring all core MCP primitives (tools, prompts, resources), agent mode, multi-server, model switching, streaming responses, human-in-the-loop, thinking mode, model params config, system prompts, and saved preferences.",
+  "fullName": "jonigl/mcp-client-for-ollama",
+  "language": "Python",
+  "stargazersCount": 826,
+  "updatedAt": "2026-10-02T15:29:54Z",
+  "url": "https://github.com/jonigl/mcp-client-for-ollama"
+ },
+ {
+  "description": "A minimalistic MCP client with a good feature set.",
+  "fullName": "zaidmukaddam/scira-mcp-chat",
+  "language": "TypeScript",
+  "stargazersCount": 825,
+  "updatedAt": "2026-10-02T18:36:57Z",
+  "url": "https://github.com/zaidmukaddam/scira-mcp-chat"
+ },
+ {
+  "description": "Next.js Development for Coding Agent",
+  "fullName": "vercel/next-devtools-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 823,
+  "updatedAt": "2026-10-06T01:47:35Z",
+  "url": "https://github.com/vercel/next-devtools-mcp"
+ },
+ {
+  "description": "Pre-build reality check for AI coding agents. Scans GitHub, HN, npm, PyPI, Product Hunt. MCP server. 290+ stars.",
+  "fullName": "mnemox-ai/idea-reality-mcp",
+  "language": "Python",
+  "stargazersCount": 822,
+  "updatedAt": "2026-10-05T08:11:37Z",
+  "url": "https://github.com/mnemox-ai/idea-reality-mcp"
+ },
+ {
+  "description": "Automate real Microsoft Excel with AI via MCP Server or CLI — Power Query, DAX, VBA, PivotTables, charts, and 326 operations.",
+  "fullName": "sbroenne/mcp-server-excel",
+  "language": "C#",
+  "stargazersCount": 802,
+  "updatedAt": "2026-10-06T04:25:40Z",
+  "url": "https://github.com/sbroenne/mcp-server-excel"
+ },
+ {
+  "description": "A growing collection of MCP servers bringing offensive security tools to AI assistants. Nmap, Ghidra, Nuclei, SQLMap, Hashcat and more.",
+  "fullName": "FuzzingLabs/mcp-security-hub",
+  "language": "Python",
+  "stargazersCount": 797,
+  "updatedAt": "2026-10-05T13:06:19Z",
+  "url": "https://github.com/FuzzingLabs/mcp-security-hub"
+ },
+ {
+  "description": "Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.",
+  "fullName": "artokun/comfyui-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 790,
+  "updatedAt": "2026-10-05T15:52:03Z",
+  "url": "https://github.com/artokun/comfyui-mcp"
+ },
+ {
+  "description": "MCP server for JADX-AI Plugin",
+  "fullName": "zinja-coder/jadx-mcp-server",
+  "language": "Python",
+  "stargazersCount": 790,
+  "updatedAt": "2026-10-05T08:59:13Z",
+  "url": "https://github.com/zinja-coder/jadx-mcp-server"
+ },
+ {
+  "description": "MCP server that integrates the LINE Messaging API to connect an AI Agent to the LINE Official Account.",
+  "fullName": "line/line-bot-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 782,
+  "updatedAt": "2026-10-06T01:57:33Z",
+  "url": "https://github.com/line/line-bot-mcp-server"
+ },
+ {
+  "description": "A Minecraft MCP Server powered by Mineflayer API. It allows to control a Minecraft character in real-time, allowing AI assistants to build structures, explore the world, and interact with the game environment through natural language instruction",
+  "fullName": "yuniko-software/minecraft-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 770,
+  "updatedAt": "2026-10-03T15:36:27Z",
+  "url": "https://github.com/yuniko-software/minecraft-mcp-server"
+ },
+ {
+  "description": "An native MCP server extension for Ghidra",
+  "fullName": "symgraph/GhidrAssistMCP",
+  "language": "Java",
+  "stargazersCount": 760,
+  "updatedAt": "2026-10-05T11:08:33Z",
+  "url": "https://github.com/symgraph/GhidrAssistMCP"
+ },
+ {
+  "description": "🔥🔒 Awesome MCP (Model Context Protocol) Security 🖥️",
+  "fullName": "Puliczek/awesome-mcp-security",
+  "language": "",
+  "stargazersCount": 741,
+  "updatedAt": "2026-10-02T20:07:54Z",
+  "url": "https://github.com/Puliczek/awesome-mcp-security"
+ },
+ {
+  "description": "An MCP proxy server that aggregates and serves multiple MCP resource servers through a single HTTP server.",
+  "fullName": "tbxark/mcp-proxy",
+  "language": "Go",
+  "stargazersCount": 734,
+  "updatedAt": "2026-10-05T21:44:21Z",
+  "url": "https://github.com/tbxark/mcp-proxy"
+ },
+ {
+  "description": "WordPress plugin that turns Elementor & WordPress into an MCP server. 500+ AI-ready tools for building, editing, and managing page designs programmatically.",
+  "fullName": "msrbuilds/elementor-mcp",
+  "language": "PHP",
+  "stargazersCount": 732,
+  "updatedAt": "2026-10-05T21:57:19Z",
+  "url": "https://github.com/msrbuilds/elementor-mcp"
+ },
+ {
+  "description": "MCPCAN is a centralized management platform for MCP services. It deploys each MCP service using a container deployment method. The platform supports container monitoring and MCP service token verification, solving security risks and enabling rapid deployment of MCP services. It uses SSE, STDIO, and STREAMABLEHTTP access protocols to deploy MCP。",
+  "fullName": "Kymo-MCP/mcpcan",
+  "language": "Go",
+  "stargazersCount": 728,
+  "updatedAt": "2026-09-24T15:05:14Z",
+  "url": "https://github.com/Kymo-MCP/mcpcan"
+ },
+ {
+  "description": "",
+  "fullName": "elastic/mcp-server-elasticsearch",
+  "language": "Rust",
+  "stargazersCount": 717,
+  "updatedAt": "2026-10-04T18:40:50Z",
+  "url": "https://github.com/elastic/mcp-server-elasticsearch"
+ },
+ {
+  "description": "A NestJS module to effortlessly create Model Context Protocol (MCP) servers for exposing AI tools, resources, and prompts.",
+  "fullName": "rekog-labs/MCP-Nest",
+  "language": "TypeScript",
+  "stargazersCount": 712,
+  "updatedAt": "2026-10-02T04:48:37Z",
+  "url": "https://github.com/rekog-labs/MCP-Nest"
+ },
+ {
+  "description": "Figma Plugin & MCP server to bypass API limits",
+  "fullName": "gethopp/figma-mcp-bridge",
+  "language": "TypeScript",
+  "stargazersCount": 709,
+  "updatedAt": "2026-10-05T23:23:44Z",
+  "url": "https://github.com/gethopp/figma-mcp-bridge"
+ },
+ {
+  "description": "An MCP tool that connects Google Ads with Claude AI/Cursor and others, allowing you to analyze your advertising data through natural language conversations. This integration gives you access to campaign information, performance metrics, keyword analytics, and ad management—all through simple chat with Claude, Cursor or Windsurf.",
+  "fullName": "cohnen/mcp-google-ads",
+  "language": "Python",
+  "stargazersCount": 708,
+  "updatedAt": "2026-10-02T15:15:12Z",
+  "url": "https://github.com/cohnen/mcp-google-ads"
+ },
+ {
+  "description": "MCP Server for Adobe After Effects. Enables remote control (compositions, text, shapes, solids, properties) via the Model Context Protocol using ExtendScript.",
+  "fullName": "Dakkshin/after-effects-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 707,
+  "updatedAt": "2026-10-05T23:51:51Z",
+  "url": "https://github.com/Dakkshin/after-effects-mcp"
+ },
+ {
+  "description": "Stock market MCP server for Yahoo Finance data, technical analysis, portfolio tracking, and Python backtesting. Runs locally with no API key for core tools.",
+  "fullName": "wshobson/maverick-mcp",
+  "language": "Python",
+  "stargazersCount": 701,
+  "updatedAt": "2026-10-04T23:48:08Z",
+  "url": "https://github.com/wshobson/maverick-mcp"
+ },
+ {
+  "description": "Read, write, search, and surgically edit Obsidian vault notes, tags, and frontmatter via MCP. STDIO or Streamable HTTP.",
+  "fullName": "cyanheads/obsidian-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 691,
+  "updatedAt": "2026-10-05T07:31:09Z",
+  "url": "https://github.com/cyanheads/obsidian-mcp-server"
+ },
+ {
+  "description": "An MCP Server for Android running on the phone, optmized for token usage, supports also files downloads and cloudflare and ngrok automated tunnelling.",
+  "fullName": "danielealbano/android-remote-control-mcp",
+  "language": "Kotlin",
+  "stargazersCount": 683,
+  "updatedAt": "2026-10-05T14:13:26Z",
+  "url": "https://github.com/danielealbano/android-remote-control-mcp"
+ },
+ {
+  "description": "A simple CLI to run LLM prompt and implement MCP client.",
+  "fullName": "adhikasp/mcp-client-cli",
+  "language": "Python",
+  "stargazersCount": 675,
+  "updatedAt": "2026-09-29T20:04:43Z",
+  "url": "https://github.com/adhikasp/mcp-client-cli"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) that allows Claude Desktop and other AI tools (Claude Code, Cursor, Antigravity, etc.) to read, analyze, and modify Figma designs",
+  "fullName": "arinspunk/claude-talk-to-figma-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 666,
+  "updatedAt": "2026-10-02T18:02:13Z",
+  "url": "https://github.com/arinspunk/claude-talk-to-figma-mcp"
+ },
+ {
+  "description": "A MCP Server for APK Tool (Part of Android Reverse Engineering MCP Suites)",
+  "fullName": "zinja-coder/apktool-mcp-server",
+  "language": "Python",
+  "stargazersCount": 661,
+  "updatedAt": "2026-10-05T05:59:36Z",
+  "url": "https://github.com/zinja-coder/apktool-mcp-server"
+ },
+ {
+  "description": "Official SonarQube MCP Server for code quality and security in AI agents",
+  "fullName": "SonarSource/sonarqube-mcp-server",
+  "language": "Java",
+  "stargazersCount": 658,
+  "updatedAt": "2026-10-06T03:35:46Z",
+  "url": "https://github.com/SonarSource/sonarqube-mcp-server"
+ },
+ {
+  "description": "120-tool MCP server for real-time global intelligence: markets, SEC filings, conflict, military, cyber, climate, news, and 30+ domains. AI situation briefs that cite their sources, user-defined geofences with escalation scoring, cited daily digests, live SSE dashboard. MIT, no paid API keys.",
+  "fullName": "marc-shade/world-intel-mcp",
+  "language": "Python",
+  "stargazersCount": 657,
+  "updatedAt": "2026-10-04T11:27:31Z",
+  "url": "https://github.com/marc-shade/world-intel-mcp"
+ },
+ {
+  "description": "Adobe Premiere Pro MCP. Tools for AI-driven video editing via MCP, for Codex, Claude, and other MCP clients.",
+  "fullName": "hetpatel-11/Adobe_Premiere_Pro_MCP",
+  "language": "TypeScript",
+  "stargazersCount": 653,
+  "updatedAt": "2026-10-06T04:42:38Z",
+  "url": "https://github.com/hetpatel-11/Adobe_Premiere_Pro_MCP"
+ },
+ {
+  "description": "BioMCP: Biomedical Model Context Protocol",
+  "fullName": "genomoncology/biomcp",
+  "language": "Rust",
+  "stargazersCount": 647,
+  "updatedAt": "2026-10-06T00:41:59Z",
+  "url": "https://github.com/genomoncology/biomcp"
+ },
+ {
+  "description": "❤️ Generate mermaid diagram and chart with AI MCP dynamically.",
+  "fullName": "hustcc/mcp-mermaid",
+  "language": "TypeScript",
+  "stargazersCount": 642,
+  "updatedAt": "2026-10-06T03:01:35Z",
+  "url": "https://github.com/hustcc/mcp-mermaid"
+ },
+ {
+  "description": "MCP server to deploy apps to Cloud Run",
+  "fullName": "GoogleCloudPlatform/cloud-run-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 632,
+  "updatedAt": "2026-10-06T04:46:11Z",
+  "url": "https://github.com/GoogleCloudPlatform/cloud-run-mcp"
+ },
+ {
+  "description": "The official Redis MCP Server is a natural language interface designed for agentic applications to manage and search data in Redis efficiently",
+  "fullName": "redis/mcp-redis",
+  "language": "Python",
+  "stargazersCount": 630,
+  "updatedAt": "2026-10-04T20:07:29Z",
+  "url": "https://github.com/redis/mcp-redis"
+ },
+ {
+  "description": "MCP for Security: A collection of Model Context Protocol servers for popular security tools like SQLMap, FFUF, NMAP, Masscan and more. Integrate security testing and penetration testing into AI workflows.",
+  "fullName": "cyproxio/mcp-for-security",
+  "language": "TypeScript",
+  "stargazersCount": 630,
+  "updatedAt": "2026-10-03T03:30:43Z",
+  "url": "https://github.com/cyproxio/mcp-for-security"
+ },
+ {
+  "description": "Convert Any OpenAPI V3 API to MCP Server",
+  "fullName": "automation-ai-labs/mcp-link",
+  "language": "Go",
+  "stargazersCount": 624,
+  "updatedAt": "2026-10-05T11:10:35Z",
+  "url": "https://github.com/automation-ai-labs/mcp-link"
+ },
+ {
+  "description": "162 MCP tools for AI-powered Godot 4 development. Scene, animation, 3D, physics, particles, audio, shader, input simulation, runtime analysis, navigation, testing & more. $15 one-time.",
+  "fullName": "youichi-uda/godot-mcp-pro",
+  "language": "GDScript",
+  "stargazersCount": 617,
+  "updatedAt": "2026-10-05T04:39:50Z",
+  "url": "https://github.com/youichi-uda/godot-mcp-pro"
+ },
+ {
+  "description": "MCP server for Coolify — 42 optimized tools for managing self-hosted PaaS through AI assistants",
+  "fullName": "StuMason/coolify-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 609,
+  "updatedAt": "2026-10-06T03:37:05Z",
+  "url": "https://github.com/StuMason/coolify-mcp"
+ },
+ {
+  "description": "A MCP (Model Context Protocol) server for interacting with dbt.",
+  "fullName": "dbt-labs/dbt-mcp",
+  "language": "Python",
+  "stargazersCount": 607,
+  "updatedAt": "2026-10-05T16:28:33Z",
+  "url": "https://github.com/dbt-labs/dbt-mcp"
+ },
+ {
+  "description": "MCP tool: let you point at DOM elements for your favorite agentic coding tool. Let AI see what you see.",
+  "fullName": "etsd-tech/mcp-pointer",
+  "language": "TypeScript",
+  "stargazersCount": 598,
+  "updatedAt": "2026-10-03T22:51:29Z",
+  "url": "https://github.com/etsd-tech/mcp-pointer"
+ },
+ {
+  "description": "🧠 An adaptation of the MCP Sequential Thinking Server to guide tool usage. This server provides recommendations for which MCP tools would be most effective at each stage.",
+  "fullName": "spences10/mcp-sequentialthinking-tools",
+  "language": "TypeScript",
+  "stargazersCount": 587,
+  "updatedAt": "2026-10-05T11:03:17Z",
+  "url": "https://github.com/spences10/mcp-sequentialthinking-tools"
+ },
+ {
+  "description": "CAD MCP Server",
+  "fullName": "daobataotie/CAD-MCP",
+  "language": "Python",
+  "stargazersCount": 582,
+  "updatedAt": "2026-10-05T21:09:35Z",
+  "url": "https://github.com/daobataotie/CAD-MCP"
+ },
+ {
+  "description": "An implementation of Model Context Protocol (MCP) server for Argo CD.",
+  "fullName": "argoproj-labs/mcp-for-argocd",
+  "language": "TypeScript",
+  "stargazersCount": 580,
+  "updatedAt": "2026-10-05T19:49:46Z",
+  "url": "https://github.com/argoproj-labs/mcp-for-argocd"
+ },
+ {
+  "description": "MCP for Adobe Photoshop. 118 tools. Control from Cursor, Claude or custom LLMs.",
+  "fullName": "alisaitteke/photoshop-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 574,
+  "updatedAt": "2026-10-05T22:14:12Z",
+  "url": "https://github.com/alisaitteke/photoshop-mcp"
+ },
+ {
+  "description": "Local-first Apple Health MCP server. Lets AI assistants answer questions about your sleep, workouts, activity and heart data from a local export.",
+  "fullName": "neiltron/apple-health-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 570,
+  "updatedAt": "2026-10-05T05:14:54Z",
+  "url": "https://github.com/neiltron/apple-health-mcp"
+ },
+ {
+  "description": "Use MCP and OpenAPI to safely control Proxmox VE VMs, LXCs, backups, and snapshots from LLMs and AI agents.",
+  "fullName": "RekklesNA/ProxmoxMCP-Plus",
+  "language": "Python",
+  "stargazersCount": 570,
+  "updatedAt": "2026-10-04T11:35:31Z",
+  "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus"
+ },
+ {
+  "description": "A Model Context Protocol server that executes commands in the current iTerm session - useful for REPL and CLI assistance",
+  "fullName": "ferrislucas/iterm-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 567,
+  "updatedAt": "2026-09-30T12:33:12Z",
+  "url": "https://github.com/ferrislucas/iterm-mcp"
+ },
+ {
+  "description": "MCP server for TouchDesigner",
+  "fullName": "8beeeaaat/touchdesigner-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 566,
+  "updatedAt": "2026-10-05T23:58:17Z",
+  "url": "https://github.com/8beeeaaat/touchdesigner-mcp"
+ },
+ {
+  "description": "MCP server for AI agents that need a phone number: order a private number in 200+ countries, read the SMS verification code, hand it back. The widest country coverage in the category, and you can check it with one API call.",
+  "fullName": "sv-number/mcp-server",
+  "language": "JavaScript",
+  "stargazersCount": 546,
+  "updatedAt": "2026-10-05T03:18:59Z",
+  "url": "https://github.com/sv-number/mcp-server"
+ },
+ {
+  "description": "An MCP server to query any Postgres database in natural language.",
+  "fullName": "subnetmarco/pgmcp",
+  "language": "Go",
+  "stargazersCount": 541,
+  "updatedAt": "2026-09-24T15:05:14Z",
+  "url": "https://github.com/subnetmarco/pgmcp"
+ },
+ {
+  "description": "Gift your VS Code agent a real debugger: breakpoints, stepping, inspection.",
+  "fullName": "microsoft/DebugMCP",
+  "language": "TypeScript",
+  "stargazersCount": 541,
+  "updatedAt": "2026-10-05T19:55:05Z",
+  "url": "https://github.com/microsoft/DebugMCP"
+ },
+ {
+  "description": "Measure token savings per AI coding agent, optimize context, and share a live local knowledge graph across 16 CLI clients.",
+  "fullName": "ooples/token-optimizer-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 538,
+  "updatedAt": "2026-10-06T01:19:25Z",
+  "url": "https://github.com/ooples/token-optimizer-mcp"
+ },
+ {
+  "description": "A MCP server for the Discord integration. Enable your AI assistants to seamlessly interact with Discord. Enhance your Discord experience with powerful automation capabilities.",
+  "fullName": "SaseQ/discord-mcp",
+  "language": "Java",
+  "stargazersCount": 531,
+  "updatedAt": "2026-10-05T13:33:10Z",
+  "url": "https://github.com/SaseQ/discord-mcp"
+ },
+ {
+  "description": "",
+  "fullName": "google/mcp-security",
+  "language": "Python",
+  "stargazersCount": 531,
+  "updatedAt": "2026-10-04T20:06:43Z",
+  "url": "https://github.com/google/mcp-security"
+ },
+ {
+  "description": "An MCP server enabling AI assistants to interact with Anytype - your encrypted, local and collaborative wiki - to organize objects, lists, and more through natural language.",
+  "fullName": "anyproto/anytype-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 527,
+  "updatedAt": "2026-10-05T09:32:27Z",
+  "url": "https://github.com/anyproto/anytype-mcp"
+ },
+ {
+  "description": "A centralized manager for Model Context Protocol (MCP) servers with dynamic server management and monitoring",
+  "fullName": "ravitemer/mcp-hub",
+  "language": "JavaScript",
+  "stargazersCount": 520,
+  "updatedAt": "2026-10-02T18:01:46Z",
+  "url": "https://github.com/ravitemer/mcp-hub"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server that enables AI agents and LLMs to query and analyze Prometheus metrics through standardized interfaces.",
+  "fullName": "pab1it0/prometheus-mcp-server",
+  "language": "Python",
+  "stargazersCount": 516,
+  "updatedAt": "2026-10-05T11:38:59Z",
+  "url": "https://github.com/pab1it0/prometheus-mcp-server"
+ },
+ {
+  "description": "MCP server SDK/example implemented entirely in bash — build a Model Context Protocol server with no runtime dependency beyond a POSIX shell.",
+  "fullName": "muthuishere/mcp-server-bash-sdk",
+  "language": "Shell",
+  "stargazersCount": 515,
+  "updatedAt": "2026-10-02T14:11:35Z",
+  "url": "https://github.com/muthuishere/mcp-server-bash-sdk"
+ },
+ {
+  "description": "Full agentic runs for Slay the Spire 2. A mod that exposes in-game state, and the MCP server for the mod.",
+  "fullName": "Gennadiyev/STS2MCP",
+  "language": "C#",
+  "stargazersCount": 509,
+  "updatedAt": "2026-10-05T14:25:54Z",
+  "url": "https://github.com/Gennadiyev/STS2MCP"
+ },
+ {
+  "description": "A VSCode extension that lets you find and install Agent Skills and MCP Apps to use with GitHub Copilot, Claude Code, and Codex CLI.",
+  "fullName": "VikashLoomba/copilot-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 505,
+  "updatedAt": "2026-10-06T03:00:39Z",
+  "url": "https://github.com/VikashLoomba/copilot-mcp"
+ },
+ {
+  "description": "Vibe Check is a tool that provides mentor-like feedback to AI Agents, preventing tunnel-vision, over-engineering and reasoning lock-in for complex and long-horizon agent workflows. KISS your over-eager AI Agents goodbye! Effective for: Coding, Ambiguous Tasks, High-Risk tasks",
+  "fullName": "PV-Bhat/vibe-check-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 502,
+  "updatedAt": "2026-09-30T12:33:26Z",
+  "url": "https://github.com/PV-Bhat/vibe-check-mcp-server"
+ },
+ {
+  "description": "Manage your Hevy workouts, routines, folders, and exercise templates. Create and update sessions faster, organize plans, and search exercises to build workouts quickly. Stay synced with changes so your training log is always up to date.",
+  "fullName": "chrisdoc/hevy-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 501,
+  "updatedAt": "2026-10-05T19:08:34Z",
+  "url": "https://github.com/chrisdoc/hevy-mcp"
+ },
+ {
+  "description": "🔌 A curated list of OSINT MCP servers. Pull requests are welcomed!",
+  "fullName": "soxoj/awesome-osint-mcp-servers",
+  "language": "",
+  "stargazersCount": 500,
+  "updatedAt": "2026-10-05T15:38:58Z",
+  "url": "https://github.com/soxoj/awesome-osint-mcp-servers"
+ },
+ {
+  "description": "Report issues related to MCP integration with Claude here.",
+  "fullName": "anthropics/claude-ai-mcp",
+  "language": "",
+  "stargazersCount": 498,
+  "updatedAt": "2026-10-05T20:50:22Z",
+  "url": "https://github.com/anthropics/claude-ai-mcp"
+ },
+ {
+  "description": "MCP SSH Server: 37 tools for remote SSH management | Claude Code & OpenAI Codex | DevOps automation, backups, database operations, health monitoring",
+  "fullName": "bvisible/mcp-ssh-manager",
+  "language": "JavaScript",
+  "stargazersCount": 497,
+  "updatedAt": "2026-10-04T11:04:30Z",
+  "url": "https://github.com/bvisible/mcp-ssh-manager"
+ },
+ {
+  "description": "Unity MCP Server — 268 tools for AI-assisted game development. Connect Claude, Cursor, or any MCP client to Unity Editor & Unity Hub. Scene management, GameObjects, components, builds, profiling, Shader Graph, Amplify, terrain, physics, NavMesh, animation, MPPM multiplayer & more. Free & open source by AnkleBreaker Studio.",
+  "fullName": "AnkleBreaker-Studio/unity-mcp-server",
+  "language": "JavaScript",
+  "stargazersCount": 490,
+  "updatedAt": "2026-10-05T21:13:26Z",
+  "url": "https://github.com/AnkleBreaker-Studio/unity-mcp-server"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server for ATLAS, a Neo4j-powered task management system for LLM Agents - implementing a three-tier architecture (Projects, Tasks, Knowledge) to manage complex workflows. Now with Deep Research.",
+  "fullName": "cyanheads/atlas-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 477,
+  "updatedAt": "2026-10-05T17:03:02Z",
+  "url": "https://github.com/cyanheads/atlas-mcp-server"
+ },
+ {
+  "description": "MCP server for full Godot 4.x engine control: 157 tools for AI-driven game development (GDScript and C#/.NET). Tested with Godot 4.7.",
+  "fullName": "tugcantopaloglu/godot-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 475,
+  "updatedAt": "2026-10-04T02:14:00Z",
+  "url": "https://github.com/tugcantopaloglu/godot-mcp"
+ },
+ {
+  "description": "18 Google Maps tools and 3 Agent Skills for place search, routes, travel planning, and local SEO—via MCP or standalone CLI.",
+  "fullName": "cablate/mcp-google-map",
+  "language": "TypeScript",
+  "stargazersCount": 466,
+  "updatedAt": "2026-10-05T11:10:29Z",
+  "url": "https://github.com/cablate/mcp-google-map"
+ },
+ {
+  "description": "66-tool MCP server for dark web intelligence — breach data, ransomware tracking, Tor .onion access, malware analysis, blockchain intel, exploit search, stealer logs",
+  "fullName": "badchars/darknet-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 466,
+  "updatedAt": "2026-10-05T11:03:54Z",
+  "url": "https://github.com/badchars/darknet-mcp-server"
+ },
+ {
+  "description": "High-performance Model Context Protocol (MCP) server for Obsidian that provides AI tools with direct vault access through semantic operations and HTTP transport.",
+  "fullName": "aaronsb/obsidian-mcp-plugin",
+  "language": "TypeScript",
+  "stargazersCount": 463,
+  "updatedAt": "2026-10-04T12:45:21Z",
+  "url": "https://github.com/aaronsb/obsidian-mcp-plugin"
+ },
+ {
+  "description": "🗂️🤖 Airtable Model Context Protocol Server, for allowing AI systems to interact with your Airtable bases",
+  "fullName": "domdomegg/airtable-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 456,
+  "updatedAt": "2026-10-03T18:27:57Z",
+  "url": "https://github.com/domdomegg/airtable-mcp-server"
+ },
+ {
+  "description": "MCP server for Claude to access Outlook data via Microsoft Graph API",
+  "fullName": "ryaker/outlook-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 442,
+  "updatedAt": "2026-09-26T09:29:05Z",
+  "url": "https://github.com/ryaker/outlook-mcp"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server that provides tools for fetching and analyzing Reddit content.",
+  "fullName": "adhikasp/mcp-reddit",
+  "language": "Python",
+  "stargazersCount": 429,
+  "updatedAt": "2026-10-05T17:28:51Z",
+  "url": "https://github.com/adhikasp/mcp-reddit"
+ },
+ {
+  "description": "Live messaging for coding agents",
+  "fullName": "Get-Concord-AI/concord-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 406,
+  "updatedAt": "2026-10-05T19:13:43Z",
+  "url": "https://github.com/Get-Concord-AI/concord-mcp"
+ },
+ {
+  "description": "Local-first RAG server for developers. Semantic + keyword search for code and technical docs. Works with MCP or CLI. Fully private, zero setup.",
+  "fullName": "shinpr/mcp-local-rag",
+  "language": "TypeScript",
+  "stargazersCount": 406,
+  "updatedAt": "2026-10-04T23:31:19Z",
+  "url": "https://github.com/shinpr/mcp-local-rag"
+ },
+ {
+  "description": "Model Context Protocol (MCP) server that enables AI assistants to securely interact with Odoo ERP systems through standardized resources and tools for data retrieval and manipulation.",
+  "fullName": "ivnvxd/mcp-server-odoo",
+  "language": "Python",
+  "stargazersCount": 397,
+  "updatedAt": "2026-10-05T19:31:46Z",
+  "url": "https://github.com/ivnvxd/mcp-server-odoo"
+ },
+ {
+  "description": "Giving Claude ability to run code with E2B via MCP (Model Context Protocol)",
+  "fullName": "e2b-dev/mcp-server",
+  "language": "JavaScript",
+  "stargazersCount": 393,
+  "updatedAt": "2026-10-04T18:40:55Z",
+  "url": "https://github.com/e2b-dev/mcp-server"
+ },
+ {
+  "description": "Supercharge AI Agents, Safely",
+  "fullName": "smart-mcp-proxy/mcpproxy-go",
+  "language": "Go",
+  "stargazersCount": 385,
+  "updatedAt": "2026-10-06T04:47:22Z",
+  "url": "https://github.com/smart-mcp-proxy/mcpproxy-go"
+ },
+ {
+  "description": "💻 Give AI models complete control of your computer (probably a bad idea)",
+  "fullName": "domdomegg/computer-use-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 382,
+  "updatedAt": "2026-10-05T06:19:03Z",
+  "url": "https://github.com/domdomegg/computer-use-mcp"
+ },
+ {
+  "description": "Complete Unreal Engine development toolkit exposed as MCP tools.",
+  "fullName": "db-lyon/ue-mcp",
+  "language": "C++",
+  "stargazersCount": 382,
+  "updatedAt": "2026-10-06T00:51:45Z",
+  "url": "https://github.com/db-lyon/ue-mcp"
+ },
+ {
+  "description": "Model Context Protocol (MCP) Server for Graphlit Platform",
+  "fullName": "graphlit/graphlit-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 378,
+  "updatedAt": "2026-10-04T18:40:23Z",
+  "url": "https://github.com/graphlit/graphlit-mcp-server"
+ },
+ {
+  "description": "MCPSharp is a .NET library that helps you build Model Context Protocol (MCP) servers and clients - the standardized API protocol used by AI assistants and models.",
+  "fullName": "afrise/MCPSharp",
+  "language": "C#",
+  "stargazersCount": 377,
+  "updatedAt": "2026-09-24T15:04:10Z",
+  "url": "https://github.com/afrise/MCPSharp"
+ },
+ {
+  "description": "Nextcloud MCP Server",
+  "fullName": "cbcoutinho/nextcloud-mcp-server",
+  "language": "Python",
+  "stargazersCount": 376,
+  "updatedAt": "2026-10-05T20:12:22Z",
+  "url": "https://github.com/cbcoutinho/nextcloud-mcp-server"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server that provides tools to query Erick Wendel's contributions across different platforms",
+  "fullName": "ErickWendel/erickwendel-contributions-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 370,
+  "updatedAt": "2026-10-05T20:20:21Z",
+  "url": "https://github.com/ErickWendel/erickwendel-contributions-mcp"
+ },
+ {
+  "description": "A SEC EDGAR MCP (Model Context Protocol) Server",
+  "fullName": "stefanoamorelli/sec-edgar-mcp",
+  "language": "Python",
+  "stargazersCount": 365,
+  "updatedAt": "2026-10-06T01:25:26Z",
+  "url": "https://github.com/stefanoamorelli/sec-edgar-mcp"
+ },
+ {
+  "description": "Wireshark for MCP. A transparent proxy between your AI client and MCP server. Watch every call live in your terminal, fail CI on what it finds, export OpenTelemetry spans.",
+  "fullName": "kerlenton/mcpsnoop",
+  "language": "Go",
+  "stargazersCount": 360,
+  "updatedAt": "2026-10-05T23:12:37Z",
+  "url": "https://github.com/kerlenton/mcpsnoop"
+ },
+ {
+  "description": "Model Context Protocol server for DeepSeek's advanced language models",
+  "fullName": "DMontgomery40/deepseek-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 354,
+  "updatedAt": "2026-10-03T21:41:06Z",
+  "url": "https://github.com/DMontgomery40/deepseek-mcp-server"
+ },
+ {
+  "description": "🔍 A Model Context Protocol (MCP) server providing unified access to multiple search engines (Tavily, Brave, Kagi, Exa), AI tools (Kagi FastGPT, Exa, Linkup), and content extraction services (Firecrawl, Tavily, Kagi). Includes GitHub search. All through a single interface.",
+  "fullName": "spences10/mcp-omnisearch",
+  "language": "TypeScript",
+  "stargazersCount": 352,
+  "updatedAt": "2026-10-04T21:52:22Z",
+  "url": "https://github.com/spences10/mcp-omnisearch"
+ },
+ {
+  "description": "Full-featured, multi-account MCP email server for Windows, macOS, and Linux—read, search, organize, and send email via IMAP and SMTP.",
+  "fullName": "Wh1isper/mcp-email-server",
+  "language": "Python",
+  "stargazersCount": 349,
+  "updatedAt": "2026-10-05T21:30:13Z",
+  "url": "https://github.com/Wh1isper/mcp-email-server"
+ },
+ {
+  "description": "A server that integrates Linear's project management system with the Model Context Protocol (MCP) to allow LLMs to interact with Linear.",
+  "fullName": "jerhadf/linear-mcp-server",
+  "language": "JavaScript",
+  "stargazersCount": 346,
+  "updatedAt": "2026-10-04T09:17:32Z",
+  "url": "https://github.com/jerhadf/linear-mcp-server"
+ },
+ {
+  "description": "Control and query Home Assistant from Claude and other LLMs — a Model Context Protocol (MCP) server.",
+  "fullName": "voska/hass-mcp",
+  "language": "Python",
+  "stargazersCount": 344,
+  "updatedAt": "2026-09-24T15:04:19Z",
+  "url": "https://github.com/voska/hass-mcp"
+ },
+ {
+  "description": "MCP Documentation Server - Bridge the AI Knowledge Gap.  ✨ Features: Document management • Gemini integration • AI-powered semantic search • File uploads • Smart chunking • Multilingual support • Zero-setup  🎯 Perfect for: New frameworks • API docs • Internal guides ",
+  "fullName": "andrea9293/mcp-documentation-server",
+  "language": "TypeScript",
+  "stargazersCount": 343,
+  "updatedAt": "2026-10-05T20:10:18Z",
+  "url": "https://github.com/andrea9293/mcp-documentation-server"
+ },
+ {
+  "description": "An MCP server that executes Python code in isolated rootless containers with optional MCP server proxying. Implementation of Anthropic's and Cloudflare's ideas for reducing MCP tool definitions context bloat.",
+  "fullName": "elusznik/mcp-server-code-execution-mode",
+  "language": "Python",
+  "stargazersCount": 340,
+  "updatedAt": "2026-10-04T14:49:14Z",
+  "url": "https://github.com/elusznik/mcp-server-code-execution-mode"
+ },
+ {
+  "description": "Plane's Official Model Context Protocol Server 🔌 ⌨️ 🔥",
+  "fullName": "makeplane/plane-mcp-server",
+  "language": "Python",
+  "stargazersCount": 335,
+  "updatedAt": "2026-10-02T21:09:29Z",
+  "url": "https://github.com/makeplane/plane-mcp-server"
+ },
+ {
+  "description": "다이소를 MCP로! 뿐만 아니라 한국 로컬 리테일과 영화관 조회를 MCP, CLI, Codex Skill로 가능하게 해줍니다.",
+  "fullName": "hmmhmmhm/daiso-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 333,
+  "updatedAt": "2026-10-06T01:48:18Z",
+  "url": "https://github.com/hmmhmmhm/daiso-mcp"
+ },
+ {
+  "description": "Drive the Unity Editor from an AI agent or the terminal. The Editor serves MCP itself over HTTP, so there is no second process to run, and the isuzu-unity-cli command needs no Node or .NET runtime.",
+  "fullName": "isuzu-shiranui/UnityMCP",
+  "language": "C#",
+  "stargazersCount": 331,
+  "updatedAt": "2026-10-04T12:45:41Z",
+  "url": "https://github.com/isuzu-shiranui/UnityMCP"
+ },
+ {
+  "description": "A Model Context Protocol Server that allows you to interact with your MacOS Calendar through natural language.",
+  "fullName": "Omar-V2/mcp-ical",
+  "language": "Python",
+  "stargazersCount": 331,
+  "updatedAt": "2026-09-24T15:04:08Z",
+  "url": "https://github.com/Omar-V2/mcp-ical"
+ },
+ {
+  "description": "A comprehensive Model Context Protocol (MCP) server implementing the latest specification.",
+  "fullName": "hemanth/paws-on-mcp",
+  "language": "Python",
+  "stargazersCount": 327,
+  "updatedAt": "2026-09-03T16:27:17Z",
+  "url": "https://github.com/hemanth/paws-on-mcp"
+ },
+ {
+  "description": "Adobe Premiere Pro MCP — independent, local-first server for supported workflows. Connect Claude, Codex, or Cursor through a local CEP bridge.",
+  "fullName": "leancoderkavy/premiere-pro-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 325,
+  "updatedAt": "2026-10-05T20:16:20Z",
+  "url": "https://github.com/leancoderkavy/premiere-pro-mcp"
+ },
+ {
+  "description": "Desktop automation MCP server — computer use for any AI agent: control screen, windows, mouse/keyboard, and Chrome via Model Context Protocol (stdio). Not a DSH plugin — DSH users install dsh-nuphus-mcp.",
+  "fullName": "mrpulor-gh/nuphus-mcp",
+  "language": "Rust",
+  "stargazersCount": 322,
+  "updatedAt": "2026-10-04T22:40:38Z",
+  "url": "https://github.com/mrpulor-gh/nuphus-mcp"
+ },
+ {
+  "description": "Postman MCP Server — connect AI agents (Claude Code, Cursor, VS Code Copilot, Gemini CLI) to your Postman collections, OpenAPI specs, and environments via Model Context Protocol (MCP)",
+  "fullName": "postmanlabs/postman-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 318,
+  "updatedAt": "2026-10-05T10:00:42Z",
+  "url": "https://github.com/postmanlabs/postman-mcp-server"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server that helps read GitHub repository structure and important files.",
+  "fullName": "adhikasp/mcp-git-ingest",
+  "language": "Python",
+  "stargazersCount": 314,
+  "updatedAt": "2026-09-10T14:24:38Z",
+  "url": "https://github.com/adhikasp/mcp-git-ingest"
+ },
+ {
+  "description": "MCP Server for Tree-sitter",
+  "fullName": "wrale/mcp-server-tree-sitter",
+  "language": "Python",
+  "stargazersCount": 310,
+  "updatedAt": "2026-09-28T22:51:41Z",
+  "url": "https://github.com/wrale/mcp-server-tree-sitter"
+ },
+ {
+  "description": "Turn any openapi file into an mcp server, with just the tools you need.",
+  "fullName": "getdatanaut/openmcp",
+  "language": "TypeScript",
+  "stargazersCount": 303,
+  "updatedAt": "2026-08-05T05:34:35Z",
+  "url": "https://github.com/getdatanaut/openmcp"
+ },
+ {
+  "description": "MCP web research server (give Claude real-time info from the web)",
+  "fullName": "mzxrai/mcp-webresearch",
+  "language": "JavaScript",
+  "stargazersCount": 299,
+  "updatedAt": "2026-10-05T19:30:32Z",
+  "url": "https://github.com/mzxrai/mcp-webresearch"
+ },
+ {
+  "description": "Model Context Protocol server for AFFiNE. Connect AI assistants to AFFiNE workspaces, documents, databases, and collaboration APIs over stdio or HTTP.",
+  "fullName": "DAWNCR0W/affine-mcp-server",
+  "language": "JavaScript",
+  "stargazersCount": 297,
+  "updatedAt": "2026-10-06T03:52:11Z",
+  "url": "https://github.com/DAWNCR0W/affine-mcp-server"
+ },
+ {
+  "description": "MCP server for Mikrotik",
+  "fullName": "jeff-nasseri/mikrotik-mcp",
+  "language": "Python",
+  "stargazersCount": 293,
+  "updatedAt": "2026-10-05T09:16:14Z",
+  "url": "https://github.com/jeff-nasseri/mikrotik-mcp"
+ },
+ {
+  "description": "simple web ui to manage mcp (model context protocol) servers in the claude app",
+  "fullName": "amxv/mcp-manager",
+  "language": "TypeScript",
+  "stargazersCount": 293,
+  "updatedAt": "2026-10-05T08:10:44Z",
+  "url": "https://github.com/amxv/mcp-manager"
+ },
+ {
+  "description": "Turn Google Search, Papers, and Codebases into an Automatic Local Knowledge Graph for AI Agents.",
+  "fullName": "HarimxChoi/google-surf-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 291,
+  "updatedAt": "2026-09-30T03:50:11Z",
+  "url": "https://github.com/HarimxChoi/google-surf-mcp"
+ },
+ {
+  "description": "PaperGraph MCP turns math papers into evidence-grounded reading maps for AI agents: extract results, trace proof evidence, plan reading order, and review external dependencies without guessing.",
+  "fullName": "lotchuazzz-crypto/papergraph-mcp",
+  "language": "Python",
+  "stargazersCount": 285,
+  "updatedAt": "2026-10-06T03:01:41Z",
+  "url": "https://github.com/lotchuazzz-crypto/papergraph-mcp"
+ },
+ {
+  "description": "Drive Siemens TIA Portal V20/V21 (STEP 7, WinCC Unified) from any MCP client — create projects, generate PLC & HMI, compile & diagnose. Prebuilt runtime, no Openness coding required.",
+  "fullName": "bulaofen0036-coder/TIA_Portal_Openness_MCP",
+  "language": "C#",
+  "stargazersCount": 284,
+  "updatedAt": "2026-10-05T11:39:14Z",
+  "url": "https://github.com/bulaofen0036-coder/TIA_Portal_Openness_MCP"
+ },
+ {
+  "description": "A Model Context Protocol Server for MongoDB",
+  "fullName": "kiliczsh/mcp-mongo-server",
+  "language": "TypeScript",
+  "stargazersCount": 281,
+  "updatedAt": "2026-10-03T20:12:42Z",
+  "url": "https://github.com/kiliczsh/mcp-mongo-server"
+ },
+ {
+  "description": "Open-source MCP servers for Latin American commerce — Pix, NF-e, banking, fiscal, logistics, and messaging across Brazil, Mexico, Argentina, Colombia, Chile, and Peru. MIT, on npm.",
+  "fullName": "codespar/mcp-dev-latam",
+  "language": "TypeScript",
+  "stargazersCount": 272,
+  "updatedAt": "2026-10-04T21:50:00Z",
+  "url": "https://github.com/codespar/mcp-dev-latam"
+ },
+ {
+  "description": "Free, self-hosted MCP server that scrapes the public Facebook Ad Library (no API token) for competitive ad research — advertiser, copy, landing pages, CTAs, any country.",
+  "fullName": "RamsesAguirre777/facebook-ads-library-mcp",
+  "language": "Python",
+  "stargazersCount": 268,
+  "updatedAt": "2026-10-04T19:15:58Z",
+  "url": "https://github.com/RamsesAguirre777/facebook-ads-library-mcp"
+ },
+ {
+  "description": "AI-powered MCP server for Burp Suite Professional — 149 tools across proxy, scanner, inline fuzzer, race conditions, guided injection, JWT/IDOR attacks, recon & OOB, with a real-time dashboard and hardened localhost security. Drive Burp from Claude Code or any MCP client.",
+  "fullName": "Cy-S3c/BurpMCP-Ultra",
+  "language": "Kotlin",
+  "stargazersCount": 264,
+  "updatedAt": "2026-10-05T08:18:22Z",
+  "url": "https://github.com/Cy-S3c/BurpMCP-Ultra"
+ },
+ {
+  "description": "ServiceNow MCP server: 500+ tools and 26 AI capabilities for any AI (Claude, ChatGPT, Gemini, Cursor, Copilot). Multi-transport (stdio, SSE, HTTP), A2A, dynamic schema discovery, read-only by default. Free and source available. Part of the NowAIKit suite.",
+  "fullName": "aartiq/servicenow-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 264,
+  "updatedAt": "2026-10-02T20:33:44Z",
+  "url": "https://github.com/aartiq/servicenow-mcp"
+ },
+ {
+  "description": "Desktop app that automatically scans and blocks malicious MCP traffic in AI apps like Cursor, Claude, VS Code and Windsurf.",
+  "fullName": "MCP-Defender/MCP-Defender",
+  "language": "TypeScript",
+  "stargazersCount": 256,
+  "updatedAt": "2026-09-21T12:13:07Z",
+  "url": "https://github.com/MCP-Defender/MCP-Defender"
+ },
+ {
+  "description": "MCP Fusion - The TypeScript framework for secure MCP servers.",
+  "fullName": "vinkius-labs/mcpfusion",
+  "language": "TypeScript",
+  "stargazersCount": 255,
+  "updatedAt": "2026-10-05T08:17:44Z",
+  "url": "https://github.com/vinkius-labs/mcpfusion"
+ },
+ {
+  "description": "The Most Advanced MCP Server for Unity Editor with execute_code, prompts/resources, input simulation, screenshots, and play mode automation.",
+  "fullName": "FunplayAI/funplay-unity-mcp",
+  "language": "C#",
+  "stargazersCount": 255,
+  "updatedAt": "2026-10-04T04:05:40Z",
+  "url": "https://github.com/FunplayAI/funplay-unity-mcp"
+ },
+ {
+  "description": "Local MCP server for ComfyUI — run your local ComfyUI from AI agents",
+  "fullName": "Comfy-Org/comfy-mcp",
+  "language": "Python",
+  "stargazersCount": 255,
+  "updatedAt": "2026-10-06T03:26:46Z",
+  "url": "https://github.com/Comfy-Org/comfy-mcp"
+ },
+ {
+  "description": "Turn Reddit's chaos into structured insights with full citations. MCP server for competitive analysis, customer discovery, and market research. Zero-setup hosted solution with semantic search across 20,000+ subreddits.",
+  "fullName": "dialog-tools/reddit-research-mcp",
+  "language": "Python",
+  "stargazersCount": 254,
+  "updatedAt": "2026-10-04T08:05:36Z",
+  "url": "https://github.com/dialog-tools/reddit-research-mcp"
+ },
+ {
+  "description": "Turn ChatGPT into a local agent runtime. Operate your computer, use local tools, discover MCP servers, and delegate work to your own models through one MCP connection.",
+  "fullName": "XiaoPuOuO/openchatx-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 253,
+  "updatedAt": "2026-10-06T03:57:41Z",
+  "url": "https://github.com/XiaoPuOuO/openchatx-mcp"
+ },
+ {
+  "description": "MCP Server for Telegram",
+  "fullName": "dryeab/mcp-telegram",
+  "language": "Python",
+  "stargazersCount": 251,
+  "updatedAt": "2026-10-02T01:27:26Z",
+  "url": "https://github.com/dryeab/mcp-telegram"
+ },
+ {
+  "description": "Unity MCP Plugin (UPM) — Editor bridge for AI-assisted game development. Enables Claude, Cursor & MCP-compatible AI to control Unity Editor with 268 tools: scenes, GameObjects, components, builds, profiling, Shader Graph, Amplify Shader Editor, terrain, physics, NavMesh & more. Free & open source.",
+  "fullName": "AnkleBreaker-Studio/unity-mcp-plugin",
+  "language": "C#",
+  "stargazersCount": 250,
+  "updatedAt": "2026-10-05T21:30:22Z",
+  "url": "https://github.com/AnkleBreaker-Studio/unity-mcp-plugin"
+ },
+ {
+  "description": "FTShare financial data MCP for AI Agents｜通过标准 MCP 接入基础金融数据与 FTShare 特色因子，返回结构化、可核对的结果。",
+  "fullName": "FTShare-Lab/FTShare-MCP",
+  "language": "",
+  "stargazersCount": 249,
+  "updatedAt": "2026-10-05T15:47:04Z",
+  "url": "https://github.com/FTShare-Lab/FTShare-MCP"
+ },
+ {
+  "description": "** THIS REPO HAS MOVED TO https://github.com/langchain-ai/langchainjs/tree/main/libs/langchain-mcp-adapters ** Adapters for integrating Model Context Protocol (MCP) tools with LangChain.js applications, supporting both stdio and SSE transports.",
+  "fullName": "langchain-ai/langchainjs-mcp-adapters",
+  "language": "TypeScript",
+  "stargazersCount": 248,
+  "updatedAt": "2026-08-26T14:26:25Z",
+  "url": "https://github.com/langchain-ai/langchainjs-mcp-adapters"
+ },
+ {
+  "description": "Model Context Protocol (MCP) server that supports secure interaction with MySQL databases and has anomaly analysis capabilities.更加牛逼！更加好用！不仅止于mysql的增删改查功能； 还包含了数据库异常分析能力；且便于开发者们进行个性化的工具扩展 ",
+  "fullName": "wenb1n-dev/mysql_mcp_server_pro",
+  "language": "Python",
+  "stargazersCount": 248,
+  "updatedAt": "2026-08-30T12:45:44Z",
+  "url": "https://github.com/wenb1n-dev/mysql_mcp_server_pro"
+ },
+ {
+  "description": "Production-grade MCP server for Wazuh SIEM — 55 security tools for alert triage, threat hunting, vulnerability management, compliance (PCI DSS, GDPR, HIPAA, NIST CSF, ISO 27001) and active response. Connect Claude or any LLM to your SOC. OAuth 2.1, RBAC, multi-cluster, air-gap ready.",
+  "fullName": "gensecaihq/Wazuh-MCP-Server",
+  "language": "Python",
+  "stargazersCount": 248,
+  "updatedAt": "2026-10-03T18:56:54Z",
+  "url": "https://github.com/gensecaihq/Wazuh-MCP-Server"
+ },
+ {
+  "description": "MCP server for controlling a real iPhone via macOS iPhone Mirroring...and any MacOs app. Screenshot, tap, swipe, type — from any MCP client.",
+  "fullName": "jfarcand/mirroir-mcp",
+  "language": "Swift",
+  "stargazersCount": 244,
+  "updatedAt": "2026-10-05T19:32:20Z",
+  "url": "https://github.com/jfarcand/mirroir-mcp"
+ },
+ {
+  "description": "Google Analytics 4 data to AI agents, agentic workflows, and MCP clients. Give agents analysis-ready access to website traffic, user behavior, and performance data with schema discovery, server-side aggregation, and safe defaults that reduce data wrangling.",
+  "fullName": "surendranb/google-analytics-mcp",
+  "language": "Python",
+  "stargazersCount": 242,
+  "updatedAt": "2026-10-03T13:21:28Z",
+  "url": "https://github.com/surendranb/google-analytics-mcp"
+ },
+ {
+  "description": "Penpot MCP server",
+  "fullName": "montevive/penpot-mcp",
+  "language": "Python",
+  "stargazersCount": 241,
+  "updatedAt": "2026-09-27T11:42:37Z",
+  "url": "https://github.com/montevive/penpot-mcp"
+ },
+ {
+  "description": "A Desktop Chat App that leverages MCP(Model Context Protocol) to interface with other LLMs.",
+  "fullName": "AI-QL/chat-mcp",
+  "language": "HTML",
+  "stargazersCount": 240,
+  "updatedAt": "2026-09-21T12:12:45Z",
+  "url": "https://github.com/AI-QL/chat-mcp"
+ },
+ {
+  "description": "Clone, commit, diff, branch, merge, rebase, cherry-pick, stash, tag, and manage worktrees in local git repos via MCP. STDIO or Streamable HTTP.",
+  "fullName": "cyanheads/git-mcp-server",
+  "language": "TypeScript",
+  "stargazersCount": 239,
+  "updatedAt": "2026-10-05T08:15:20Z",
+  "url": "https://github.com/cyanheads/git-mcp-server"
+ },
+ {
+  "description": "An MCP (Model Context Protocol) server for interacting with a Paperless-NGX API server. This server provides tools for managing documents, tags, correspondents, and document types in your Paperless-NGX instance.",
+  "fullName": "nloui/paperless-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 239,
+  "updatedAt": "2026-10-04T17:02:28Z",
+  "url": "https://github.com/nloui/paperless-mcp"
+ },
+ {
+  "description": "MCP server for 1С:Enterprise — AI assistant sees your configuration and generates accurate BSL code. One binary, zero dependencies, 11 tools.",
+  "fullName": "feenlace/mcp-1c",
+  "language": "Go",
+  "stargazersCount": 237,
+  "updatedAt": "2026-10-02T10:49:33Z",
+  "url": "https://github.com/feenlace/mcp-1c"
+ },
+ {
+  "description": "Creates a simple MCP tool server with \"streaming\" HTTP.",
+  "fullName": "mikegc-aws/Lambda-MCP-Server",
+  "language": "Python",
+  "stargazersCount": 236,
+  "updatedAt": "2026-09-14T14:50:46Z",
+  "url": "https://github.com/mikegc-aws/Lambda-MCP-Server"
+ },
+ {
+  "description": "A Model Context Protocol (MCP) server for interacting with Twitter.",
+  "fullName": "adhikasp/mcp-twikit",
+  "language": "Python",
+  "stargazersCount": 235,
+  "updatedAt": "2026-09-20T10:27:42Z",
+  "url": "https://github.com/adhikasp/mcp-twikit"
+ },
+ {
+  "description": "MCP Server & Config Manager for 14 AI Clients — Cursor, VS Code, Claude Code, Gemini CLI, Windsurf, Zed, TRAE, Kiro, JetBrains & more. 8500+ servers, 4400+ skills.",
+  "fullName": "OldJii/mcp-dock",
+  "language": "TypeScript",
+  "stargazersCount": 233,
+  "updatedAt": "2026-10-06T02:22:49Z",
+  "url": "https://github.com/OldJii/mcp-dock"
+ },
+ {
+  "description": "AI-powered n8n workflow automation through natural language. MCP server enabling Claude AI & Cursor IDE to create, manage, and monitor workflows via Model Context Protocol. Multi-instance support, 17 tools, comprehensive docs. Build workflows conversationally without manual JSON editing.",
+  "fullName": "salacoste/mcp-n8n-workflow-builder",
+  "language": "JavaScript",
+  "stargazersCount": 233,
+  "updatedAt": "2026-10-05T08:09:58Z",
+  "url": "https://github.com/salacoste/mcp-n8n-workflow-builder"
+ },
+ {
+  "description": "Connect any MCP-compatible AI client (Claude Code, Cursor, Windsurf) to Unity or Godot. 275+ granular tools, an editor aware system prompt, game design document project context, script semantic search, and skill calibration.",
+  "fullName": "Glade-tool/glade-mcp",
+  "language": "C#",
+  "stargazersCount": 222,
+  "updatedAt": "2026-10-05T06:56:42Z",
+  "url": "https://github.com/Glade-tool/glade-mcp"
+ },
+ {
+  "description": "MCP server for *arr media management suite",
+  "fullName": "aplaceforallmystuff/mcp-arr",
+  "language": "JavaScript",
+  "stargazersCount": 222,
+  "updatedAt": "2026-10-04T02:23:03Z",
+  "url": "https://github.com/aplaceforallmystuff/mcp-arr"
+ },
+ {
+  "description": "A curated list of MCP servers for AI finance agents",
+  "fullName": "BlockRunAI/awesome-finance-mcp",
+  "language": "",
+  "stargazersCount": 221,
+  "updatedAt": "2026-10-06T03:02:20Z",
+  "url": "https://github.com/BlockRunAI/awesome-finance-mcp"
+ },
+ {
+  "description": "This is a Model Context Protocol (MCP) server that gets answers from your Perfetto Traces. It turns natural‑language prompts into focused Perfetto analyses.",
+  "fullName": "antarikshc/perfetto-mcp",
+  "language": "Python",
+  "stargazersCount": 220,
+  "updatedAt": "2026-09-17T03:15:46Z",
+  "url": "https://github.com/antarikshc/perfetto-mcp"
+ },
+ {
+  "description": "Model Context Protocol (MCP) server for Opik, the open-source LLM observability and evaluation platform, built by Comet. Read traces, log scores, and manage prompts from Claude Code, Cursor, or VS Code.",
+  "fullName": "comet-ml/opik-mcp",
+  "language": "Python",
+  "stargazersCount": 219,
+  "updatedAt": "2026-10-05T16:57:46Z",
+  "url": "https://github.com/comet-ml/opik-mcp"
+ },
+ {
+  "description": "MCP server for the complete Zabbix API - 237 tools, multi-server, OAuth 2.1 + bearer auth, PDF reports, systemd ready. Works with ChatGPT, Claude, VS Code, Codex, JetBrains and any MCP client.",
+  "fullName": "initMAX/zabbix-mcp-server",
+  "language": "Python",
+  "stargazersCount": 218,
+  "updatedAt": "2026-10-05T16:13:21Z",
+  "url": "https://github.com/initMAX/zabbix-mcp-server"
+ },
+ {
+  "description": "WhatsApp MCP server - Connect Claude to WhatsApp for reading and sending messages",
+  "fullName": "verygoodplugins/whatsapp-mcp",
+  "language": "Go",
+  "stargazersCount": 216,
+  "updatedAt": "2026-10-05T22:02:45Z",
+  "url": "https://github.com/verygoodplugins/whatsapp-mcp"
+ },
+ {
+  "description": "MCP server providing native macOS integration with Apple Reminders and Calendar via EventKit",
+  "fullName": "FradSer/mcp-server-apple-events",
+  "language": "TypeScript",
+  "stargazersCount": 215,
+  "updatedAt": "2026-10-05T09:47:53Z",
+  "url": "https://github.com/FradSer/mcp-server-apple-events"
+ },
+ {
+  "description": "One zero-dependency CLI for every MCP server and agent skill. Token optimization, tool discovery and context compression: 71,929 -> 581 tokens (-99.2%, measured), schemas stay out of context. One config for Claude Code, Codex, Cursor, every agent. 341KB, pure Python. | 零依赖 CLI：管所有 MCP 工具与技能，工具发现省 99.2% token。",
+  "fullName": "activeing123/mcptoon",
+  "language": "Python",
+  "stargazersCount": 214,
+  "updatedAt": "2026-10-05T22:34:26Z",
+  "url": "https://github.com/activeing123/mcptoon"
+ },
+ {
+  "description": "Native Safari browser automation for AI agents. 98 tools via AppleScript — zero overhead, keeps logins, runs silently in background. Drop-in alternative to Chrome DevTools MCP with 40-60% less CPU/heat on Apple Silicon.",
+  "fullName": "achiya-automation/safari-mcp",
+  "language": "JavaScript",
+  "stargazersCount": 209,
+  "updatedAt": "2026-10-04T08:37:04Z",
+  "url": "https://github.com/achiya-automation/safari-mcp"
+ },
+ {
+  "description": "[DEPRECATED] Superseded by systempromptio/systemprompt-template and systempromptio/systemprompt-core. Multi-modal MCP client for voice-powered agentic workflows.",
+  "fullName": "Ejb503/multimodal-mcp-client",
+  "language": "TypeScript",
+  "stargazersCount": 209,
+  "updatedAt": "2026-10-05T08:09:52Z",
+  "url": "https://github.com/Ejb503/multimodal-mcp-client"
+ },
+ {
+  "description": "A type-safe solution to remote MCP communication, enabling effortless integration for centralized management of Model Context.",
+  "fullName": "ssut/Remote-MCP",
+  "language": "TypeScript",
+  "stargazersCount": 208,
+  "updatedAt": "2026-10-03T18:34:51Z",
+  "url": "https://github.com/ssut/Remote-MCP"
+ },
+ {
+  "description": "Windows Remote MCP Server — 40+ tools for desktop automation, process management, file operations via FastMCP",
+  "fullName": "dddabtc/winremote-mcp",
+  "language": "Python",
+  "stargazersCount": 207,
+  "updatedAt": "2026-10-03T13:33:50Z",
+  "url": "https://github.com/dddabtc/winremote-mcp"
+ },
+ {
+  "description": "All-in-one MCP server that can connect your AI agents to any native endpoint, powered by UTCP",
+  "fullName": "universal-tool-calling-protocol/utcp-mcp",
+  "language": "Python",
+  "stargazersCount": 206,
+  "updatedAt": "2026-10-04T20:25:50Z",
+  "url": "https://github.com/universal-tool-calling-protocol/utcp-mcp"
+ },
+ {
+  "description": "Magic UI components, searchable and installable from your AI editor.",
+  "fullName": "magicuidesign/mcp",
+  "language": "TypeScript",
+  "stargazersCount": 205,
+  "updatedAt": "2026-10-03T07:33:26Z",
+  "url": "https://github.com/magicuidesign/mcp"
+ },
+ {
+  "description": "The leading, most token-efficient MCP server for documentation exploration and retrieval via structured section indexing",
+  "fullName": "jgravelle/jdocmunch-mcp",
+  "language": "Python",
+  "stargazersCount": 204,
+  "updatedAt": "2026-10-03T16:10:18Z",
+  "url": "https://github.com/jgravelle/jdocmunch-mcp"
+ },
+ {
+  "description": "Serverless AI agent using LangChain.js and Model Context Protocol (MCP) integration to order burgers from a burger restaurant",
+  "fullName": "Azure-Samples/mcp-agent-langchainjs",
+  "language": "TypeScript",
+  "stargazersCount": 202,
+  "updatedAt": "2026-10-02T15:30:07Z",
+  "url": "https://github.com/Azure-Samples/mcp-agent-langchainjs"
+ },
+ {
+  "description": "MCP server connecting AI agents to ITASCA engines (PFC, FLAC, 3DEC, MPoint, MassFlow) — run geotechnical & geomechanics simulations through natural conversation",
+  "fullName": "yusong652/itasca-mcp",
+  "language": "Python",
+  "stargazersCount": 201,
+  "updatedAt": "2026-10-05T14:28:01Z",
+  "url": "https://github.com/yusong652/itasca-mcp"
+ },
+ {
+  "description": "A token-efficient MCP server for safe, line-oriented text file editing with partial reads, hash-based conflict detection, and atomic multi-file operations.",
+  "fullName": "tumf/mcp-text-editor",
+  "language": "Python",
+  "stargazersCount": 200,
+  "updatedAt": "2026-09-25T12:04:45Z",
+  "url": "https://github.com/tumf/mcp-text-editor"
+ },
+ {
+  "description": "Manage / Proxy / Secure your MCP Servers",
+  "fullName": "eqtylab/mcp-guardian",
+  "language": "Rust",
+  "stargazersCount": 200,
+  "updatedAt": "2026-10-05T08:10:47Z",
+  "url": "https://github.com/eqtylab/mcp-guardian"
+ },
+ {
+  "description": "MCP server + CLI + Codex/Claude skill for embedded debugging via probe-rs or OpenOCD — ARM Cortex-M, RISC-V, and Xtensa (ESP32), with AI crash diagnosis",
+  "fullName": "Adancurusul/embedded-debugger-mcp",
+  "language": "Rust",
+  "stargazersCount": 199,
+  "updatedAt": "2026-10-06T04:00:58Z",
+  "url": "https://github.com/Adancurusul/embedded-debugger-mcp"
+ },
+ {
+  "description": "Secure MCP server for whitelisted shell command execution with stdin, argv pipelines, timeouts, and structured audit logging.",
+  "fullName": "tumf/mcp-shell-server",
+  "language": "Python",
+  "stargazersCount": 198,
+  "updatedAt": "2026-10-02T08:44:08Z",
+  "url": "https://github.com/tumf/mcp-shell-server"
+ },
+ {
+  "description": "",
+  "fullName": "MCP-Manager/MCP-Checklists",
+  "language": "JavaScript",
+  "stargazersCount": 197,
+  "updatedAt": "2026-10-05T11:10:48Z",
+  "url": "https://github.com/MCP-Manager/MCP-Checklists"
+ },
+ {
+  "description": "Absurdly easy Model Context Protocol Servers in Typescript",
+  "fullName": "zcaceres/easy-mcp",
+  "language": "TypeScript",
+  "stargazersCount": 196,
+  "updatedAt": "2026-07-16T14:49:38Z",
+  "url": "https://github.com/zcaceres/easy-mcp"
+ },
+ {
+  "description": "A high-performance, asynchronous toolkit for building MCP servers and clients in Rust.",
+  "fullName": "rust-mcp-stack/rust-mcp-sdk",
+  "language": "Rust",
+  "stargazersCount": 196,
+  "updatedAt": "2026-10-01T05:06:58Z",
+  "url": "https://github.com/rust-mcp-stack/rust-mcp-sdk"
+ }
+]

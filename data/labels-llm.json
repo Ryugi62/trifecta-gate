@@ -1,0 +1,3156 @@
+[
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "cancel_order",
+  "description": "Cancel a pending or confirmed order",
+  "params": [
+   "orderId",
+   "reason",
+   "itemId",
+   "quantity"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "issue_card",
+  "description": "Issue a card (debit / credit / prepaid / virtual) against a Dock account. Card issuing is Dock",
+  "params": [
+   "account_id",
+   "card_type",
+   "network",
+   "holder_name",
+   "shipping_address",
+   "street",
+   "number"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_payment_source_using_token",
+  "description": "Attach a payment source to a customer using a gateway token (e.g. from Chargebee JS / Stripe.js / Adyen tokenization)",
+  "params": [
+   "customer_id",
+   "token_id",
+   "gateway_account_id",
+   "id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_order_status",
+  "description": "Notify Konduto of the merchant",
+  "params": [
+   "id",
+   "status",
+   "comments"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_bill",
+  "description": "Create a bill (charge) in Vindi",
+  "params": [
+   "customer_id",
+   "payment_method_code",
+   "bill_items",
+   "product_id",
+   "amount",
+   "quantity",
+   "id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_customer",
+  "description": "Create a customer in Vindi",
+  "params": [
+   "name",
+   "email",
+   "registry_code",
+   "phones",
+   "phone_type",
+   "number",
+   "id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "Omar-V2/mcp-ical",
+  "name": "list_calendars",
+  "description": "List all available calendars.",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_reserves",
+  "description": "Get international reserves data (reservas internacionales)",
+  "params": [
+   "date",
+   "date_from",
+   "date_to"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "tugcantopaloglu/godot-mcp",
+  "name": "game_performance",
+  "description": "Get performance metrics (FPS, memory, draw calls)",
+  "params": [
+   "frames",
+   "frameType"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_set_heights_region",
+  "description": "Set heights for a rectangular region of the heightmap. Heights are normalized 0-1.",
+  "params": [
+   "xBase",
+   "yBase",
+   "heights",
+   "name"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_company",
+  "description": "Update the authenticated company. All fields optional.",
+  "params": [
+   "name",
+   "full_name"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "list_atf_tests",
+  "description": "List ATF test cases, optionally filtered by suite",
+  "params": [
+   "suite_sys_id",
+   "active",
+   "limit",
+   "sys_id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "achiya-automation/safari-mcp",
+  "name": "safari_reload",
+  "description": "Reload the current page",
+  "params": [
+   "hard",
+   "receipt"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_search_by_name",
+  "description": "Find all GameObjects whose name contains a pattern. Supports substring matching or regex.",
+  "params": [
+   "name",
+   "regex",
+   "includeInactive",
+   "limit",
+   "shader"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_notifications",
+  "description": "Get payment notification details by notification code",
+  "params": [
+   "notificationCode",
+   "charge_id",
+   "receivers",
+   "account_id",
+   "amount",
+   "value"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_pix_charge_due",
+  "description": "Create a due-dated Pix charge (BCB /cobv — Pix com Vencimento). Boleto-style charge with due date, late fee (multa), interest (juros), and discount fields. Returns txid + QR payload.",
+  "params": [
+   "pix_key",
+   "amount",
+   "due_date",
+   "validity_days_after_due",
+   "debtor",
+   "cpf",
+   "cnpj"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "create_ai_agent",
+  "description": "Create an AI agent definition with optional auto-generated ACLs (requires NOW_ASSIST_ENABLED + WRITE_ENABLED)",
+  "params": [
+   "name",
+   "capabilities",
+   "auto_generate_acls",
+   "active",
+   "limit"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_search_assets",
+  "description": "Search for assets in the project by name, type, and folder. Uses Unity",
+  "params": [
+   "query",
+   "folder",
+   "maxResults",
+   "scope"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "unfreeze_account",
+  "description": "Unfreeze a previously frozen Dock account, restoring Pix and card operations.",
+  "params": [
+   "account_id",
+   "reason",
+   "card_id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "find_artifact",
+  "description": "Search for platform artifacts by name, type, or scope (business rules, scripts, widgets, etc.)",
+  "params": [
+   "name",
+   "scope",
+   "limit",
+   "table",
+   "sys_id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_pix_automatico",
+  "description": "Retrieve a Pix Automático recurrence by idRec. Returns current status (CRIADA, APROVADA, REJEITADA, CANCELADA), schedule, and last charge attempt.",
+  "params": [
+   "id_rec",
+   "reason"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_balance_account",
+  "description": "Open a new currency balance account on a profile (e.g. open a EUR balance to hold euros).",
+  "params": [
+   "profile_id",
+   "currency",
+   "name"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_tm20_rate",
+  "description": "Get TM20 rate (tasa de plazos fijos >20M ARS, bancos privados)",
+  "params": [
+   "date",
+   "date_from",
+   "date_to"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_preauth_payment",
+  "description": "Create a NuPay payment using a pre-authorized Bearer access_token (pre-auth / recurrence flow). Same body as create_payment, but auth is Bearer instead of merchant-key. Use after exchange_token.",
+  "params": [
+   "access_token",
+   "payment",
+   "parameters"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_product",
+  "description": "Update an existing product (partial update)",
+  "params": [
+   "productId",
+   "product_key",
+   "price",
+   "tax_included",
+   "unit_key",
+   "unit_name"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "submit_dispute_evidence",
+  "description": "Submit evidence to defend a dispute. Pass the evidence payload (document references, rebuttal text, etc.) in the body.",
+  "params": [
+   "disputeId",
+   "evidence",
+   "supportingDocuments",
+   "transactionReference",
+   "instruction"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_amplify_save",
+  "description": "Save the currently open Amplify Shader Editor graph to disk. If the shader has never been saved, auto-determines a save path from the shader name or uses the provided path.",
+  "params": [
+   "path",
+   "save"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_search_missing_references",
+  "description": "Find all missing/broken object references and missing scripts in the scene. Essential for cleanup and debugging.",
+  "params": [
+   "scope",
+   "limit"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "list_story_dependencies",
+  "description": "List dependency links for a story (m2m_story_dependencies).",
+  "params": [
+   "story",
+   "limit",
+   "sys_id",
+   "short_description"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_registration_certificate",
+  "description": "Get constancia de inscripción (registration certificate) for a CUIT",
+  "params": [
+   "cuit",
+   "create_invoice"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "cancel_bill",
+  "description": "Cancel a pending bill",
+  "params": [
+   "id",
+   "amount",
+   "cancel_bill"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "get_csm_account",
+  "description": "Get details of a customer account including contacts and open cases count",
+  "params": [
+   "name_or_sysid",
+   "query",
+   "active",
+   "limit"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_debugger_enable",
+  "description": "Enable or disable the Frame Debugger. When enabled, Unity pauses rendering after a specific draw call so you can inspect the GPU state. Uses reflection to access internal Unity APIs (Unity 6+).",
+  "params": [
+   "enabled"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_order",
+  "description": "Get order details including items, status, payment, and shipping info",
+  "params": [
+   "orderId",
+   "status",
+   "merchantId",
+   "from",
+   "to",
+   "pageSize",
+   "pageToken"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "update_request_item",
+  "description": "Update the state/stage or fields of a requested item (sc_req_item). Requires WRITE_ENABLED=true",
+  "params": [
+   "sys_id",
+   "state",
+   "stage",
+   "fields",
+   "request_item",
+   "assignment_group",
+   "active",
+   "limit"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_graphics_material_info",
+  "description": "Get detailed material information: shader name, render queue, all properties (colors, floats, vectors, textures), keywords, and a visual preview thumbnail. Works on material assets or scene GameObjects.",
+  "params": [
+   "assetPath",
+   "objectPath",
+   "materialIndex",
+   "includePreview"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "service_mapping_summary",
+  "description": "View service dependencies and related CIs for impact analysis",
+  "params": [
+   "service_sys_id",
+   "query",
+   "limit",
+   "instruction"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_create",
+  "description": "Create a new Terrain in the scene with configurable size and heightmap resolution.",
+  "params": [
+   "name",
+   "width",
+   "length",
+   "height",
+   "heightmapResolution",
+   "position",
+   "x",
+   "y",
+   "dataPath",
+   "overwrite"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_hub_install_editor",
+  "description": "Install a specific Unity Editor version. Optionally include platform modules (android, ios, webgl, linux, macos, windows-il2cpp).",
+  "params": [
+   "version",
+   "modules"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_add_tree_prototype",
+  "description": "Add a tree prefab prototype to the terrain for tree placement.",
+  "params": [
+   "prefabPath",
+   "bendFactor",
+   "name",
+   "prototypeIndex"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_loan_payments",
+  "description": "Get loan payment schedule via Open Finance",
+  "params": [
+   "consentId",
+   "contractId",
+   "page",
+   "pageSize"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_transactions",
+  "description": "List transactions with optional filters",
+  "params": [
+   "status",
+   "payment_type",
+   "limit",
+   "offset",
+   "date_range_start",
+   "date_range_end",
+   "sort"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_undo_last",
+  "description": "Revert the latest verified MCP Undo group, optionally by agentId. Newer MCP/native groups require force:true. Only Unity-registered changes are covered; this revert creates no Redo step. Use unity_undo for normal Undo/Redo. Reads and execute-code are not targets.",
+  "params": [
+   "agentId",
+   "force"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_resize",
+  "description": "Resize an existing terrain",
+  "params": [
+   "width",
+   "length",
+   "height",
+   "heightmapResolution",
+   "name",
+   "rows",
+   "cols"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_reconciliation_batch",
+  "description": "Retrieve a reconciliation batch (daily settlement file equivalent) — lists all settled transactions, fees, and net amount for a given batch.",
+  "params": [
+   "batchId",
+   "disputeId",
+   "reference"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_consent",
+  "description": "Get consent details by ID",
+  "params": [
+   "consentId",
+   "permissions",
+   "expirationDateTime",
+   "transactionFromDateTime",
+   "transactionToDateTime"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_shipment_history",
+  "description": "Get tracking history (status changes) for a shipment",
+  "params": [
+   "shipmentId",
+   "shipmentIds",
+   "format",
+   "itemId"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_add_layer",
+  "description": "Add a texture layer to the terrain for painting.",
+  "params": [
+   "texturePath",
+   "normalMapPath",
+   "tileSizeX",
+   "tileSizeY",
+   "name",
+   "worldX",
+   "worldZ"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_receivers",
+  "description": "List receivers onboarded under the current integrator account.",
+  "params": [
+   "page",
+   "page_size",
+   "start",
+   "end",
+   "merchant_id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "query_payment",
+  "description": "Look up a payment by the merchant-side transactionReference you assigned on authorize_payment. Returns the matching payment event(s).",
+  "params": [
+   "transactionReference",
+   "fromDate",
+   "toDate",
+   "pageSize",
+   "pageNumber"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "list_decision_inputs",
+  "description": "List the inputs of a decision table",
+  "params": [
+   "decision_sys_id",
+   "limit"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_bank_account",
+  "description": "Create a bank account token for a seller",
+  "params": [
+   "holder_name",
+   "bank_code",
+   "routing_number",
+   "account_number",
+   "id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "get_rtti_classname",
+  "description": "Try to identify the class name of an object at address using Run-Time Type Information.",
+  "params": [
+   "address"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_update_route",
+  "description": "",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "UpdateDbInstance",
+  "description": "Updates a Timestream for InfluxDB DB instance.",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "get_pricing",
+  "description": "",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "mukul975/cve-mcp-server",
+  "name": "check_ransomware_intel",
+  "description": "Check if a Bitcoin address is associated with a known ransomware family using the Ransomwhere database. Args: bitcoin_address: Bitcoin wallet address to look up (P2PKH, P2SH, or bech32)",
+  "params": [
+   "bitcoin_address"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "FuzzingLabs/mcp-security-hub",
+  "name": "capa_analyze",
+  "description": "Analyze a binary file for capabilities using Mandiant",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "webpay_mall_commit_transaction",
+  "description": "Commit a Webpay Mall transaction after the user has returned. Charges all child commerce codes at once.",
+  "params": [
+   "token"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "accept_dispute_claim",
+  "description": "Accept liability for a dispute claim via POST /v1/customer/disputes/{id}/accept-claim. The disputed amount is refunded to the buyer. Terminal action.",
+  "params": [
+   "disputeId",
+   "note",
+   "accept_claim_reason",
+   "body"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "openags/paper-search-mcp",
+  "name": "download_openaire",
+  "description": "Download PDF for a paper from OpenAIRE. Args: paper_id: OpenAIRE paper identifier. save_path: Directory to save the PDF (default: './downloads'). Returns: str: Path to downloaded PDF or error message.",
+  "params": [
+   "paper_id",
+   "save_path"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "get_breakpoint_hits",
+  "description": "Get hits for a specific breakpoint ID (or all if None). Set clear=True to flush buffer. Args: id: Breakpoint ID to query, or None for all breakpoints. clear: If True, flush the hit buffer after reading (default False). offset: Start index for pagination (default 0). limit: Maximum hits to return (default 100, max 10000). Returns JSON with: success, total, offset, limit, returned, hits.",
+  "params": [
+   "id",
+   "clear",
+   "offset",
+   "limit"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_category",
+  "description": "Create a product category in Bling",
+  "params": [
+   "descricao",
+   "categoriaPai",
+   "id",
+   "dataInicial",
+   "dataFinal"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_categories",
+  "description": "List all marketplace categories for the site",
+  "params": [
+   "categoryId",
+   "title",
+   "limit"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_create_route",
+  "description": "",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "budget-notifications",
+  "description": "",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "guangxiangdebizi/FinanceMCP",
+  "name": "margin_trade",
+  "description": "获取融资融券相关数据，支持多种数据类型：标的股票、交易汇总、交易明细、转融券汇总等",
+  "params": [
+   "data_type",
+   "ts_code",
+   "start_date",
+   "end_date",
+   "exchange",
+   "args"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_flatten",
+  "description": "Flatten the entire terrain to a uniform height.",
+  "params": [
+   "height",
+   "name",
+   "texturePath",
+   "normalMapPath",
+   "tileSizeX",
+   "tileSizeY"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "mukul975/cve-mcp-server",
+  "name": "check_url_safety",
+  "description": "Check a URL or domain for malicious activity via URLScan.io. Returns scan verdicts, malicious flag, score, and categories. Args: url_or_domain: URL (https://example.com/path) or bare domain (example.com)",
+  "params": [
+   "url_or_domain"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_abandoned_carts",
+  "description": "List abandoned checkouts",
+  "params": [
+   "page",
+   "per_page",
+   "since_id",
+   "created_at_min",
+   "created_at_max",
+   "list_products"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "get_instruction_info",
+  "description": "Get detailed info about a single instruction (size, bytes, opcode).",
+  "params": [
+   "address"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "Wh0am123/MCP-Kali-Server",
+  "name": "nikto_scan",
+  "description": "Execute Nikto web server scanner. Args: target: The target URL or IP additional_args: Additional Nikto arguments Returns: Scan results",
+  "params": [
+   "target",
+   "additional_args"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "samuelgursky/davinci-resolve-mcp",
+  "name": "ti_add_flag",
+  "description": "Add a flag to a timeline item. Args: color: Flag color. item_index: 0-based item index. Default: 0.",
+  "params": [
+   "color",
+   "item_index",
+   "track_type",
+   "track_index"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "pay_order",
+  "description": "Pay an existing order (attach a charge/payment to an order in CREATED state)",
+  "params": [
+   "order_id",
+   "charges",
+   "reference_id",
+   "amount",
+   "value",
+   "currency",
+   "payment_method"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "vercel/next-devtools-mcp",
+  "name": "nextjs_call",
+  "description": "Call a specific MCP tool on a running Next.js development server. REQUIREMENTS: - Port number of the target Next.js dev server - Tool name to execute - Optional arguments object (if the tool requires parameters) Use",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "scan_all",
+  "description": "Unified Memory Scanner (first scan). Args: value: Value to search for. Omit when scan_option is 'unknown'. type: Value type: byte, word, dword, qword, float, double, string. protection: +W-C (Writable, Not Copy-on-Write). scan_option: exact, unknown, between, bigger, smaller. value2: Upper bound for 'between'. Alternatively pass both bounds in value as \"min,max\" (e.g. \"0,1\").",
+  "params": [
+   "value",
+   "type",
+   "protection",
+   "scan_option",
+   "value2"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "chrisryugj/korean-law-mcp",
+  "name": "get_treaty_text",
+  "description": "[조약] 조약 본문 조회. 한글/영문 선택 가능.",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "openags/paper-search-mcp",
+  "name": "read_hal_paper",
+  "description": "Read and extract text content from a HAL paper. Args: paper_id: HAL paper identifier. save_path: Directory where the PDF is/will be saved (default: './downloads'). Returns: str: Extracted text content.",
+  "params": [
+   "paper_id",
+   "save_path"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": true,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_branches",
+  "description": "List Andreani branches/sucursales",
+  "params": [
+   "province",
+   "locality",
+   "shipmentId"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_shadergraph_add_node",
+  "description": "Add a new node to a Shader Graph. Supports common types: Add, Multiply, Subtract, Divide, Lerp, Color, Float, Vector2, Vector3, Vector4, Time, UV, Position, Normal, SampleTexture2D, Fresnel, Saturate, OneMinus, Power, Split, Combine. Also supports any type by full class name.",
+  "params": [
+   "path",
+   "nodeType",
+   "positionX",
+   "positionY"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "arinspunk/claude-talk-to-figma-mcp",
+  "name": "convert_to_frame",
+  "description": "Convert a group or shape node into a frame in Figma. Preserves position, size, visual properties, and children. Useful for converting groups into auto-layout-capable frames.",
+  "params": [
+   "nodeId"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "query_records",
+  "description": "Query ServiceNow records with filtering, field selection, pagination, and sorting",
+  "params": [
+   "table",
+   "query",
+   "fields",
+   "limit",
+   "orderBy"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_shadergraph_list",
+  "description": "List all Shader Graph (.shadergraph) assets in the project. Requires Shader Graph package. Shows shader name, path, property count, pass count, and file size.",
+  "params": [
+   "filter",
+   "maxResults",
+   "path"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "marc-shade/world-intel-mcp",
+  "name": "intel_nuclear_monitor",
+  "description": "Monitor seismic activity near 5 known nuclear test sites (Punggye-ri, Lop Nur, Novaya Zemlya, Nevada NTS, Semipalatinsk). Concern scoring based on depth, magnitude, distance.",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_list_usergroups",
+  "description": "",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_graphics_asset_preview",
+  "description": "Inline PNG from Unity",
+  "params": [
+   "assetPath",
+   "width",
+   "height"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_toggle_traffic_route",
+  "description": "",
+  "params": [],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_scatter_detail",
+  "description": "Randomly scatter detail/grass across the entire terrain or a region.",
+  "params": [
+   "detailIndex",
+   "density",
+   "coverage",
+   "seed",
+   "name"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_transfers",
+  "description": "List marketplace transfers with filters",
+  "params": [
+   "status",
+   "limit",
+   "offset",
+   "sort",
+   "id",
+   "plan_id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "openags/paper-search-mcp",
+  "name": "read_citeseerx_paper",
+  "description": "Read and extract text content from a CiteSeerX paper. Args: paper_id: CiteSeerX paper identifier. save_path: Directory where the PDF is/will be saved (default: './downloads'). Returns: str: Extracted text or fallback abstract/error message.",
+  "params": [
+   "paper_id",
+   "save_path"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_products",
+  "description": "List products in the catalog",
+  "params": [
+   "page",
+   "per_page",
+   "status",
+   "id"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "mcpjungle/MCPJungle",
+  "name": "echo",
+  "description": "Echoes the msg argument",
+  "params": [
+   "msg"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_pix_cob",
+  "description": "List PIX immediate charges within a time range (with optional end_to_end_id filters)",
+  "params": [
+   "inicio",
+   "fim",
+   "cpf",
+   "cnpj",
+   "status",
+   "paginaAtual",
+   "itensPorPagina"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_card_details",
+  "description": "Get details for a single debit or credit card",
+  "params": [
+   "cardId",
+   "reason"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_list",
+  "description": "List all terrains in the scene with their names, positions, sizes, and basic info.",
+  "params": [
+   "x",
+   "delta",
+   "radius",
+   "falloff",
+   "name"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "grab/cursor-talk-to-figma-mcp",
+  "name": "set_parent",
+  "description": "Move a node into a new parent node (e.g. a section, frame or group). Preserves the node",
+  "params": [
+   "nodeId",
+   "x",
+   "y"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_transaction_details",
+  "description": "Retrieve the full result payload for a workflow execution — all capability outputs (extraction, liveness, similarity, watchlist, etc). Use after status =",
+  "params": [
+   "accountId",
+   "workflowExecutionId"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "cmdb_find_stale",
+  "description": "Find CIs not updated within a given number of days that are still operational",
+  "params": [
+   "ci_class",
+   "days_threshold",
+   "limit",
+   "action",
+   "targets"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "microsoft/DebugMCP",
+  "name": "get_debug_status",
+  "description": "Check whether the debuggee is currently paused at a breakpoint, and where. Read-only and safe to call at any time - it never pauses or resumes anything. Use it after triggering the code path under test instead of guessing, and pass waitForPauseSeconds to block until the breakpoint is actually hit. Returns status",
+  "params": [
+   "waitForPauseSeconds",
+   "args"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "track_signup",
+  "description": "Notify Legiti of a new account creation. Convenience wrapper over track_account with action=",
+  "params": [
+   "account_id",
+   "account_email",
+   "account_name",
+   "account_phone",
+   "account_cpf",
+   "account_address",
+   "address",
+   "ip",
+   "user_agent",
+   "timestamp"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "idosal/git-mcp",
+  "name": "fetch_threejs_urls_inside_docs",
+  "description": "Fetch content from URLs that are inside the reference docs. Usually contains",
+  "params": [
+   "url",
+   "annotations",
+   "content"
+  ],
+  "split": "dev",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_get_dpi_stats",
+  "description": "Get Deep Packet Inspection (DPI) statistics (applications and categories)",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "create_story",
+  "description": "Create a new agile story/user story (requires WRITE_ENABLED=true)",
+  "params": [
+   "short_description",
+   "story_points",
+   "sprint",
+   "epic",
+   "assigned_to",
+   "sys_id",
+   "fields"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_inquiries",
+  "description": "List inquiries, filterable by reference-id (your internal user id) or status. Useful for reconciling state or finding a user",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_get_vpn_server_details",
+  "description": "Get details for a specific VPN server by ID.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "arinspunk/claude-talk-to-figma-mcp",
+  "name": "resize_node",
+  "description": "Resize a node in Figma",
+  "params": [
+   "nodeId",
+   "width",
+   "height"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_allowlist_entry",
+  "description": "Update an existing allowlist entry — typically to extend or shorten the expiration window. Konduto",
+  "params": [
+   "value",
+   "expires_at"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_scriptableobject_info",
+  "description": "Get all serialized properties and values of a ScriptableObject asset.",
+  "params": [
+   "path",
+   "field",
+   "value"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "get_atf_suite_result",
+  "description": "Get the results of a test suite run",
+  "params": [
+   "result_sys_id",
+   "suite_result_sys_id",
+   "limit"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "chrisryugj/korean-law-mcp",
+  "name": "get_legal_term_detail",
+  "description": "[지식베이스] 법령용어 상세정보.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_get_threat_management_settings",
+  "description": "Get site-wide threat management (IDS/IPS) and traffic identification settings. Requires Network session credentials.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "openags/paper-search-mcp",
+  "name": "read_base_paper",
+  "description": "Read and extract text content from a BASE paper. Args: paper_id: BASE paper identifier. save_path: Directory where the PDF is/will be saved (default: './downloads'). Returns: str: Extracted text content.",
+  "params": [
+   "paper_id",
+   "save_path"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": true,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "marc-shade/world-intel-mcp",
+  "name": "intel_weekly_trends",
+  "description": "Analyze weekly trends from temporal baselines. Reports volatility (coefficient of variation) and current anomalies across all tracked metrics.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "batch_get_process_status",
+  "description": "IDCheck: batch status lookup. Send up to 100 process_ids per call and receive the same status payload as get_process_status for each. Use this for nightly reconciliation jobs or backfill, not for hot-path polling.",
+  "params": [
+   "process_ids",
+   "process_id"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "marc-shade/world-intel-mcp",
+  "name": "intel_news_feed",
+  "description": "Get aggregated intelligence news from 119 RSS feeds across 24 categories. Covers geopolitics, security, tech, finance, military, science, think tanks, regional, energy, space, nuclear, climate, maritime, arctic, and more.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": true,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "lookup_dict_key",
+  "description": "Resolve a DICT key (CPF, CNPJ, email, phone, EVP) to the owner",
+  "params": [
+   "key",
+   "payer_document",
+   "key_type",
+   "account"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_applicant",
+  "description": "Update fields on an existing applicant. Send only the fields you want to change.",
+  "params": [
+   "applicant_id",
+   "first_name",
+   "last_name",
+   "email",
+   "dob",
+   "address",
+   "id_numbers"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "marc-shade/world-intel-mcp",
+  "name": "intel_central_bank_rates",
+  "description": "Policy rates for 15 major central banks: Fed, ECB, BoE, BoJ, PBoC, RBI, RBA, BoC, SNB, BCB, BoK, CBRT, SARB, Banxico, BI. Live FRED data when API key set, curated fallback otherwise.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "biometrics_face_match",
+  "description": "Compare a selfie against a document photo (RG / CNH front). Returns match_score (0..1) and liveness verdict. POST /v1/biometrics/face-match.",
+  "params": [
+   "selfie",
+   "document_image",
+   "liveness_check"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "horizon_pct",
+  "description": "Document-height percentage where sky meets landscape (0-100). Default 50.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_tax_payment",
+  "description": "Pay a tax (DARF, GPS, GRU, etc.) by barcode / digitable line",
+  "params": [
+   "line",
+   "barCode",
+   "scheduled",
+   "tags",
+   "limit",
+   "username"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_search_by_shader",
+  "description": "Find all renderers using a specific shader.",
+  "params": [
+   "shader",
+   "limit",
+   "query",
+   "folder"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "photoshop_create_artboard",
+  "description": "Create a Photoshop artboard (AM artboardSection) at an explicit origin or placed to the right of existing artboards.\\n\\n",
+  "params": [
+   "name",
+   "width",
+   "height",
+   "left",
+   "top"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "southleft/figma-console-mcp",
+  "name": "figma_get_file_versions",
+  "description": "List a Figma file",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_spriteatlas_delete",
+  "description": "Delete a SpriteAtlas asset.",
+  "params": [
+   "path",
+   "folder"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_list_instances",
+  "description": "List running Unity Editor instances (name, port, version, clone flag, pluginVersion).",
+  "params": [
+   "refresh"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "ps.passport_photo",
+  "description": "Turn the active portrait into a passport/ID photo: white background, ICAO-style framing, exact official pixel size at 300 DPI, optional 10×15 cm print sheet. Users often say: passport photo, visa photo, ID photo, vesikalık, biyometrik.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_update_vpn_client_state",
+  "description": "Enable or disable a specific VPN client by ID. Requires confirmation.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "list_datasets",
+  "description": "List RODA datasets with optional tag filtering. Args: tag: Optional tag to filter by (e.g., 'climate', 'genomics', 'satellite imagery') limit: Maximum number of results to return (default: 20) Returns: JSON string with dataset list Presentation Guidelines: - For each dataset listed, always display the license field verbatim. Do not omit it.",
+  "params": [
+   "tag",
+   "limit"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "cache_flush_all",
+  "description": "Flush all cache entries. Args: delay: Optional delay in seconds before flushing Returns: Success message or error message",
+  "params": [
+   "delay"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_mppm_deactivate_player",
+  "description": "Deactivate a Virtual Player previously activated via unity_mppm_activate_player.",
+  "params": [
+   "index",
+   "mode"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_listings",
+  "description": "List seller",
+  "params": [
+   "sellerId",
+   "status",
+   "limit",
+   "itemId",
+   "available_quantity",
+   "price"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "credits",
+  "description": "",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "prompt",
+  "description": "What to generate inside the selection",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_execute",
+  "description": "Execute a UniFi tool by name. Use unifi_tool_index to discover available tools first.",
+  "params": [
+   "tool",
+   "arguments",
+   "__location",
+   "annotations",
+   "calls"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_undo_history",
+  "description": "Show which recorded MCP actions can still be reverted, with agent, target and current Unity Undo state.",
+  "params": [
+   "count",
+   "agentId",
+   "objectPath"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "get_bedrock_patterns",
+  "description": "Get architecture patterns for Amazon Bedrock applications, including component relationships and cost considerations",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_sceneview_set_camera",
+  "description": "Control the Scene View camera: set pivot, rotation, zoom, orthographic mode, look-at target, or frame selection.",
+  "params": [
+   "pivot",
+   "x",
+   "y",
+   "rotation",
+   "size",
+   "orthographic",
+   "is2D",
+   "lookAt",
+   "lookAtSize"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "photoshop_move_layer_to_top",
+  "description": "Move the active layer to the top of the layer stack",
+  "params": [
+   "tool"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "track_payment",
+  "description": "Notify Legiti of a payment-method-level event (authorization attempt, capture, refund, void). Distinct from track_sale, which is order-level. Use this when you process payments separately from sale state — e.g. multi-installment captures or refund flows.",
+  "params": [
+   "action",
+   "sale_id",
+   "payment_id",
+   "method",
+   "first_six_digits_cc",
+   "last_four_digits_cc",
+   "installments",
+   "amount"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "hetpatel-11/Adobe_Premiere_Pro_MCP",
+  "name": "setup_ducking",
+  "description": "High-level wrapper around add_audio_keyframes that builds a ducking curve from a base level + ducking windows.",
+  "params": [
+   "clipId",
+   "baseDb",
+   "startTime",
+   "endTime",
+   "duckedDb"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "webpay_capture_transaction",
+  "description": "Deferred-capture for a previously authorized Webpay Plus transaction. Uses the official PUT /capture endpoint — prefer this over webpay_increase_amount for standard deferred-capture flows.",
+  "params": [
+   "token",
+   "buy_order",
+   "authorization_code",
+   "capture_amount"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_mppm_activate_scenario",
+  "description": "Load/activate a specific scenario by its asset path.",
+  "params": [
+   "path",
+   "enterPlayMode"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "grab/cursor-talk-to-figma-mcp",
+  "name": "join_channel",
+  "description": "Join a specific channel to communicate with Figma",
+  "params": [
+   "channel"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "kontext-security/browser-use-mcp-server",
+  "name": "browser_get_result",
+  "description": "Gets the result of an asynchronous browser task (not needed in patient mode as browser_use returns complete results directly)",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "image_path",
+  "description": "Absolute path to the image file to place (sky, background, texture). Required.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "report_chargeback",
+  "description": "Report a confirmed chargeback for an order. Convenience wrapper around update_order_status with status=",
+  "params": [
+   "id",
+   "comments"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "chrisryugj/korean-law-mcp",
+  "name": "search_legal_terms",
+  "description": "[용어사전] 법령용어 정의·해설 검색.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_packages_add",
+  "description": "Add/install a Unity package by identifier (e.g.",
+  "params": [
+   "identifier",
+   "name",
+   "query"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_pix_devolucao",
+  "description": "Create PIX return (devolução) for a received transaction",
+  "params": [
+   "e2eId",
+   "devolucao_id",
+   "amount"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "read_process_memory_cr3",
+  "description": "Read virtual memory using an explicit CR3 page-table base via DBK/DBVM. Bypasses the standard OS memory-translation path, making it effective for processes that hide memory from normal reads (e.g. anti-cheat analysis). Requires: DBK kernel driver or DBVM hypervisor loaded; a process must be attached. Args: cr3: CR3 value (hex string or integer) identifying the target page table. address: Virtual a",
+  "params": [
+   "cr3",
+   "address",
+   "size"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_check",
+  "description": "Run a verification check on an applicant. A check is a bundle of one or more reports (document, facial_similarity_photo, watchlist, etc). This is the step that actually triggers the verification.",
+  "params": [
+   "applicant_id",
+   "report_names",
+   "document_ids",
+   "applicant_provides_data",
+   "asynchronous"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "ryaker/outlook-mcp",
+  "name": "onedrive-download",
+  "description": "Get a download URL for a file in OneDrive. Either",
+  "params": [
+   "itemId",
+   "path",
+   "content",
+   "conflictBehavior"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "reverse_transaction",
+  "description": "Reverse (void) an authorization (POST /api.authorization/v3/reverse/ecommerce/{merchantId}). Same-day undo of an authorized transaction by transactionId or purchaseNumber.",
+  "params": [
+   "transactionId",
+   "purchaseNumber",
+   "get_security_token",
+   "content",
+   "create_session_token"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "Jpisnice/shadcn-ui-mcp-server",
+  "name": "get_component",
+  "description": "Get the source code for a specific shadcn/ui v4 component",
+  "params": [
+   "get_component_demo",
+   "list_components",
+   "get_component_metadata",
+   "get_directory_structure"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_questions",
+  "description": "List questions on a product listing",
+  "params": [
+   "itemId",
+   "status",
+   "questionId",
+   "text",
+   "packId"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "54yyyu/zotero-mcp",
+  "name": "zotero_add_item_relation",
+  "description": "Add a related item relationship to a Zotero item. Creates a bidirectional link between two items.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "nicobailon/pi-mcp-adapter",
+  "name": "add_comment",
+  "description": "Add a comment to an issue.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_update_port_profile",
+  "description": "Update an existing port profile. Pass only the fields you want to change —",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "CursorTouch/Windows-MCP",
+  "name": "Notification",
+  "description": "Sends a Windows toast notification with a title and message.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "lharries/whatsapp-mcp",
+  "name": "get_contact_chats",
+  "description": "Get all WhatsApp chats involving the contact. Args: jid: The contact's JID to search for limit: Maximum number of chats to return (default 20) page: Page number for pagination (default 0)",
+  "params": [
+   "jid",
+   "limit",
+   "page"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": true,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_graphics_prefab_render",
+  "description": "Return Unity",
+  "params": [
+   "assetPath",
+   "width",
+   "height",
+   "rotationY",
+   "rotationX",
+   "padding"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "auto_assemble_check",
+  "description": "Validate an Auto Assembler script for syntax errors without executing it. Returns {success, valid: bool, errors: [str]}. enable: True checks the [Enable] section; False checks [Disable]. target_self: if True, validates against CE's own process instead of the target.",
+  "params": [
+   "script",
+   "enable",
+   "target_self"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "neka-nat/freecad-mcp",
+  "name": "get_async_status",
+  "description": "Report the state of background jobs started by execute_code_async. Does not use the FreeCAD GUI thread, so it answers even while a job runs. Args: job_id: The id returned by execute_code_async. Empty lists all running jobs and up to 20 recently completed jobs. Returns: For one job: its state (running/done/failed), the error and traceback when it failed. History is held in memory until FreeCAD exit",
+  "params": [
+   "job_id"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "cache_quit",
+  "description": "Close the connection to the cache server. Returns: Success message or error message",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_probuilder_info",
+  "description": "Inspect a ProBuilder object: face/vertex/edge/shared-vertex counts, submesh count, and bounds.",
+  "params": [
+   "distance",
+   "method"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "homeassistant-ai/ha-mcp",
+  "name": "echo_tool",
+  "description": "Echo the input text",
+  "params": [
+   "text"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "grab/cursor-talk-to-figma-mcp",
+  "name": "set_stroke_color",
+  "description": "Set the stroke color of a node in Figma",
+  "params": [
+   "nodeId",
+   "r",
+   "g",
+   "b",
+   "a",
+   "weight"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "lharries/whatsapp-mcp",
+  "name": "get_direct_chat_by_contact",
+  "description": "Get WhatsApp chat metadata by sender phone number. Args: sender_phone_number: The phone number to search for",
+  "params": [
+   "sender_phone_number"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_payment_sources",
+  "description": "List payment sources for a customer",
+  "params": [
+   "customerId",
+   "limit",
+   "next",
+   "eventId"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_transfer_charge",
+  "description": "Bank transfer-in charge with a transfer token (POST /transfer/v1/init, private merchant id). Returns the bank redirect URL the customer authorizes at.",
+  "params": [
+   "token",
+   "metadata",
+   "name",
+   "lastName",
+   "documentType",
+   "documentNumber"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_amplify_add_node",
+  "description": "Add a node to the currently open Amplify Shader Editor graph. The ASE window must be open with a shader loaded. Use unity_amplify_get_node_types to discover available node types first.",
+  "params": [
+   "nodeType",
+   "x",
+   "y",
+   "nodeId"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "openags/paper-search-mcp",
+  "name": "download_scihub",
+  "description": "Download paper PDF via Sci-Hub (optional fallback connector). Args: identifier: DOI, title, PMID, or paper URL. save_path: Directory to save the PDF. base_url: Sci-Hub mirror URL. Returns: Downloaded PDF path on success; error message on failure.",
+  "params": [
+   "identifier",
+   "save_path",
+   "base_url"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "read_memory",
+  "description": "Read raw bytes from memory.",
+  "params": [
+   "address",
+   "size"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "marc-shade/world-intel-mcp",
+  "name": "intel_ai_releases",
+  "description": "Track AI/AGI developments from arXiv, HuggingFace, and AI news feeds. Lab mention trending.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": true,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "grab/cursor-talk-to-figma-mcp",
+  "name": "set_item_spacing",
+  "description": "Set distance between children in an auto-layout frame",
+  "params": [
+   "nodeId",
+   "itemSpacing",
+   "counterAxisSpacing"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "pay_session",
+  "description": "Pay an existing session. IMPORTANT: requires the",
+  "params": [
+   "sessionId",
+   "publicKey",
+   "paymentMethod",
+   "paymentSource"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "Wh0am123/MCP-Kali-Server",
+  "name": "john_crack",
+  "description": "Execute John the Ripper password cracker. Args: hash_file: Path to file containing hashes wordlist: Path to wordlist file format_type: Hash format type additional_args: Additional John arguments Returns: Cracking results",
+  "params": [
+   "hash_file",
+   "wordlist",
+   "format_type",
+   "additional_args"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "CursorTouch/Android-MCP",
+  "name": "ListDevices",
+  "description": "List available ADB devices",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_noise",
+  "description": "Apply Perlin noise to the entire terrain heightmap. Great for generating natural-looking terrain.",
+  "params": [
+   "scale",
+   "amplitude",
+   "octaves",
+   "additive",
+   "name"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_business_qualifications",
+  "description": "Get business customer qualifications via Open Finance",
+  "params": [
+   "consentId",
+   "list_accounts",
+   "content"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "photoshop_close_document",
+  "description": "Close a Photoshop document tab. Defaults to the active document; pass document_id to close a specific open file.\\n\\n",
+  "params": [
+   "save"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_cnpj",
+  "description": "Look up company information by CNPJ",
+  "params": [
+   "cnpj",
+   "year",
+   "vehicle_type"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "auto_group",
+  "description": "When true, group layers by kind (text / image / shape / adjustment) into folders. Default true.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_institutions",
+  "description": "List available financial institutions",
+  "params": [
+   "country_code",
+   "page",
+   "page_size",
+   "institution",
+   "username",
+   "password",
+   "external_id"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_credit_card_bills",
+  "description": "Get credit card bills (faturas) via Open Finance",
+  "params": [
+   "consentId",
+   "creditCardAccountId",
+   "fromDueDate",
+   "toDueDate",
+   "page",
+   "pageSize"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "search_contacts",
+  "description": "Search contacts with an SGQL query via POST /marketing/contacts/search. Example:",
+  "params": [
+   "query",
+   "id",
+   "page_size"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "ps.composite_blend",
+  "description": "Place an external image into the active document, mask it, and set blend mode — interim workflow for sky replacement and compositing.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_get_port_stats",
+  "description": "Get live port statistics for a switch. Returns per-port data including",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "badchars/darknet-mcp-server",
+  "name": "ransomlookRecent",
+  "description": "Fetch the most recent ransomware posts and victim claims from RansomLook. Returns group name, post title, URL, and discovery timestamp.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": true,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "keep_shadow",
+  "description": "When true, records intent for a contact shadow in the recipe response. Shadow layer creation is not yet implemented. Default false.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_boleto",
+  "description": "Retrieve a boleto by Rede boleto id or by merchant reference. Returns status (REGISTERED, PAID, EXPIRED, CANCELED) and typable line.",
+  "params": [
+   "id",
+   "reference",
+   "authorize_transaction"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "antvis/mcp-server-chart",
+  "name": "generate_flow_diagram",
+  "description": "Generate a flow diagram chart to show the steps and decision points of a process or system, such as, scenarios requiring linear process presentation.",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_particle_set_emission",
+  "description": "Configure particle emission: rate over time, rate over distance.",
+  "params": [
+   "path",
+   "instanceId",
+   "enabled",
+   "rateOverTime",
+   "rateOverDistance"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_profile",
+  "description": "Update instance profile (name, status text, or picture)",
+  "params": [
+   "instance",
+   "name",
+   "status",
+   "picture",
+   "presence",
+   "number"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "arinspunk/claude-talk-to-figma-mcp",
+  "name": "set_text_style_id",
+  "description": "Apply a text style to a text node in Figma",
+  "params": [
+   "nodeId",
+   "textStyleId"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "awslabs/mcp",
+  "name": "list-source-views-for-billing-view",
+  "description": "",
+  "params": [],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "guangxiangdebizi/FinanceMCP",
+  "name": "block_trade",
+  "description": "获取大宗交易数据，包括成交价格、成交量、买卖双方营业部等详细信息",
+  "params": [
+   "code",
+   "start_date",
+   "end_date",
+   "args"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "write_region_to_file",
+  "description": "Write a memory region to a file. Filename must be an absolute path and must not contain '..' components.",
+  "params": [
+   "address",
+   "size",
+   "filename"
+  ],
+  "split": "test",
+  "llm": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "miscusi-peek/cheatengine-mcp-bridge",
+  "name": "output_debug_string",
+  "description": "Post a message to the Windows debugger via OutputDebugString (readable with tools like DebugView).",
+  "params": [
+   "message"
+  ],
+  "split": "test",
+  "llm": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ }
+]
