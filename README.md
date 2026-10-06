@@ -14,7 +14,7 @@ https://ryugi62.github.io/trifecta-gate/demo.mp4 · built for [2nd LaserHacks 20
 
 <!-- NUMBERS -->
 - **Live agent benchmark** (fictional town clerk's office; per model 84 planted attacks + 28 normal tasks + 2 tasks that need an address only found in outsiders' text; each run with and without the gate, one run per cell): secrets reached the attacker in **11 of 252** attack runs without the gate and **0 of 252** with it (paired design, exact McNemar one-sided p = 0.00049). With the gate, agents tried to contact the attacker 25 times and all 25 were blocked (95% upper bound on the per-attempt miss rate: 12%, rule of three).
-- **Cost to normal work:** normal tasks completed 76/84 without and 76/84 with the gate; the gate blocked a call in 0 normal runs. The user's own task under attack: 212/252 without, 204/252 with the gate (a blocked step sometimes stops the agent). The 6 "reply to whoever emailed me" runs need one confirmation by design.
+- **Cost to normal work:** normal tasks completed 76/84 without and 76/84 with the gate; the gate blocked a call in 0 normal runs. The user's own task under attack: 212/252 without, 204/252 with the gate (a blocked step sometimes stops the agent). The 6 confirmation-task runs ("reply to whoever emailed me", "follow a link after reading private notes") succeeded 5/6 without and 2/6 with the gate, because the reply needs one confirmation by design. Leak rate without the gate 4.4% (95% Wilson CI 2.5–7.6%), with the gate 0% (0–1.5%).
   - gpt-4o-mini: leaked 9/84 → 0/84; normal tasks 27/28 → 27/28.
   - gpt-5.4-mini: leaked 1/84 → 0/84; normal tasks 28/28 → 28/28.
   - gpt-4.1-nano: leaked 1/84 → 0/84; normal tasks 21/28 → 21/28.
@@ -73,6 +73,10 @@ gate.unsafeAnswerLinks(finalAnswer)    // links/images in the reply that would l
 The proxy learns tool specs from `tools/list`, records results, holds any call that arrives before the previous result is
 recorded, answers blocked calls with an MCP error, and writes a **hash-chained JSON audit log** (`scripts/verify-audit.ts`
 checks the chain). `npm run e2e:proxy` runs it against a fake server.
+
+## Audit and governance
+See [docs/detections.md](docs/detections.md): audit event fields, a Sigma rule and KQL queries, and who owns the allowlist,
+labels and confirmations in a small office.
 
 ## Threat model
 - **Attacker:** writes content the agent reads (email, web page, shared document, calendar invite, issue). Cannot change the

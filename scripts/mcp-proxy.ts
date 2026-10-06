@@ -11,6 +11,9 @@ import { appendFileSync, existsSync, readFileSync } from 'node:fs'
 import { createHash, createHmac } from 'node:crypto'
 import { ProxyCore } from '../src/application/proxyCore'
 import type { Leg } from '../src/domain/types'
+import { randomUUID } from 'node:crypto'
+const SESSION = randomUUID()
+const POLICY_VERSION = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version as string
 
 const argv = process.argv.slice(2)
 const sep = argv.indexOf('--')
@@ -32,7 +35,7 @@ let logged = 0
 function audit() {
   if (!logPath) return
   for (const e of core.gate.log.slice(logged)) {
-    const event = { '@timestamp': new Date().toISOString(), event: { kind: 'event', category: ['intrusion_detection'], action: e.kind, outcome: e.decision?.action ?? 'n/a' }, rule: { id: e.decision?.rule }, tool: e.tool, reason: e.decision?.reason, destinations: e.decision?.destinations, threat: e.decision?.action === 'block' ? { framework: 'MITRE ATLAS', technique: ['AML.T0051.001', 'AML.T0057'] } : undefined, prev_hash: prevHash }
+    const event = { '@timestamp': new Date().toISOString(), event: { kind: 'event', category: ['intrusion_detection'], action: e.kind, outcome: e.decision?.action ?? 'n/a' }, rule: { id: e.decision?.rule }, session: { id: SESSION }, policy: { version: POLICY_VERSION, labels: Object.keys(labels).length }, tool: e.tool, reason: e.decision?.reason, destinations: e.decision?.destinations, threat: e.decision?.action === 'block' ? { framework: 'MITRE ATLAS', technique: ['AML.T0051.001', 'AML.T0057'] } : undefined, prev_hash: prevHash }
     prevHash = digest(prevHash + JSON.stringify(event))
     appendFileSync(logPath, JSON.stringify({ ...event, hash: prevHash }) + '\n')
   }
