@@ -1,6 +1,6 @@
 // Independent labeller for classifier validation: a separate LLM call labels each sampled tool's legs from its definition only.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
-const env = process.env.OPENAI_API_KEY ? `OPENAI_API_KEY=${process.env.OPENAI_API_KEY}` : readFileSync(`${process.env.HOME}/.config/jarvis/env/openai.env`, 'utf8')
+const env = `OPENAI_API_KEY=${process.env.OPENAI_API_KEY ?? ''}`
 const apiKey = env.match(/OPENAI_API_KEY=(\S+)/)?.[1]?.replace(/^["']|["']$/g, '') ?? ''
 const scan = JSON.parse(readFileSync('data/scan.json', 'utf8'))
 const all: Array<{ repo: string; name: string; description: string; params: string[] }> = []

@@ -5,6 +5,8 @@ export interface ToolSpec {
   name: string
   description: string
   params: string[]
+  /** MCP tool annotations, when the server provides them */
+  annotations?: { readOnlyHint?: boolean; openWorldHint?: boolean; destructiveHint?: boolean }
 }
 
 export interface Classification {

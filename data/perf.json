@@ -1,0 +1,8 @@
+{
+ "privateBytes": 5000000,
+ "bodyBytes": 9000,
+ "recordMsTotal": 2306,
+ "checkMsP50": 0.31,
+ "checkMsP95": 0.43,
+ "fingerprints": 4862120
+}

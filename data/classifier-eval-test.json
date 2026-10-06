@@ -1,34 +1,171 @@
 {
  "split": "test",
  "n": 100,
+ "note": "rules frozen before this split was scored, except vocabulary added after the mock review (exec/delivery/health words) — see git history",
  "private": {
-  "tp": 12,
-  "fp": 7,
-  "fn": 13,
-  "tn": 68,
-  "precision": 0.63,
-  "recall": 0.48,
-  "agreement": 0.8,
-  "kappa": 0.42
+  "rulesVsOpenAI": {
+   "n": 100,
+   "positives": 25,
+   "tp": 13,
+   "fp": 9,
+   "fn": 12,
+   "tn": 66,
+   "precision": 0.59,
+   "recall": 0.52,
+   "recallCI95": [
+    0.33,
+    0.7
+   ],
+   "agreement": 0.79,
+   "kappa": 0.42
+  },
+  "rulesVsGemini": {
+   "n": 0,
+   "positives": 0,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "tn": 0,
+   "precision": 0,
+   "recall": 0,
+   "recallCI95": [
+    0,
+    1
+   ],
+   "agreement": 0,
+   "kappa": 0
+  },
+  "openAIvsGemini": {
+   "n": 0,
+   "positives": 0,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "tn": 0,
+   "precision": 0,
+   "recall": 0,
+   "recallCI95": [
+    0,
+    1
+   ],
+   "agreement": 0,
+   "kappa": 0
+  },
+  "gateEffectiveVsOpenAI": {
+   "n": 100,
+   "positives": 25,
+   "tp": 20,
+   "fp": 65,
+   "fn": 5,
+   "tn": 10,
+   "precision": 0.24,
+   "recall": 0.8,
+   "recallCI95": [
+    0.61,
+    0.91
+   ],
+   "agreement": 0.3,
+   "kappa": -0.04
+  }
  },
  "untrusted": {
-  "tp": 4,
-  "fp": 10,
-  "fn": 1,
-  "tn": 85,
-  "precision": 0.29,
-  "recall": 0.8,
-  "agreement": 0.89,
-  "kappa": 0.38
+  "rulesVsOpenAI": {
+   "n": 100,
+   "positives": 5,
+   "tp": 4,
+   "fp": 11,
+   "fn": 1,
+   "tn": 84,
+   "precision": 0.27,
+   "recall": 0.8,
+   "recallCI95": [
+    0.38,
+    0.96
+   ],
+   "agreement": 0.88,
+   "kappa": 0.35
+  },
+  "rulesVsGemini": {
+   "n": 0,
+   "positives": 0,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "tn": 0,
+   "precision": 0,
+   "recall": 0,
+   "recallCI95": [
+    0,
+    1
+   ],
+   "agreement": 0,
+   "kappa": 0
+  },
+  "openAIvsGemini": {
+   "n": 0,
+   "positives": 0,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "tn": 0,
+   "precision": 0,
+   "recall": 0,
+   "recallCI95": [
+    0,
+    1
+   ],
+   "agreement": 0,
+   "kappa": 0
+  }
  },
  "outbound": {
-  "tp": 5,
-  "fp": 8,
-  "fn": 2,
-  "tn": 85,
-  "precision": 0.38,
-  "recall": 0.71,
-  "agreement": 0.9,
-  "kappa": 0.45
+  "rulesVsOpenAI": {
+   "n": 100,
+   "positives": 7,
+   "tp": 5,
+   "fp": 13,
+   "fn": 2,
+   "tn": 80,
+   "precision": 0.28,
+   "recall": 0.71,
+   "recallCI95": [
+    0.36,
+    0.92
+   ],
+   "agreement": 0.85,
+   "kappa": 0.33
+  },
+  "rulesVsGemini": {
+   "n": 0,
+   "positives": 0,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "tn": 0,
+   "precision": 0,
+   "recall": 0,
+   "recallCI95": [
+    0,
+    1
+   ],
+   "agreement": 0,
+   "kappa": 0
+  },
+  "openAIvsGemini": {
+   "n": 0,
+   "positives": 0,
+   "tp": 0,
+   "fp": 0,
+   "fn": 0,
+   "tn": 0,
+   "precision": 0,
+   "recall": 0,
+   "recallCI95": [
+    0,
+    1
+   ],
+   "agreement": 0,
+   "kappa": 0
+  }
  }
 }

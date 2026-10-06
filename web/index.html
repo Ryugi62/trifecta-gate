@@ -56,13 +56,15 @@
     <h2 id="howTitle">How the gate decides</h2>
     <p>The gate never asks a model whether text looks malicious. It checks where an outgoing message is going and where that address came from.</p>
     <ol class="rules">
-      <li><strong>You named it:</strong> the address or site appears in your request or your allowlist. Allowed.</li>
-      <li><strong>A stranger named it, and private data is in play:</strong> the agent has read your files or mail in this run. Blocked, and the agent is told to ask you.</li>
-      <li><strong>A stranger named it, nothing private read yet:</strong> nothing to leak. Allowed, so browsing still works.</li>
-      <li><strong>Private text in the outgoing call:</strong> a 12-character piece of a private result heading to an address you did not name. Blocked, even if the earlier checks were bypassed.</li>
+      <li><strong>You named it:</strong> the address, channel or exact link appears in your request, your allowlist, or you confirmed it. Allowed.</li>
+      <li><strong>Someone else named it, and private data is in play:</strong> the agent has read your files or mail, or you typed a secret. Blocked, and the gate (not the agent) asks you, showing where the address came from.</li>
+      <li><strong>Someone else named it, nothing private yet:</strong> nothing to leak. Allowed, so browsing still works.</li>
+      <li><strong>Private data hidden in the call:</strong> fingerprints of what the agent read catch it even when re-cased, split or base64-encoded. Blocked.</li>
+      <li><strong>Writing to your own workspace:</strong> a calendar entry or a file with no outside recipient. Allowed.</li>
     </ol>
+    <p>Links inside a message body count as destinations too, because previews and images fetch them. A site you only mention by name is trusted for that site alone, without query strings, and never for shared platforms such as docs.google.com or github.com. Tools the rules cannot label are treated as private and outgoing.</p>
     <details><summary>What it does not catch</summary>
-      <p>If you name the recipient yourself, the gate lets the message go even if the agent was tricked into adding extra data. Replies to someone who emailed you look exactly like an attack, so they need one confirmation from you. The tool classifier is keyword rules; it can mislabel unusual tools, which is why you can override labels.</p>
+      <p>If you name the recipient yourself, the gate lets the message go even if the agent was tricked into adding extra data. Text you paste into your own request counts as your words. A compromised tool server, and leaks through side channels such as timing, are out of scope. In proxy mode the gate cannot see your chat, so destinations come from the allowlist and your confirmations only.</p>
     </details>
   </section>
 

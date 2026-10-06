@@ -57,7 +57,7 @@ try {
   await scrollTo('#scan')
   await caption(p, 'We also scanned public MCP servers on GitHub with the same rules.', 6000)
   await p.evaluate(() => document.querySelectorAll('#scanBody details').forEach((d) => ((d as HTMLDetailsElement).open = true)))
-  await caption(p, 'About one in four ships a tool that can send data out, and 21 servers have all three abilities on their own.', 8000)
+  await caption(p, 'About one in four ships a tool that can send data out, and 22 servers have all three abilities on their own.', 8000)
   await scrollTo('#how')
   await caption(p, 'How it decides: no AI model inside the gate. It checks where a message is going and who chose that address.', 9000)
   await caption(p, 'Named by you: allowed. Named by a stranger while private data is in play: blocked, and the agent asks you.', 9000)

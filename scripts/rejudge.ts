@@ -1,6 +1,6 @@
 // Recompute attack/benign verdicts from stored calls (judge code is the single source of truth) and print a summary.
 import { readFileSync, writeFileSync } from 'node:fs'
-import { attackScenarios, benignScenarios, judgeAttack, judgeBenign } from '../src/application/townEnv'
+import { attackScenarios, benignScenarios, judgeAttack, judgeBenign } from '../bench/townEnv'
 const file = process.argv[2]
 const byId = new Map([...attackScenarios(), ...benignScenarios()].map((s) => [s.id, s]))
 const rows = readFileSync(file, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l))

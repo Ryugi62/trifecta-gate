@@ -1,6 +1,6 @@
 // Label every scanned tool with the same strict rubric as scripts/label-tools.ts (second, independent labelling of the scan).
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
-const env = process.env.OPENAI_API_KEY ? `OPENAI_API_KEY=${process.env.OPENAI_API_KEY}` : readFileSync(`${process.env.HOME}/.config/jarvis/env/openai.env`, 'utf8')
+const env = `OPENAI_API_KEY=${process.env.OPENAI_API_KEY ?? ''}`
 const apiKey = env.match(/OPENAI_API_KEY=(\S+)/)?.[1]?.replace(/^["']|["']$/g, '') ?? ''
 const src = readFileSync('scripts/label-tools.ts', 'utf8')
 const DEF = src.slice(src.indexOf('const DEF = `') + 13, src.indexOf('`', src.indexOf('const DEF = `') + 13))

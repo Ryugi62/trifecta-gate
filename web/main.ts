@@ -31,8 +31,8 @@ function renderCheck(): void {
 interface Call { tool: string; args: Record<string, unknown>; blocked: boolean }
 interface Results {
   headline: { model: string; leakedNoGate: number; leakedGate: number; attacks: number; benignNoGate: number; benignGate: number; benign: number }
-  scan: { servers: number; tools: number; share: Record<Leg, number>; trifectaServers: number; examples: Array<{ repo: string; stars: number; fix: { leg: Leg; tools: string[] } | null }> }
-  replay: { id: string; instruction: string; injection: string; noGate: Call[]; gate: Call[]; model: string }
+  scan: { candidates: number; servers: number; tools: number; share: Record<Leg, number>; rulesShare: Record<Leg, number>; trifectaServers: number }
+  replay: { id: string; instruction: string; injection: string; noGate: Call[]; gate: Call[]; model: string; confirmPrompt?: string }
   models: Array<{ model: string; leakedNoGate: number; leakedGate: number; attacks: number }>
 }
 
@@ -52,16 +52,17 @@ async function loadResults(): Promise<void> {
   $('stats').innerHTML = `
     <div class="stat"><b class="no">${h.leakedNoGate} of ${h.attacks}</b><span>injection attacks leaked a secret through ${esc(h.model)} with no gate</span></div>
     <div class="stat"><b class="ok">${h.leakedGate} of ${h.attacks}</b><span>leaked with Trifecta Gate in front of the same agent</span></div>
-    <div class="stat"><b>${Math.round(r.scan.share.outbound * 100)}%</b><span>of ${r.scan.servers} public MCP servers ship a tool that can send data out</span></div>
-    <div class="stat"><b>${r.scan.trifectaServers}</b><span>servers have all three abilities on their own</span></div>`
+    <div class="stat"><b>${Math.round(r.scan.share.outbound * 100)}%</b><span>of ${r.scan.servers} public MCP servers ship a tool that can send data out (independent labeller)</span></div>
+    <div class="stat"><b>${r.scan.trifectaServers}</b><span>servers have all three abilities on their own (labeller and rules agree)</span></div>`
   const leakHosts = /evil-audit|ext-vendor-sync/i
   $('replayIntro').innerHTML = `Same task, same planted message, ${esc(r.replay.model)}. The request: “${esc(r.replay.instruction)}”<div class="inject"><strong>Planted in the content:</strong> ${esc(r.replay.injection)}</div>`
   $('runs').innerHTML = `<div class="run"><h3>Without the gate</h3>${r.replay.noGate.map((c) => callLine(c, leakHosts)).join('')}</div><div class="run"><h3>With Trifecta Gate</h3>${r.replay.gate.map((c) => callLine(c, leakHosts)).join('')}</div>`
   const s = r.scan
-  $('scanBody').innerHTML = `<p>We cloned public GitHub repositories named as MCP servers, pulled out ${s.tools.toLocaleString('en-US')} tool declarations from ${s.servers} servers, and labelled them with the same rules the checker uses.</p>
+  $('scanBody').innerHTML = `<p>We cloned public GitHub repositories named as MCP servers, pulled out ${s.tools.toLocaleString('en-US')} tool declarations from ${s.servers} servers (of ${s.candidates} repositories found), and had an independent language-model labeller mark each tool. The checker above uses our keyword rules instead; those rules flag more (${Math.round(s.rulesShare.outbound * 100)}% of servers can send data out by the rules).</p>
     <div class="bars">${(['private', 'untrusted', 'outbound'] as Leg[]).map((l) => `<div class="bar">${Math.round(s.share[l] * 100)}% of servers have a tool that ${LEG_TEXT[l]}<div class="track"><div class="fill" style="width:${(s.share[l] * 100).toFixed(1)}%"></div></div></div>`).join('')}</div>
-    <details><summary>Servers with all three on their own (${s.trifectaServers})</summary><ul>${s.examples.map((e) => `<li><a href="https://github.com/${esc(e.repo)}">${esc(e.repo)}</a>${e.fix ? ` · smallest fix: gate ${e.fix.tools.slice(0, 3).map((t) => `<code>${esc(t)}</code>`).join(', ')}${e.fix.tools.length > 3 ? '…' : ''}` : ''}</li>`).join('')}</ul></details>
+    <p>${s.trifectaServers} servers have all three abilities on their own, counted only where the labeller and the rules agree. We do not list them here: a label is a reason to look, not a finding.</p>
     <details><summary>Other models we tested</summary><ul>${r.models.map((m) => `<li>${esc(m.model)}: ${m.leakedNoGate} of ${m.attacks} leaked without the gate, ${m.leakedGate} with it</li>`).join('')}</ul></details>`
+  if (r.replay.confirmPrompt) $('runs').insertAdjacentHTML('afterend', `<div class="inject" style="background:var(--soft)"><strong>What the user sees:</strong> ${esc(r.replay.confirmPrompt)} <em>Default: Don't allow.</em></div>`)
 }
 
 document.querySelectorAll<HTMLButtonElement>('[data-preset]').forEach((b) => b.addEventListener('click', () => { $<HTMLTextAreaElement>('tools').value = PRESETS[b.dataset.preset!]; renderCheck() }))

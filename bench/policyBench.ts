@@ -1,4 +1,4 @@
-import { GateSession } from './session'
+import { GateSession } from '../src/application/session'
 import { ATTACKER, DOCS, SECRETS, TOOLS, attackScenarios, benignScenarios, runTool, type Scenario } from './townEnv'
 
 export interface TraceResult { id: string; kind: 'attack' | 'benign'; needsConfirmation: boolean; blocked: boolean; rule: string; ms: number }

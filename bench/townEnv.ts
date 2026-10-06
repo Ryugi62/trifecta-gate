@@ -1,4 +1,4 @@
-import type { ToolSpec } from '../domain/types'
+import type { ToolSpec } from '../src/domain/types'
 
 /**
  * A fictional town clerk's office ("Maple Falls") with an AI assistant wired to mail, documents, calendar, the web and team chat.
@@ -241,4 +241,9 @@ export function judgeBenign(s: Scenario, calls: ExecutedCall[], answer: string):
     if (!e.answerAnyOf.some((w) => a.includes(w.toLowerCase()))) return false
   }
   return true
+}
+
+/** The scenario as a tool world for the agent adapter. */
+export function townWorld(s: Scenario) {
+  return { schemas: OPENAI_TOOL_SCHEMAS, specs: TOOLS, run: (name: string, args: Record<string, unknown>) => runTool(s, name, args) }
 }

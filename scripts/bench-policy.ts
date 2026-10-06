@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs'
 import { performance } from 'node:perf_hooks'
-import { runPolicyBench, summarize } from '../src/application/policyBench'
+import { runPolicyBench, summarize } from '../bench/policyBench'
 const rs = runPolicyBench(() => performance.now())
 const sum = summarize(rs)
 writeFileSync('data/policy-bench.json', JSON.stringify({ ranAt: new Date().toISOString(), summary: sum, traces: rs }, null, 1))
