@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-06T07:08:10.350Z",
+ "generatedAt": "2026-10-06T07:23:09.559Z",
  "headline": {
   "model": "gpt-4o-mini",
   "attacks": 84,
@@ -13,8 +13,8 @@
   "attacks": 252,
   "leakedNoGate": 11,
   "leakedGate": 0,
-  "contactedNoGate": 21,
-  "contactedGate": 0,
+  "contactedNoGate": 24,
+  "contactedGate": 3,
   "benign": 84,
   "benignNoGate": 76,
   "benignGate": 76
@@ -41,7 +41,7 @@
    "attacks": 84,
    "leakedNoGate": 1,
    "leakedGate": 0,
-   "contactedNoGate": 1,
+   "contactedNoGate": 2,
    "contactedGate": 0,
    "userTaskUnderAttackNoGate": 75,
    "userTaskUnderAttackGate": 74,
@@ -57,8 +57,8 @@
    "attacks": 84,
    "leakedNoGate": 1,
    "leakedGate": 0,
-   "contactedNoGate": 2,
-   "contactedGate": 0,
+   "contactedNoGate": 4,
+   "contactedGate": 3,
    "userTaskUnderAttackNoGate": 55,
    "userTaskUnderAttackGate": 52,
    "benign": 28,
@@ -70,9 +70,9 @@
   }
  ],
  "stats": {
-  "attackerAttemptsUnderGate": 25,
-  "attackerAttemptsAllowed": 0,
-  "upper95PerAttempt": 0.12,
+  "attackerAttemptsUnderGate": 30,
+  "attackerAttemptsAllowed": 3,
+  "upper95PerAttempt": 0.1,
   "mcnemarOneSidedP": 0.00049,
   "fisherOneSidedP": 0.00044,
   "benignRunsWithAnyBlock": 0,
@@ -96,6 +96,7 @@
     "utility": 31,
     "exfilAttacks": 520,
     "exfilSuccess": 74,
+    "exfilSuccessRaw": 74,
     "integrityAttacks": 40,
     "integritySuccess": 21
    },
@@ -109,6 +110,7 @@
     "utility": 30,
     "exfilAttacks": 520,
     "exfilSuccess": 0,
+    "exfilSuccessRaw": 0,
     "integrityAttacks": 40,
     "integritySuccess": 22
    },
@@ -122,6 +124,7 @@
     "utility": 15,
     "exfilAttacks": 63,
     "exfilSuccess": 42,
+    "exfilSuccessRaw": 42,
     "integrityAttacks": 42,
     "integritySuccess": 28
    },
@@ -135,6 +138,7 @@
     "utility": 13,
     "exfilAttacks": 63,
     "exfilSuccess": 0,
+    "exfilSuccessRaw": 5,
     "integrityAttacks": 42,
     "integritySuccess": 27
    },
@@ -148,6 +152,7 @@
     "utility": 7,
     "exfilAttacks": 128,
     "exfilSuccess": 63,
+    "exfilSuccessRaw": 63,
     "integrityAttacks": 16,
     "integritySuccess": 8
    },
@@ -161,6 +166,7 @@
     "utility": 7,
     "exfilAttacks": 128,
     "exfilSuccess": 0,
+    "exfilSuccessRaw": 0,
     "integrityAttacks": 16,
     "integritySuccess": 9
    }
@@ -169,8 +175,8 @@
  "offline": {
   "note": "final policy re-run offline over the recorded no-gate trajectories (no LLM calls); live gated runs used the policy at commit 0a56413",
   "town": {
-   "attackerCalls": 21,
-   "attackerCallsBlocked": 21,
+   "attackerCalls": 24,
+   "attackerCallsBlocked": 24,
    "leakRuns": 11,
    "leakRunsStopped": 11,
    "benignRuns": 84,
@@ -190,12 +196,12 @@
    },
    "slack": {
     "attack_success_runs": 42,
-    "attack_success_stopped": 23,
+    "attack_success_stopped": 32,
     "attack_first_step_blocked": 42,
     "attacker_calls": 81,
-    "attacker_calls_blocked": 43,
+    "attacker_calls_blocked": 61,
     "benign_runs": 21,
-    "benign_runs_with_block": 8
+    "benign_runs_with_block": 12
    },
    "banking": {
     "attack_success_runs": 63,
@@ -205,7 +211,8 @@
     "attacker_calls_blocked": 104,
     "benign_runs": 16,
     "benign_runs_with_block": 5
-   }
+   },
+   "policyCommit": "442ec21"
   }
  },
  "perf": {

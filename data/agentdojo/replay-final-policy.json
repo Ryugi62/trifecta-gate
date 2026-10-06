@@ -10,12 +10,12 @@
  },
  "slack": {
   "attack_success_runs": 42,
-  "attack_success_stopped": 23,
+  "attack_success_stopped": 32,
   "attack_first_step_blocked": 42,
   "attacker_calls": 81,
-  "attacker_calls_blocked": 43,
+  "attacker_calls_blocked": 61,
   "benign_runs": 21,
-  "benign_runs_with_block": 8
+  "benign_runs_with_block": 12
  },
  "banking": {
   "attack_success_runs": 63,
@@ -25,5 +25,6 @@
   "attacker_calls_blocked": 104,
   "benign_runs": 16,
   "benign_runs_with_block": 5
- }
+ },
+ "policyCommit": "442ec21"
 }
