@@ -64,7 +64,7 @@ export function extractDestinations(args: Record<string, unknown>): Destination[
   return out
 }
 
-interface Trusted { emails: Set<string>; hosts: Set<string>; names: Set<string>; allow: string[] }
+interface Trusted { emails: Set<string>; hosts: Set<string>; names: Set<string>; urls: Set<string>; allow: string[] }
 
 function trustedFrom(instruction: string, allowlist: string[]): Trusted {
   const emails = new Set((instruction.match(EMAIL) ?? []).map((x) => x.toLowerCase()))
@@ -72,8 +72,14 @@ function trustedFrom(instruction: string, allowlist: string[]): Trusted {
   const hosts = new Set<string>()
   for (const u of noEmails.match(URL_RE) ?? []) { try { hosts.add(stripWww(new URL(u).hostname)) } catch { /* skip */ } }
   for (const h of noEmails.replace(URL_RE, ' ').match(HOST_RE) ?? []) hosts.add(stripWww(h))
-  const names = new Set(instruction.toLowerCase().split(/[^a-z0-9_#-]+/).filter((w) => w.length >= 2).map((w) => w.replace(/^#/, '')))
-  return { emails, hosts, names, allow: allowlist.map((a) => a.toLowerCase().trim()) }
+  // channel/recipient names count only when the user marked them: "#name", "@name", or "<name> channel"
+  const lower = instruction.toLowerCase()
+  const names = new Set<string>([
+    ...[...lower.matchAll(/(?:^|[\s(])[#@]([a-z0-9][\w.-]*)/g)].map((m) => m[1].replace(/[.,]$/, '')),
+    ...[...lower.matchAll(/([a-z0-9][\w-]*)\s+channel\b/g)].map((m) => m[1]),
+  ])
+  const urls = new Set((noEmails.match(URL_RE) ?? []).map((u) => u.replace(/[.,)]+$/, '').toLowerCase()))
+  return { emails, hosts, names, urls, allow: allowlist.map((a) => a.toLowerCase().trim()) }
 }
 
 const underHost = (host: string, parent: string) => host === parent || host.endsWith(`.${parent}`)
@@ -123,8 +129,16 @@ export function decide(call: ProposedCall, ctx: Context, legsOverride?: Readonly
   const dests = extractDestinations(call.args).map((d) => ({ ...d, provenance: provenanceOf(d, trusted) }))
   const fromContent = dests.filter((d) => d.provenance === 'content')
   const unknown = dests.length === 0
-  if (!unknown && fromContent.length === 0) return { action: 'allow', rule: 'R1', reason: 'every destination came from the user or the allowlist', destinations: dests }
   const leaked = leaksPrivate(call.args, ctx.taint.privateTexts)
+  if (!unknown && fromContent.length === 0) {
+    // a user-named host is not a user-named URL: shared hosts (github.com, docs.google.com) can receive attacker-chosen paths,
+    // so private text inside a URL the user did not write is still blocked
+    const urlArgs: string[] = []
+    collectStrings(call.args, urlArgs)
+    const newUrl = urlArgs.flatMap((v) => v.match(URL_RE) ?? []).some((u) => !trusted.urls.has(u.replace(/[.,)]+$/, '').toLowerCase()))
+    if (leaked && newUrl && dests.every((d) => d.kind === 'host')) return { action: 'block', rule: 'R4', reason: `private text ("${leaked}") inside a URL the user did not write`, destinations: dests }
+    return { action: 'allow', rule: 'R1', reason: 'every destination came from the user or the allowlist', destinations: dests }
+  }
   if (leaked) return { action: 'block', rule: 'R4', reason: `arguments carry private text ("${leaked}") to a destination the user did not name`, destinations: dests }
   if (ctx.taint.privateSeen) {
     const who = unknown ? 'an unnamed destination' : fromContent.map((d) => d.value).join(', ')

