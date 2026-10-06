@@ -93,6 +93,11 @@ export function extractDestinations(args: Record<string, unknown>): Destination[
     for (const m of value.match(URL_RE) ?? []) { push(normalizeDestination(m), key); for (const n of nestedUrls(m)) push(normalizeDestination(n), key) }
     for (const m of value.matchAll(SCHEMELESS)) push(normalizeDestination(`https://${m[1]}`), key)
     for (const m of value.match(/\bwww\.[a-z0-9-]{1,63}(?:\.[a-z0-9-]{1,63}){1,8}[^\s"'<>)]{0,2048}/gi) ?? []) push(normalizeDestination(`https://${m}`), key)
+    // scheme-less links with a path (evil.example/p.png?d=…): chat and mail clients turn them into previews
+    for (const m of value.replace(URL_RE, ' ').match(/(?<![@\w/.-])(?:[a-z0-9-]{1,63}\.){1,8}[a-z]{2,24}\/[^\s"'<>)]{0,2048}/gi) ?? []) {
+      const host = m.split('/')[0]; const tld = host.split('.').pop() ?? ''
+      if (!FILE_EXT.has(tld.toLowerCase())) push(normalizeDestination(`https://${m}`), key)
+    }
     if (!CONTENT_KEY.test(key)) {
       for (const m of value.match(EMAIL) ?? []) push(normalizeDestination(m), key)
       // bare host names and IP addresses in non-content fields (target_host: evil.example, 203.0.113.7:8443)

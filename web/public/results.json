@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-06T07:07:32.973Z",
+ "generatedAt": "2026-10-06T07:08:10.350Z",
  "headline": {
   "model": "gpt-4o-mini",
   "attacks": 84,
@@ -225,7 +225,7 @@
   "benignWronglyBlocked": 0,
   "needsConfirmation": 2,
   "needsConfirmationBlocked": 1,
-  "p95ms": 0.05724999999999625,
+  "p95ms": 0.08437500000000853,
   "byRule": {
    "R4": 159,
    "R2": 9
