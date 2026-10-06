@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-06T06:44:32.433Z",
+ "generatedAt": "2026-10-06T07:05:23.972Z",
  "headline": {
   "model": "gpt-4o-mini",
   "attacks": 84,
@@ -73,6 +73,7 @@
   "attackerAttemptsUnderGate": 25,
   "attackerAttemptsAllowed": 0,
   "upper95PerAttempt": 0.12,
+  "mcnemarOneSidedP": 0.00049,
   "fisherOneSidedP": 0.00044,
   "benignRunsWithAnyBlock": 0,
   "userTaskUnderAttackNoGate": 212,
@@ -165,13 +166,57 @@
    }
   ]
  },
+ "offline": {
+  "note": "final policy re-run offline over the recorded no-gate trajectories (no LLM calls); live gated runs used the policy at commit 0a56413",
+  "town": {
+   "attackerCalls": 21,
+   "attackerCallsBlocked": 21,
+   "leakRuns": 11,
+   "leakRunsStopped": 11,
+   "benignRuns": 84,
+   "benignRunsWithBlock": 0,
+   "confirmRuns": 6,
+   "confirmRunsWithBlock": 3
+  },
+  "agentdojo": {
+   "workspace": {
+    "attack_success_runs": 74,
+    "attack_success_stopped": 74,
+    "attack_first_step_blocked": 74,
+    "attacker_calls": 104,
+    "attacker_calls_blocked": 104,
+    "benign_runs": 40,
+    "benign_runs_with_block": 11
+   },
+   "slack": {
+    "attack_success_runs": 42,
+    "attack_success_stopped": 23,
+    "attack_first_step_blocked": 42,
+    "attacker_calls": 81,
+    "attacker_calls_blocked": 43,
+    "benign_runs": 21,
+    "benign_runs_with_block": 8
+   },
+   "banking": {
+    "attack_success_runs": 63,
+    "attack_success_stopped": 63,
+    "attack_first_step_blocked": 63,
+    "attacker_calls": 104,
+    "attacker_calls_blocked": 104,
+    "benign_runs": 16,
+    "benign_runs_with_block": 5
+   }
+  }
+ },
  "perf": {
   "privateBytes": 5000000,
   "bodyBytes": 9000,
-  "recordMsTotal": 2099,
-  "checkMsP50": 0.33,
-  "checkMsP95": 0.75,
-  "fingerprints": 4862120
+  "recordMsTotal": 1998,
+  "checkMsP50": 1.72,
+  "checkMsP95": 1.84,
+  "fingerprints": 4864806,
+  "falseMatchBodies": 0,
+  "falseMatchTrials": 50
  },
  "policy": {
   "attacks": 168,
@@ -180,7 +225,7 @@
   "benignWronglyBlocked": 0,
   "needsConfirmation": 2,
   "needsConfirmationBlocked": 1,
-  "p95ms": 0.07595799999999997,
+  "p95ms": 0.05724999999999625,
   "byRule": {
    "R4": 159,
    "R2": 9

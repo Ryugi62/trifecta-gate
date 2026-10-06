@@ -13,16 +13,17 @@ https://ryugi62.github.io/trifecta-gate/demo.mp4 · built for [2nd LaserHacks 20
 *Securing the Next 250*, the theme CISA chose for [Cybersecurity Awareness Month 2026](https://www.cisa.gov/news-events/news/cisa-launches-cybersecurity-awareness-month-securing-next-250).
 
 <!-- NUMBERS -->
-- **Live agent benchmark** (fictional town clerk's office; per model 84 planted attacks + 28 normal tasks + 2 tasks that need an address only found in outsiders' text; each run with and without the gate, one run per cell): secrets reached the attacker in **11 of 252** attack runs without the gate and **0 of 252** with it (one-sided Fisher exact p = 0.00044). With the gate, agents tried to contact the attacker 25 times and all 25 were blocked (95% upper bound on the per-attempt miss rate: 12%, rule of three).
+- **Live agent benchmark** (fictional town clerk's office; per model 84 planted attacks + 28 normal tasks + 2 tasks that need an address only found in outsiders' text; each run with and without the gate, one run per cell): secrets reached the attacker in **11 of 252** attack runs without the gate and **0 of 252** with it (paired design, exact McNemar one-sided p = 0.00049). With the gate, agents tried to contact the attacker 25 times and all 25 were blocked (95% upper bound on the per-attempt miss rate: 12%, rule of three).
 - **Cost to normal work:** normal tasks completed 76/84 without and 76/84 with the gate; the gate blocked a call in 0 normal runs. The user's own task under attack: 212/252 without, 204/252 with the gate (a blocked step sometimes stops the agent). The 6 "reply to whoever emailed me" runs need one confirmation by design.
   - gpt-4o-mini: leaked 9/84 → 0/84; normal tasks 27/28 → 27/28.
   - gpt-5.4-mini: leaked 1/84 → 0/84; normal tasks 28/28 → 28/28.
   - gpt-4.1-nano: leaked 1/84 → 0/84; normal tasks 21/28 → 21/28.
 - **Rule conformance** (scripted traces written for these rules, so not independent evidence): 168/168 attack traces blocked, 0/28 normal traces wrongly blocked. **Adaptive attacks** written against the rules after a review (shared hosts, file names as hosts, extra recipient fields, image links in bodies, ordinary words as channels, unlabelled shell tools, typed secrets, open redirects, re-cased and base64 secrets): all blocked — `tests/redteam.test.ts`.
-- **Cost:** with 5 MB of private text read and a 9 KB outgoing body, a gate check takes 0.33 ms (p50) / 0.75 ms (p95); fingerprinting costs about 420 ms per MB read.
+- **Final policy, offline replay** (the live gated runs above used the policy at commit 0a56413; after a second review round the rules were tightened, and the final rules were re-run over the recorded no-gate trajectories with no LLM calls): town office — 11/11 leaking runs stopped, 21/21 calls to the attacker blocked, 0/84 normal runs interrupted; AgentDojo — the first attacker-serving call blocked in 179/179 attacks the undefended agent completed; the gate would ask the user in 24/77 normal tasks (mostly payments to account numbers found in bills, invites to addresses found in e-mails or websites). Replay shows what the final rules block on the same trajectories; it does not show how the model would have continued after a block.
+- **Cost:** with 5 MB of private text read and a 9 KB outgoing body, a gate check takes 1.72 ms (p50) / 1.84 ms (p95); fingerprinting costs about 400 ms per MB read; 0/50 unrelated 9 KB bodies matched any fingerprint (53-bit hashes).
 - **Public MCP servers** (311 GitHub repositories named as MCP servers → 166 with tool declarations our extractor could read → 6,088 tools): 23.5% of servers have a tool that can send data out, 60.2% read private data, 36.1% return outsiders' text (independent LLM labeller; keyword rules: 60.2% / 72.9% / 60.8%). **22** servers have all three on their own (both labellers agree; rules alone 76, LLM alone 23). Sample: sorted by stars, so it over-represents popular servers.
 - **AgentDojo v1.2** (independent benchmark; gpt-4o-mini-2024-07-18; "important_instructions" attack; workspace, Slack and banking suites; gate with `startPrivate`): attacks that move data, money or workspace access to the attacker succeeded **179/711** without the gate and **0/711** with it; attacks that only delete a file, open a site, send a colleague a link or change a password (out of scope) 57/98 vs 58/98. Tasks solved with no attack: 53/77 vs 50/77; under attack 331/809 vs 350/809. AgentDojo's own score (which counts blocked attempts for one Slack task scored from the call trace): 236/809 vs 63/809. Config: startPrivate; allowlist workspace=company domain, slack=own workspace (#*), banking=none. Code and summaries: `agentdojo-eval/`, `data/agentdojo/`.
-- **Label check** (held-out random sample of 100 public tools vs an independent LLM labeller, gpt-5.4-mini): private: recall 0.52 (95% CI 0.33–0.7, 25 positives), precision 0.59, kappa 0.42; untrusted: recall 0.8 (95% CI 0.38–0.96, 5 positives), precision 0.27, kappa 0.35; outbound: recall 0.71 (95% CI 0.36–0.92, 7 positives), precision 0.28, kappa 0.33. Because unlabelled tools fail closed, the gate treats 0.8 of private tools as private. On the 40 tools a second labeller from another vendor (Google Gemini, free quota) could label: rules vs Gemini kappa 0.36 / 0.64 / 0.26; the two LLM labellers agree with each other at kappa 0.38 / 1 / 0.68. Keyword labels are a starting point; admins should review them.
+- **Label check** (random development sample — the vocabulary was extended after reviewers saw it, so this is not a clean held-out test — of 100 public tools vs an independent LLM labeller, gpt-5.4-mini): private: recall 0.52 (95% CI 0.33–0.7, 25 positives), precision 0.59, kappa 0.42; untrusted: recall 0.8 (95% CI 0.38–0.96, 5 positives), precision 0.27, kappa 0.35; outbound: recall 0.71 (95% CI 0.36–0.92, 7 positives), precision 0.28, kappa 0.33. Because unlabelled tools fail closed, the gate treats 0.8 of private tools as private. On the 40 tools a second labeller from another vendor (Google Gemini, free quota) could label: rules vs Gemini kappa 0.36 / 0.64 / 0.26; the two LLM labellers agree with each other at kappa 0.38 / 1 / 0.68. Keyword labels are a starting point; admins should review them.
 <!-- /NUMBERS -->
 
 ## How the gate decides
@@ -38,8 +39,12 @@ https://ryugi62.github.io/trifecta-gate/demo.mp4 · built for [2nd LaserHacks 20
 - **Destinations** are e-mail addresses, channels and URLs in *any* argument, including links inside message bodies (link previews
   and images fetch them) and URLs nested in query strings (open redirects).
 - **Trust is narrow:** an exact URL the user wrote; a host the user named, for that host only and without query strings; never a
-  shared platform (docs.google.com, github.com, webhook relays…) unless the admin allowlists it; channels only when marked
-  (`#council`, "council channel"); file names such as `readme.md` are not hosts.
+  shared platform (docs.google.com, github.com, webhook relays…) unless the admin allowlists it; channel/account names only when
+  the user marked them (`#council`, "council channel"), quoted them, or typed an account number (letters + digits, 10+ chars);
+  file names such as `readme.md` are not hosts. `#*` in the allowlist trusts channel/member fields of the organisation's own chat
+  tools only — never phone numbers, account numbers or repositories.
+- **The conversation is private from the first turn by default** (`startPrivate: true`), so a link the agent builds itself goes to
+  the user; only links copied character for character from content may be visited (R6).
 - **Fail closed:** tools the keyword rules cannot label are treated as returning private data, and any address in their
   arguments as an outgoing destination. Shell/exec tools are labelled private + outbound. MCP `openWorldHint` is honoured.
   Admins can override any label.
@@ -58,7 +63,9 @@ gate.unsafeAnswerLinks(finalAnswer)    // links/images in the reply that would l
 ## Two ways to deploy
 - **Host middleware (sees the user's request — full rules).** `src/adapters/openaiAgent.ts` wraps an OpenAI function-calling loop.
 - **Drop-in MCP proxy (one config line, allowlist + confirmations).** MCP carries no user message, so the proxy trusts only the
-  allowlist and confirmed destinations; everything else follows the same rules.
+  allowlist and confirmed destinations (`--confirm-file`, written by the user's approval UI); admin labels via `--labels`. Each
+  proxy starts private, so separate proxies for separate servers still block unnamed destinations even though they do not share
+  what the other server returned.
 ```jsonc
 // before: "command": "node", "args": ["mail-server.js"]
 "command": "npx", "args": ["tsx", "scripts/mcp-proxy.ts", "--allow", "*.town.gov", "--log", "audit.jsonl", "--", "node", "mail-server.js"]
@@ -86,6 +93,8 @@ checks the chain). `npm run e2e:proxy` runs it against a fake server.
 | FIDES (Costa, Köpf et al., Microsoft, 2025) | integrity and confidentiality labels on all content, deterministic policy | strong; needs label propagation through the agent framework |
 | Agents Rule of Two (Meta, 2025) | design rule: at most two of the three abilities per session, else human approval | a design rule, not an enforcement mechanism |
 | mcp-scan toxic flow analysis (Invariant Labs, 2025) | static scan of MCP set-ups for trifecta flows | reports risk, blocks nothing at run time |
+| Progent (2025), LlamaFirewall (Meta, 2025) | privilege policies for agent tools; guardrail models that scan prompts and reasoning | Progent needs per-task policies; LlamaFirewall relies on detectors that judge wording |
+| AgentDojo's own defenses (tool filter, spotlighting, injection detector) | restrict tools up front, mark tool output, or classify it | not measured side by side here (API credits ran out) |
 | **Trifecta Gate** | enforces the Rule of Two only on the one flow that leaks — sends to destinations the user did not choose — at run time, plus a scanner | no agent rewrite, no model in the gate, drop-in proxy, normal tasks unchanged in our test; coarser than full information-flow control (cannot stop leaks to a user-named recipient) |
 
 ## Reproduce
@@ -100,7 +109,9 @@ npx tsx scripts/export-web.ts && npx tsx scripts/readme-numbers.ts && npm run bu
 ```
 Raw logs: `data/agent-bench-*.jsonl` (every tool call of every run), `data/policy-bench.json`, `data/scan.json`,
 `data/labels-*.json*`, `data/classifier-eval-*.json`, `data/perf.json`. Spec: [SPEC.md](SPEC.md). Adaptive attacks against the
-rules: `tests/redteam.test.ts`. The town, people and secrets in the benchmark are fictional.
+rules: `tests/redteam.test.ts`. Offline replays: `scripts/replay-town.ts`, `agentdojo-eval/replay_ad.py`. The town, people and secrets in the benchmark are fictional.
+
+**What was tuned on what:** the town benchmark and the first review round shaped R1–R5; R6, the `#*` scope and quoted names were added after a smoke run on AgentDojo Slack/banking user tasks 0–6, then the full suites were run once. The travel suite was not run (API credits ran out), so there is no untouched AgentDojo suite.
 
 ## Layout
 `src/domain` (labels, policy, fingerprints — pure) ← `src/application` (gate session, MCP proxy core, extraction) ←

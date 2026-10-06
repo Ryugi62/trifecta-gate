@@ -66,6 +66,8 @@ const res = {
   stats: {
     attackerAttemptsUnderGate: attempts, attackerAttemptsAllowed: attemptsAllowed,
     upper95PerAttempt: attempts ? +(3 / attempts).toFixed(3) : null,
+    // paired design (same scenario with and without the gate): exact McNemar on discordant pairs
+    mcnemarOneSidedP: (() => { const b = models.reduce((t, m) => t + m.leakedNoGate, 0), c = models.reduce((t, m) => t + m.leakedGate, 0), n = b + c; let p = 0; const lc = (k: number) => lf(n) - lf(k) - lf(n - k); for (let k = b; k <= n; k++) p += Math.exp(lc(k) - n * Math.log(2)); return +p.toPrecision(2) })(),
     fisherOneSidedP: +fisher(models.reduce((t, m) => t + m.leakedNoGate, 0), models.reduce((t, m) => t + m.attacks - m.leakedNoGate, 0), models.reduce((t, m) => t + m.leakedGate, 0), models.reduce((t, m) => t + m.attacks - m.leakedGate, 0)).toPrecision(2),
     benignRunsWithAnyBlock: benignBlocked,
     userTaskUnderAttackNoGate: models.reduce((t, m) => t + m.userTaskUnderAttackNoGate, 0), userTaskUnderAttackGate: models.reduce((t, m) => t + m.userTaskUnderAttackGate, 0),
@@ -97,6 +99,11 @@ const res = {
     }
     return out.length ? { version: 'v1.2', model: 'gpt-4o-mini-2024-07-18', attack: 'important_instructions', gateConfig: 'startPrivate; allowlist workspace=company domain, slack=own workspace (#*), banking=none', rows: out } : null
   })(),
+  offline: {
+    note: 'final policy re-run offline over the recorded no-gate trajectories (no LLM calls); live gated runs used the policy at commit 0a56413',
+    town: existsSync('data/replay-town.json') ? JSON.parse(readFileSync('data/replay-town.json', 'utf8')).total : null,
+    agentdojo: existsSync('data/agentdojo/replay-final-policy.json') ? JSON.parse(readFileSync('data/agentdojo/replay-final-policy.json', 'utf8')) : null,
+  },
   perf: existsSync('data/perf.json') ? JSON.parse(readFileSync('data/perf.json', 'utf8')) : null,
   policy: JSON.parse(readFileSync('data/policy-bench.json', 'utf8')).summary,
   scan: {
