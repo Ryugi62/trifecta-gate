@@ -18,9 +18,9 @@ function wilson(k: number, n: number): [number, number] {
   const z = 1.96, p = k / n, d = 1 + z * z / n, c = p + z * z / (2 * n), m = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
   return [+((c - m) / d).toFixed(2), +((c + m) / d).toFixed(2)]
 }
-function compare(pred: (r: Row) => boolean, gold: (r: Row) => boolean | undefined) {
+function compare(pred: (r: Row) => boolean, gold: (r: Row) => boolean | undefined, set: Row[] = S) {
   let tp = 0, fp = 0, fn = 0, tn = 0
-  for (const r of S) { const g = gold(r); if (g === undefined) continue; const p = pred(r); if (p && g) tp++; else if (p) fp++; else if (g) fn++; else tn++ }
+  for (const r of set) { const g = gold(r); if (g === undefined) continue; const p = pred(r); if (p && g) tp++; else if (p) fp++; else if (g) fn++; else tn++ }
   const n = tp + fp + fn + tn, po = (tp + tn) / Math.max(1, n), pe = ((tp + fp) * (tp + fn) + (fn + tn) * (fp + tn)) / Math.max(1, n * n)
   return { n, positives: tp + fn, tp, fp, fn, tn, precision: +(tp / Math.max(1, tp + fp)).toFixed(2), recall: +(tp / Math.max(1, tp + fn)).toFixed(2), recallCI95: wilson(tp, tp + fn), agreement: +po.toFixed(2), kappa: +((po - pe) / Math.max(1e-9, 1 - pe)).toFixed(2) }
 }
@@ -29,8 +29,9 @@ const report: Record<string, unknown> = { split, n: S.length, note: 'rules froze
 for (const leg of LEGS as readonly Leg[]) {
   report[leg] = {
     rulesVsOpenAI: compare((r) => legsOf(r).has(leg), (r) => !!r.llm[leg]),
-    rulesVsGemini: compare((r) => legsOf(r).has(leg), (r) => (r.gemini ? !!r.gemini[leg] : undefined)),
-    openAIvsGemini: compare((r) => !!r.llm[leg], (r) => (r.gemini ? !!r.gemini[leg] : undefined)),
+    // the Gemini free quota covered only part of the sample: compare on every tool it labelled (dev + test)
+    rulesVsGemini: compare((r) => legsOf(r).has(leg), (r) => (r.gemini ? !!r.gemini[leg] : undefined), rows),
+    openAIvsGemini: compare((r) => !!r.llm[leg], (r) => (r.gemini ? !!r.gemini[leg] : undefined), rows),
     // what the gate actually does: a tool with no label at all is treated as returning private data (fail closed)
     ...(leg === 'private' ? { gateEffectiveVsOpenAI: compare((r) => legsOf(r).has('private') || legsOf(r).size === 0, (r) => !!r.llm.private) } : {}),
   }

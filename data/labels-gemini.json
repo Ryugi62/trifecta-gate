@@ -218,5 +218,225 @@
    "outbound": false
   },
   "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "track_signup",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_get_dpi_stats",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "create_story",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "list_inquiries",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_get_vpn_server_details",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "arinspunk/claude-talk-to-figma-mcp",
+  "name": "resize_node",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_allowlist_entry",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_scriptableobject_info",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "get_atf_suite_result",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "chrisryugj/korean-law-mcp",
+  "name": "get_legal_term_detail",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "sirkirby/unifi-mcp",
+  "name": "unifi_get_threat_management_settings",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "openags/paper-search-mcp",
+  "name": "read_base_paper",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": true,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "marc-shade/world-intel-mcp",
+  "name": "intel_weekly_trends",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "batch_get_process_status",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "marc-shade/world-intel-mcp",
+  "name": "intel_news_feed",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": true,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "lookup_dict_key",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_applicant",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "marc-shade/world-intel-mcp",
+  "name": "intel_central_bank_rates",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "biometrics_face_match",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  }
+ },
+ {
+  "repo": "alisaitteke/photoshop-mcp",
+  "name": "horizon_pct",
+  "split": "test",
+  "model": "gemini-3-flash-preview",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  }
  }
 ]

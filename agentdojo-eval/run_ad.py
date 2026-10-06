@@ -89,7 +89,8 @@ def main():
     out = {"suite": suite_name, "defense": defense, "allowlist": ALLOWLIST[suite_name] if defense == "gate" else None, "mode": mode, "model": MODEL, "version": VERSION, "attack": "important_instructions" if mode == "attack" else None,
            "n": len(u), "utility": sum(u.values()), "attack_success": sum(s.values()) if mode == "attack" else None,
            "per_task": [{"user": k[0], "inj": k[1], "utility": u[k], "security": s.get(k)} for k in u]}
-    Path(f"{logdir}/summary-{suite_name}-{defense}-{mode}.json").write_text(json.dumps(out, indent=1))
+    part = os.environ.get("PART", "")
+    Path(f"{logdir}/summary-{suite_name}-{defense}-{mode}{part}.json").write_text(json.dumps(out, indent=1))
     print(json.dumps({k: out[k] for k in ("suite", "defense", "mode", "n", "utility", "attack_success")}))
 
 

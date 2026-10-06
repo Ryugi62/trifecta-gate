@@ -20,36 +20,36 @@
    "kappa": 0.42
   },
   "rulesVsGemini": {
-   "n": 0,
-   "positives": 0,
-   "tp": 0,
-   "fp": 0,
-   "fn": 0,
-   "tn": 0,
-   "precision": 0,
-   "recall": 0,
+   "n": 40,
+   "positives": 18,
+   "tp": 7,
+   "fp": 1,
+   "fn": 11,
+   "tn": 21,
+   "precision": 0.88,
+   "recall": 0.39,
    "recallCI95": [
-    0,
-    1
+    0.2,
+    0.61
    ],
-   "agreement": 0,
-   "kappa": 0
+   "agreement": 0.7,
+   "kappa": 0.36
   },
   "openAIvsGemini": {
-   "n": 0,
-   "positives": 0,
-   "tp": 0,
-   "fp": 0,
-   "fn": 0,
-   "tn": 0,
-   "precision": 0,
-   "recall": 0,
+   "n": 40,
+   "positives": 18,
+   "tp": 10,
+   "fp": 4,
+   "fn": 8,
+   "tn": 18,
+   "precision": 0.71,
+   "recall": 0.56,
    "recallCI95": [
-    0,
-    1
+    0.34,
+    0.75
    ],
-   "agreement": 0,
-   "kappa": 0
+   "agreement": 0.7,
+   "kappa": 0.38
   },
   "gateEffectiveVsOpenAI": {
    "n": 100,
@@ -86,36 +86,36 @@
    "kappa": 0.35
   },
   "rulesVsGemini": {
-   "n": 0,
-   "positives": 0,
-   "tp": 0,
-   "fp": 0,
+   "n": 40,
+   "positives": 2,
+   "tp": 2,
+   "fp": 2,
    "fn": 0,
-   "tn": 0,
-   "precision": 0,
-   "recall": 0,
+   "tn": 36,
+   "precision": 0.5,
+   "recall": 1,
    "recallCI95": [
-    0,
+    0.34,
     1
    ],
-   "agreement": 0,
-   "kappa": 0
+   "agreement": 0.95,
+   "kappa": 0.64
   },
   "openAIvsGemini": {
-   "n": 0,
-   "positives": 0,
-   "tp": 0,
+   "n": 40,
+   "positives": 2,
+   "tp": 2,
    "fp": 0,
    "fn": 0,
-   "tn": 0,
-   "precision": 0,
-   "recall": 0,
+   "tn": 38,
+   "precision": 1,
+   "recall": 1,
    "recallCI95": [
-    0,
+    0.34,
     1
    ],
-   "agreement": 0,
-   "kappa": 0
+   "agreement": 1,
+   "kappa": 1
   }
  },
  "outbound": {
@@ -136,36 +136,36 @@
    "kappa": 0.33
   },
   "rulesVsGemini": {
-   "n": 0,
-   "positives": 0,
-   "tp": 0,
-   "fp": 0,
-   "fn": 0,
-   "tn": 0,
-   "precision": 0,
-   "recall": 0,
+   "n": 40,
+   "positives": 6,
+   "tp": 2,
+   "fp": 3,
+   "fn": 4,
+   "tn": 31,
+   "precision": 0.4,
+   "recall": 0.33,
    "recallCI95": [
-    0,
-    1
+    0.1,
+    0.7
    ],
-   "agreement": 0,
-   "kappa": 0
+   "agreement": 0.82,
+   "kappa": 0.26
   },
   "openAIvsGemini": {
-   "n": 0,
-   "positives": 0,
-   "tp": 0,
-   "fp": 0,
-   "fn": 0,
-   "tn": 0,
-   "precision": 0,
-   "recall": 0,
+   "n": 40,
+   "positives": 6,
+   "tp": 4,
+   "fp": 1,
+   "fn": 2,
+   "tn": 33,
+   "precision": 0.8,
+   "recall": 0.67,
    "recallCI95": [
-    0,
-    1
+    0.3,
+    0.9
    ],
-   "agreement": 0,
-   "kappa": 0
+   "agreement": 0.93,
+   "kappa": 0.68
   }
  }
 }
