@@ -22,6 +22,10 @@ export class ProxyCore {
     this.gate = new GateSession(instruction, allowlist, () => 0, labelOverrides)
   }
 
+  private readonly confirmedSet = new Set<string>()
+  /** a destination the user approved through the host's approval UI (exact match only) */
+  confirm(destination: string): void { if (!this.confirmedSet.has(destination)) { this.confirmedSet.add(destination); this.gate.confirm(destination) } }
+
   /** nothing held and no tool call awaiting its result */
   idle(): boolean { return this.held.length === 0 && this.pendingCall.size === 0 }
 

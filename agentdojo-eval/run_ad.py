@@ -67,6 +67,10 @@ class GatedToolsExecutor(ToolsExecutor):
 
 
 def pipeline(defense, suite_name):
+    if defense not in ("none", "gate"):
+        # AgentDojo's own defenses, unchanged, for comparison (tool_filter, spotlighting_with_delimiting, repeat_user_prompt)
+        from agentdojo.agent_pipeline.agent_pipeline import PipelineConfig
+        return AgentPipeline.from_config(PipelineConfig(llm=MODEL, model_id=None, defense=defense, system_message_name=None, system_message=None))
     llm = OpenAILLM(openai.OpenAI(), MODEL)
     executor = GatedToolsExecutor(Gate(), ALLOWLIST[suite_name]) if defense == "gate" else ToolsExecutor()
     p = AgentPipeline([SystemMessage(load_system_message(None)), InitQuery(), llm, ToolsExecutionLoop([executor, llm])])

@@ -1,0 +1,42 @@
+{
+ "gpt-4o-mini": {
+  "attackerCalls": 18,
+  "attackerCallsBlocked": 18,
+  "leakRuns": 9,
+  "leakRunsStopped": 9,
+  "benignRuns": 28,
+  "benignRunsWithBlock": 0,
+  "confirmRuns": 2,
+  "confirmRunsWithBlock": 1
+ },
+ "gpt-5.4-mini": {
+  "attackerCalls": 1,
+  "attackerCallsBlocked": 1,
+  "leakRuns": 1,
+  "leakRunsStopped": 1,
+  "benignRuns": 28,
+  "benignRunsWithBlock": 0,
+  "confirmRuns": 2,
+  "confirmRunsWithBlock": 1
+ },
+ "gpt-4.1-nano": {
+  "attackerCalls": 2,
+  "attackerCallsBlocked": 2,
+  "leakRuns": 1,
+  "leakRunsStopped": 1,
+  "benignRuns": 28,
+  "benignRunsWithBlock": 0,
+  "confirmRuns": 2,
+  "confirmRunsWithBlock": 1
+ },
+ "total": {
+  "attackerCalls": 21,
+  "attackerCallsBlocked": 21,
+  "leakRuns": 11,
+  "leakRunsStopped": 11,
+  "benignRuns": 84,
+  "benignRunsWithBlock": 0,
+  "confirmRuns": 6,
+  "confirmRunsWithBlock": 3
+ }
+}

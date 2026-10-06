@@ -7,12 +7,14 @@
  */
 export const WINDOW = 12
 
-const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '')
+// case-folded, compatibility-normalised letters and digits of any script (Hangul, Cyrillic…)
+const norm = (s: string) => s.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '')
 
+/** 53-bit fingerprint (two independent 32-bit FNV-style hashes), so false matches stay negligible at megabyte scale */
 function hash(s: string, from: number, len: number): number {
-  let h = 2166136261
-  for (let i = from; i < from + len; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619)
-  return h >>> 0
+  let a = 2166136261, b = 0x811c9dc5 ^ 0x5bd1e995
+  for (let i = from; i < from + len; i++) { const c = s.charCodeAt(i); a = Math.imul(a ^ c, 16777619); b = Math.imul(b ^ c, 0x01000193) + 0x9e3779b9 | 0 }
+  return (a >>> 0) * 2097152 + ((b >>> 0) & 0x1fffff)
 }
 
 const SHORT_SECRET_PATTERNS: RegExp[] = [

@@ -109,8 +109,8 @@ describe('AC3/AC4 URL exfiltration', () => {
     const ctx = { instruction: 'check data.maplefalls.gov for the permit list', allowlist: [], taint }
     expect(decide({ tool: fetchUrl, args: { url: 'https://data.maplefalls.gov/permits' } }, ctx).action).toBe('allow')
     expect(decide({ tool: send, args: { to: 'x@x.data.maplefalls.gov', body: 'hi' } }, ctx).action).toBe('block')
-    // a plain link visit (no query) carries nothing private: R6
-    expect(decide({ tool: fetchUrl, args: { url: 'https://x.data.maplefalls.gov/permits' } }, ctx).rule).toBe('R6')
+    // a link the agent built itself (not copied from content) goes to the user
+    expect(decide({ tool: fetchUrl, args: { url: 'https://x.data.maplefalls.gov/permits' } }, ctx).action).toBe('block')
     expect(decide({ tool: fetchUrl, args: { url: 'https://data.maplefalls.gov/permits?d=1' } }, ctx).action).toBe('block')
   })
 })

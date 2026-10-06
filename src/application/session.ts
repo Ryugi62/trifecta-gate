@@ -8,7 +8,7 @@ export interface GateOptions {
   allowlist?: string[]
   /** admin labels per tool name; replace the keyword classifier for that tool */
   labelOverrides?: Record<string, Leg[]>
-  /** start as if private data were already in the conversation (e.g. a system prompt with internal data) */
+  /** treat the conversation as private from the first turn (default true: system prompts, pasted notes and workspace context are private); set false for public-only browsing agents */
   startPrivate?: boolean
   now?: () => number
 }
@@ -30,7 +30,7 @@ export class GateSession {
 
   constructor(instruction: string, allowlistOrOptions: string[] | GateOptions = [], now?: () => number, labelOverrides?: Record<string, Leg[]>) {
     const o: GateOptions = Array.isArray(allowlistOrOptions) ? { allowlist: allowlistOrOptions, now, labelOverrides } : allowlistOrOptions
-    this.opts = { allowlist: o.allowlist ?? [], labelOverrides: o.labelOverrides ?? {}, startPrivate: o.startPrivate ?? false, now: o.now ?? (() => 0) }
+    this.opts = { allowlist: o.allowlist ?? [], labelOverrides: o.labelOverrides ?? {}, startPrivate: o.startPrivate ?? true, now: o.now ?? (() => 0) }
     if (this.opts.startPrivate) this.taint.privateSeen = true
     this.addUserTurn(instruction)
   }
@@ -54,7 +54,7 @@ export class GateSession {
   check(tool: ToolSpec, args: Record<string, unknown>): Decision {
     const t0 = this.opts.now()
     const d = decide({ tool, args }, this.ctx(), this.legsOf(tool))
-    this.log.push({ step: ++this.step, tool: tool.name, kind: 'call', legs: [...this.legsOf(tool)], decision: { action: d.action, rule: d.rule, reason: d.reason, destinations: d.destinations.map(shownDestination) }, ms: this.opts.now() - t0 })
+    this.log.push({ step: ++this.step, tool: tool.name, kind: 'call', legs: [...this.legsOf(tool)], decision: { action: d.action, rule: d.rule, reason: d.reason, destinations: d.destinations.map((x) => shownDestination(x, true)) }, ms: this.opts.now() - t0 })
     return d
   }
 

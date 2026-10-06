@@ -38,3 +38,15 @@ describe('MCP proxy ordering', () => {
     expect(JSON.stringify(after.toClient[1])).toContain('BLOCKED')
   })
 })
+
+describe('MCP proxy confirmations', () => {
+  it('a destination confirmed through the approval UI goes through; others stay blocked', () => {
+    const p = new ProxyCore(['*.town.gov'])
+    p.fromClient({ jsonrpc: '2.0', id: 1, method: 'tools/list' }); p.fromServer(listReply)
+    p.fromClient({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'read_inbox', arguments: {} } })
+    p.fromServer({ jsonrpc: '2.0', id: 2, result: { content: [{ type: 'text', text: 'From resident.lee@mailbox.example: pothole' }] } })
+    expect(p.fromClient({ jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'send_email', arguments: { to: 'resident.lee@mailbox.example' } } }).toServer).toHaveLength(0)
+    p.confirm('resident.lee@mailbox.example')
+    expect(p.fromClient({ jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'send_email', arguments: { to: 'resident.lee@mailbox.example' } } }).toServer).toHaveLength(1)
+  })
+})
