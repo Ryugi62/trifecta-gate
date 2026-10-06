@@ -1,0 +1,222 @@
+[
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "cancel_order",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "issue_card",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": true
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_payment_source_using_token",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_order_status",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_bill",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_customer",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": true
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "Omar-V2/mcp-ical",
+  "name": "list_calendars",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_reserves",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "tugcantopaloglu/godot-mcp",
+  "name": "game_performance",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_terrain_set_heights_region",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "update_company",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "list_atf_tests",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "achiya-automation/safari-mcp",
+  "name": "safari_reload",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_search_by_name",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_notifications",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "create_pix_charge_due",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "aartiq/servicenow-mcp",
+  "name": "create_ai_agent",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "AnkleBreaker-Studio/unity-mcp-server",
+  "name": "unity_search_assets",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "unfreeze_account",
+  "split": "dev",
+  "gemini": {
+   "private": false,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ },
+ {
+  "repo": "codespar/mcp-dev-latam",
+  "name": "get_pix_automatico",
+  "split": "dev",
+  "gemini": {
+   "private": true,
+   "untrusted": false,
+   "outbound": false
+  },
+  "model": "gemini-2.5-flash"
+ }
+]

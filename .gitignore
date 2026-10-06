@@ -6,3 +6,5 @@ deck/assets
 deck/out*
 deck/
 data/old/
+agentdojo-eval/.venv/
+agentdojo-eval/runs/

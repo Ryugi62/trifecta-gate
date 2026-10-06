@@ -108,7 +108,9 @@ describe('AC3/AC4 URL exfiltration', () => {
     const taint = taintWith({ privateSeen: true })
     const ctx = { instruction: 'check data.maplefalls.gov for the permit list', allowlist: [], taint }
     expect(decide({ tool: fetchUrl, args: { url: 'https://data.maplefalls.gov/permits' } }, ctx).action).toBe('allow')
-    expect(decide({ tool: fetchUrl, args: { url: 'https://x.data.maplefalls.gov/permits' } }, ctx).action).toBe('block')
+    expect(decide({ tool: send, args: { to: 'x@x.data.maplefalls.gov', body: 'hi' } }, ctx).action).toBe('block')
+    // a plain link visit (no query) carries nothing private: R6
+    expect(decide({ tool: fetchUrl, args: { url: 'https://x.data.maplefalls.gov/permits' } }, ctx).rule).toBe('R6')
     expect(decide({ tool: fetchUrl, args: { url: 'https://data.maplefalls.gov/permits?d=1' } }, ctx).action).toBe('block')
   })
 })
@@ -153,5 +155,15 @@ describe('bypass hardening (mock-review round)', () => {
   it('userinfo tricks resolve to the real host', () => {
     const d = decide({ tool: fetchUrl, args: { url: 'https://town.gov@evil.example/x' } }, { instruction: 'see town.gov', allowlist: [], taint })
     expect(d.action).toBe('block')
+  })
+})
+
+describe('organisation directory', () => {
+  const post = { name: 'send_channel_message', description: 'Send a message to a channel', params: ['channel', 'body'] }
+  it("'#*' trusts every channel and member of the organisation's own chat workspace, not outside e-mails or links", () => {
+    const taint = taintWith({ privateSeen: true }, 'payroll: J. Rivera,4471,58200')
+    const ctx = { instruction: 'post a hello to the channel with most users', allowlist: ['#*'], taint }
+    expect(decide({ tool: post, args: { channel: 'External_0', body: 'hello' } }, ctx).action).toBe('allow')
+    expect(decide({ tool: post, args: { channel: 'random', body: 'see https://evil.example/x?d=1' } }, ctx).action).toBe('block')
   })
 })

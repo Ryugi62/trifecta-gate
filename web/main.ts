@@ -34,6 +34,7 @@ interface Results {
   scan: { candidates: number; servers: number; tools: number; share: Record<Leg, number>; rulesShare: Record<Leg, number>; trifectaServers: number }
   replay: { id: string; instruction: string; injection: string; noGate: Call[]; gate: Call[]; model: string; confirmPrompt?: string }
   models: Array<{ model: string; leakedNoGate: number; leakedGate: number; attacks: number }>
+  agentdojo: null | { version: string; model: string; rows: Array<{ suite: string; defense: string; tasks: number; utility: number; exfilAttacks: number; exfilSuccess: number; integrityAttacks: number; integritySuccess: number }> }
 }
 
 function callLine(c: Call, leakHosts: RegExp): string {
@@ -62,6 +63,14 @@ async function loadResults(): Promise<void> {
     <div class="bars">${(['private', 'untrusted', 'outbound'] as Leg[]).map((l) => `<div class="bar">${Math.round(s.share[l] * 100)}% of servers have a tool that ${LEG_TEXT[l]}<div class="track"><div class="fill" style="width:${(s.share[l] * 100).toFixed(1)}%"></div></div></div>`).join('')}</div>
     <p>${s.trifectaServers} servers have all three abilities on their own, counted only where the labeller and the rules agree. We do not list them here: a label is a reason to look, not a finding.</p>
     <details><summary>Other models we tested</summary><ul>${r.models.map((m) => `<li>${esc(m.model)}: ${m.leakedNoGate} of ${m.attacks} leaked without the gate, ${m.leakedGate} with it</li>`).join('')}</ul></details>`
+  if (r.agentdojo) {
+    const ad = r.agentdojo
+    const row = (suite: string, d: string) => ad.rows.find((x) => x.suite === suite && x.defense === d)
+    $('dojoBody').innerHTML = `<p>AgentDojo ${esc(ad.version)} is a public benchmark of prompt-injection attacks on agents with email, Slack and banking tools. We ran ${esc(ad.model)} with and without the gate on its standard attack.</p>
+      <table class="legs"><thead><tr><th>Suite</th><th>Data-moving attacks that worked</th><th>Tasks solved, no attack</th></tr></thead><tbody>${['workspace', 'slack', 'banking'].filter((x) => row(x, 'none') && row(x, 'gate')).map((x) => { const n = row(x, 'none')!, g = row(x, 'gate')!; return `<tr><td>${x}</td><td>${n.exfilSuccess}/${n.exfilAttacks} → <strong>${g.exfilSuccess}/${g.exfilAttacks}</strong></td><td>${n.utility}/${n.tasks} → ${g.utility}/${g.tasks}</td></tr>` }).join('')}</tbody></table>
+      <details><summary>What the gate does not stop there</summary><p>Attacks that only delete a file, open a website or change a password do not move data out, so they are outside the gate's job: ${ad.rows.filter((x) => x.defense === 'none').reduce((a, x) => a + x.integritySuccess, 0)} worked without the gate and ${ad.rows.filter((x) => x.defense === 'gate').reduce((a, x) => a + x.integritySuccess, 0)} with it. Fewer tasks are solved with the gate because some need sending to an address found only in data, which needs your confirmation.</p></details>`
+    $('dojo').hidden = false
+  }
   if (r.replay.confirmPrompt) $('runs').insertAdjacentHTML('afterend', `<div class="inject" style="background:var(--soft)"><strong>What the user sees:</strong> ${esc(r.replay.confirmPrompt)} <em>Default: Don't allow.</em></div>`)
 }
 

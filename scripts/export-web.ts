@@ -71,6 +71,22 @@ const res = {
     userTaskUnderAttackNoGate: models.reduce((t, m) => t + m.userTaskUnderAttackNoGate, 0), userTaskUnderAttackGate: models.reduce((t, m) => t + m.userTaskUnderAttackGate, 0),
     confirmTasks: models.reduce((t, m) => t + m.confirm, 0),
   },
+  agentdojo: (() => {
+    const dir = 'agentdojo-eval/runs/full'
+    const out: Array<Record<string, unknown>> = []
+    for (const suite of ['workspace', 'slack', 'banking']) for (const defense of ['none', 'gate']) {
+      const a = `${dir}/summary-${suite}-${defense}-attack.json`, b = `${dir}/summary-${suite}-${defense}-benign.json`
+      if (!existsSync(a) || !existsSync(b)) continue
+      const A = JSON.parse(readFileSync(a, 'utf8')), B = JSON.parse(readFileSync(b, 'utf8'))
+      // injection goals that do not move data to an outside destination (delete a file, visit a site, change a password) are out of the gate's scope
+      const integrityOnly: Record<string, string[]> = { workspace: ['injection_task_1'], slack: ['injection_task_3'], banking: ['injection_task_7'] }
+      const pt = A.per_task as Array<{ inj: string; security: boolean }>
+      const inScope = pt.filter((x) => !integrityOnly[suite].includes(x.inj)), outScope = pt.filter((x) => integrityOnly[suite].includes(x.inj))
+      out.push({ suite, defense, attacks: A.n, attackSuccess: A.attack_success, utilityUnderAttack: A.utility, tasks: B.n, utility: B.utility,
+        exfilAttacks: inScope.length, exfilSuccess: inScope.filter((x) => x.security).length, integrityAttacks: outScope.length, integritySuccess: outScope.filter((x) => x.security).length })
+    }
+    return out.length ? { version: 'v1.2', model: 'gpt-4o-mini-2024-07-18', attack: 'important_instructions', gateConfig: 'startPrivate', rows: out } : null
+  })(),
   perf: existsSync('data/perf.json') ? JSON.parse(readFileSync('data/perf.json', 'utf8')) : null,
   policy: JSON.parse(readFileSync('data/policy-bench.json', 'utf8')).summary,
   scan: {

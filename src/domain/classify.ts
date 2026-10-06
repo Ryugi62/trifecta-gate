@@ -56,7 +56,9 @@ export function classifyTool(spec: ToolSpec): Classification {
     for (const t of nt) if (R.createTargets.has(t)) add('outbound', `name:create+${t}`)
   }
   const dateRange = params.includes('from') && params.includes('to')
-  for (const p of params) if (R.destinationParams.has(p) && !(p === 'email' || p === 'address') && !(p === 'to' && dateRange)) add('outbound', `param:${p}`)
+  // a destination-like parameter on a reading tool (get_users_in_channel(channel)) is a filter, not a recipient
+  const readsByName = R.readVerbs.has(nt[0] ?? '') && !R.addressOnly.has(nt[0] ?? '')
+  for (const p of params) if (!readsByName && R.destinationParams.has(p) && !(p === 'email' || p === 'address') && !(p === 'to' && dateRange)) add('outbound', `param:${p}`)
   if (canAddress && all.some((t) => R.readVerbs.has(t) || R.addressOnly.has(t))) add('outbound', 'param:url-capable')
 
   // reading legs need a read verb (or the tool takes a URL and returns content)
@@ -111,4 +113,10 @@ export function isInternalWrite(spec: ToolSpec): boolean {
   if (nt.some((t) => ['send', 'post', 'publish', 'share', 'forward', 'reply', 'upload', 'invite', 'notify', 'deliver', 'dispatch', 'tweet', 'comment', 'email', 'message', 'run', 'exec', 'execute', 'fetch', 'http', 'request', 'pay', 'transfer'].includes(t))) return false
   if (nt.some((t) => ['issue', 'comment', 'pr', 'gist', 'post', 'tweet', 'page', 'discussion', 'review', 'public', 'publish', 'webhook'].includes(t))) return false
   return WRITE_VERBS.has(nt[0] ?? '')
+}
+
+/** A tool whose only outbound ability is fetching a URL (get_webpage, fetch_url): it sends nothing but the URL itself. */
+export function isFetchOnly(spec: ToolSpec): boolean {
+  const ev = classifyTool(spec).evidence.outbound
+  return ev.length > 0 && ev.every((e) => /^(param:(url|uri|href|link|url-capable|endpoint|target_url)|name:(fetch|browse|visit|navigate|download|curl|http|request))$/.test(e))
 }

@@ -15,6 +15,8 @@ recognise malicious wording.
 - S4 Gate decision latency p95 < 1 ms on the policy benchmark (no network, no LLM).
 - S5 `npm test` green, `npm run typecheck` green, `npm run layers` green.
 
+- S6 (added after review) adaptive attacks written against the rules (`tests/redteam.test.ts`) all blocked; gate check p95 < 5 ms with 5 MB of private text; AgentDojo v1.2 (gpt-4o-mini, important_instructions) attack success and utility reported for none vs gate.
+
 ## §2 Non-goals
 - Not a content classifier for prompt injection; it never asks an LLM whether text is malicious.
 - Does not stop an agent from sending wrong data to a destination the user named (out of scope, stated as a limit).
@@ -34,12 +36,16 @@ recognise malicious wording.
 | `Decision` | `allow` · `block` with a reason and the rule id |
 | `Fix` | the smallest set of tools whose removal breaks the trifecta |
 
-## §4 Model / rules
-- R1 `outbound` call whose destination provenance is `user` → allow.
-- R2 `outbound` call with provenance `content` while `privateSeen` → **block** ("destination came from content, private data in context").
-- R3 `outbound` call with provenance `content` while not `privateSeen` → allow (nothing private to leak).
-- R4 any `outbound` call whose arguments contain a ≥12-character verbatim fragment of a private tool result, with provenance `content` → block (even if taint tracking was bypassed).
-- Destinations are normalised: e-mail lower-cased; URL → host without `www.`; a host is user-provenance if the user named the host or a parent domain.
+## §4 Model / rules (v2, after the 2026-10-06 mock review)
+- Destinations = e-mails, channels and URLs in **any** argument (links inside bodies, URLs nested in query strings); e-mails inside content fields (body, text…) are not recipients.
+- User provenance = exact e-mail the user wrote (any turn); exact URL the user wrote or a deeper path without a new query; a host the user named (that host only, no query/fragment, never a shared platform); marked or quoted channel names, ID-like tokens, capitalised names mid-sentence; admin allowlist (`*.x` for subdomains); exact confirmed destinations.
+- R0 not outbound → allow. Unlabelled tools: outbound if any address is in their arguments; their results count as private (fail closed).
+- R1 every destination user-provenance → allow (except R4 on URLs trusted only by a bare host).
+- R5 internal write (create/update… with no outside recipient, not a publishing tool) → allow.
+- R3 no private data in play → allow. `startPrivate` makes the conversation private from the first turn (used for AgentDojo).
+- R6 fetch-only tool visiting a plain link (no query, not shared) whose URL carries no private fingerprint → allow.
+- R4 private fingerprints (12-char normalised windows, password/ID patterns; raw, URL-, base64-, hex-decoded, joined across fields) in a call to a non-user destination → block.
+- R2 otherwise, with private data in play → block; the gate writes the confirmation prompt naming where the address first appeared. Reasons, prompts and logs never contain query strings or private text.
 
 ## §5 Use cases
 - UC1 Classify tools. Given a tool list, When classified, Then each tool has legs + evidence and the set reports `trifecta: true|false`.

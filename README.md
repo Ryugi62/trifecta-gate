@@ -29,9 +29,10 @@ https://ryugi62.github.io/trifecta-gate/demo.mp4 · built for [2nd LaserHacks 20
 |---|---|---|
 | R1 | every destination was written by the user (any turn), is on the admin allowlist, or the user confirmed it | allow |
 | R2 | a destination did not come from the user while private data is in play | **block**; the gate writes the confirmation prompt, naming where the address first appeared |
-| R3 | no private data in play yet | allow (browsing keeps working) |
+| R3 | no private data in play yet (`startPrivate: true` makes the conversation private from the start) | allow (browsing keeps working) |
 | R4 | fingerprints of private data (12-character runs, passwords, IDs) appear in the call — case-folded, URL/base64/hex-decoded, joined across fields — and the destination is weakly trusted or not trusted | **block** |
 | R5 | the tool only writes to the user's own workspace (calendar entry, file) with no outside recipient | allow |
+| R6 | a fetch-only tool visits a plain link (no query string, not a shared platform) that carries no private fingerprint | allow |
 
 - **Destinations** are e-mail addresses, channels and URLs in *any* argument, including links inside message bodies (link previews
   and images fetch them) and URLs nested in query strings (open redirects).

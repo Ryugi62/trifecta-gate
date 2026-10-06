@@ -1,4 +1,4 @@
-import { classifyTool, isInternalWrite } from './classify'
+import { classifyTool, isFetchOnly, isInternalWrite } from './classify'
 import { secretsIndex, type SecretIndex } from './secrets'
 import type { ToolSpec } from './types'
 
@@ -23,7 +23,7 @@ export const emptyTaint = (): Taint => ({ privateSeen: false, untrustedSeen: fal
 
 export interface Context { instruction: string; allowlist: string[]; confirmed?: string[]; taint: Taint }
 export interface ProposedCall { tool: ToolSpec; args: Record<string, unknown> }
-export type Rule = 'R0' | 'R1' | 'R2' | 'R3' | 'R4' | 'R5'
+export type Rule = 'R0' | 'R1' | 'R2' | 'R3' | 'R4' | 'R5' | 'R6'
 export interface Decision {
   action: 'allow' | 'block'
   rule: Rule
@@ -35,7 +35,7 @@ export interface Decision {
 
 const EMAIL = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi
 const URL_RE = /\bhttps?:\/\/[^\s"'<>)\]]+/gi
-const HOST_RE = /(?<![@\w/.-])(?:[a-z0-9-]+\.)+[a-z]{2,}\b(?![@/])/gi
+const HOST_RE = /(?<![@\w/.-])(?:[A-Za-z0-9-]+\.)+[a-z]{2,}\b(?![@/])/g
 const DEST_KEY = /^(to|cc|bcc|bcc_list|cc_list|recipients?|recipient_email|recipient_emails|attendees?|invitees?|participants?|members?|share_with|shared_with|forward_to|forwarding|reply_to|assignees?|webhook(_url)?|url|uri|urls|endpoint|href|link|target(_url)?|callback(_url)?|channel(_id|_name)?|chat(_id)?|phone(_number)?|number|address|email(_address)?|emails|destination|host(name)?|domain|iban|account|user|users|user_id)$/i
 const CONTENT_KEY = /^(body|text|content|message|msg|subject|description|note|notes|title|summary|comment|html|markdown|caption|prompt|query)$/i
 /** platforms where anyone can publish or receive data: naming the host never trusts it (only an exact URL or the admin can) */
@@ -108,7 +108,10 @@ export function trustedFrom(instruction: string, allowlist: string[], confirmed:
   // channel / account names: marked (#name, @name, "name channel"), ID-like tokens, or capitalised names mid-sentence
   const names = new Set<string>()
   for (const m of instruction.matchAll(/(?:^|[\s(])[#@]([A-Za-z0-9][\w.-]*)/g)) names.add(m[1].replace(/[.,]$/, '').toLowerCase())
-  for (const m of instruction.matchAll(/([A-Za-z0-9][\w-]*)\s+channel\b/gi)) names.add(m[1].toLowerCase())
+  for (const m of instruction.matchAll(/['"‘“]?([A-Za-z0-9][\w-]*)['"’”]?\s+channel\b/gi)) names.add(m[1].toLowerCase())
+  for (const m of instruction.matchAll(/channel\s+['"‘“]?([A-Za-z0-9][\w-]*)/gi)) names.add(m[1].toLowerCase())
+  // anything the user put in quotes
+  for (const m of instruction.matchAll(/['"‘“]([^'"’”\n]{2,60})['"’”]/g)) names.add(m[1].trim().toLowerCase().replace(/^#/, ''))
   for (const m of noEmails.matchAll(/\b[A-Za-z0-9]*\d[A-Za-z0-9-]{4,}\b/g)) if (/[a-z]/i.test(m[0]) || m[0].length >= 6) names.add(m[0].toLowerCase())
   for (const sentence of instruction.split(/[.!?\n]+/)) {
     const words = sentence.trim().split(/\s+/)
@@ -122,6 +125,7 @@ const underHost = (host: string, parent: string) => host === parent || host.ends
 function allowMatches(d: Destination, allow: string[]): boolean {
   for (const a of allow) {
     if (a.includes('@')) { if (d.kind === 'email' && d.value === a) return true; continue }
+    if (a === '#*') { if (d.kind === 'name') return true; continue } // every channel/member of the organisation's own chat workspace
     if (a.startsWith('#')) { if (d.kind === 'name' && d.value === a.slice(1)) return true; continue }
     if (a.startsWith('*.')) { const p = a.slice(2); if (d.host && underHost(d.host, p)) return true; continue }
     if (d.host && d.host === a) return true
@@ -170,12 +174,22 @@ export function decide(call: ProposedCall, ctx: Context, legsOverride?: Readonly
   const dests = dests0.map((d) => ({ ...d, provenance: provenanceOf(d, trusted), origin: originOf(d, ctx.taint) }))
   const fromContent = dests.filter((d) => d.provenance === 'content')
   const leak = ctx.taint.privateSeen ? ctx.taint.secrets.find(call.args) : null
-  if (dests.length > 0 && fromContent.length === 0 && leak && dests.some((d) => bareHostTrust(d, trusted))) {
+  const urlLeak = ctx.taint.privateSeen && dests.some((d) => bareHostTrust(d, trusted)) ? ctx.taint.secrets.find({ urls: dests.filter((d) => bareHostTrust(d, trusted)).map((d) => d.url ?? '') }) : null
+  if (dests.length > 0 && fromContent.length === 0 && urlLeak) {
     return { action: 'block', rule: 'R4', reason: `the call carries private data (${leak}) in a URL path on a host the user only named in passing`, destinations: dests }
   }
   if (dests.length > 0 && fromContent.length === 0) return { action: 'allow', rule: 'R1', reason: 'every destination came from the user, the allowlist or a confirmation', destinations: dests }
   if (dests.length === 0 && isInternalWrite(call.tool)) return { action: 'allow', rule: 'R5', reason: 'writes to the user\'s own workspace with no outside recipient', destinations: [] }
   if (!ctx.taint.privateSeen) return { action: 'allow', rule: 'R3', reason: 'no private data in play yet, nothing to leak', destinations: dests }
+  // R6: visiting a plain link (no query string, not a shared platform) with a fetch-only tool sends nothing but the link;
+  // links copied verbatim from content are fine, newly built links are checked for private fingerprints
+  if (isFetchOnly(call.tool) && fromContent.length > 0 && fromContent.every((d) => d.kind === 'host' && d.url && !/[?#]/.test(d.url) && !isShared(d.value))) {
+    const built = fromContent.filter((d) => !ctx.taint.origins.has(d.url!))
+    // the host is the destination itself, not data: check only the path the agent built
+    const pathOf = (u: string) => { try { return new URL(u).pathname } catch { return u } }
+    const pathLeak = built.length ? ctx.taint.secrets.find({ paths: built.map((d) => pathOf(d.url!)) }) : null
+    if (!pathLeak) return { action: 'allow', rule: 'R6', reason: 'a plain link visit carries no private data', destinations: dests }
+  }
   const who = fromContent.length ? fromContent.map(shownDestination).join(', ') : 'an unnamed destination'
   const where = fromContent.map((d) => d.origin).filter(Boolean)
   const confirmPrompt = fromContent.length
