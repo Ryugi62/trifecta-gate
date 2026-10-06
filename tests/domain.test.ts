@@ -162,8 +162,18 @@ describe('organisation directory', () => {
   const post = { name: 'send_channel_message', description: 'Send a message to a channel', params: ['channel', 'body'] }
   it("'#*' trusts every channel and member of the organisation's own chat workspace, not outside e-mails or links", () => {
     const taint = taintWith({ privateSeen: true }, 'payroll: J. Rivera,4471,58200')
+    taint.directory.add('external_0'); taint.directory.add('random')
     const ctx = { instruction: 'post a hello to the channel with most users', allowlist: ['#*'], taint }
     expect(decide({ tool: post, args: { channel: 'External_0', body: 'hello' } }, ctx).action).toBe('allow')
     expect(decide({ tool: post, args: { channel: 'random', body: 'see https://evil.example/x?d=1' } }, ctx).action).toBe('block')
+  })
+})
+
+describe("'#*' needs the organisation's directory", () => {
+  const post = { name: 'send_channel_message', description: 'Send a message to a channel', params: ['channel', 'body'] }
+  it('a channel or member never listed by a directory tool is not trusted', () => {
+    const taint = taintWith({ privateSeen: true }); taint.directory.add('general')
+    expect(decide({ tool: post, args: { channel: 'ext-vendor-sync', body: 'x' } }, { instruction: 'post the update', allowlist: ['#*'], taint }).action).toBe('block')
+    expect(decide({ tool: post, args: { channel: 'general', body: 'x' } }, { instruction: 'post the update', allowlist: ['#*'], taint }).action).toBe('allow')
   })
 })

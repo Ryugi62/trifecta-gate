@@ -8,3 +8,5 @@ deck/
 data/old/
 agentdojo-eval/.venv/
 agentdojo-eval/runs/
+__pycache__/
+*.pyc

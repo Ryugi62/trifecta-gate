@@ -18,8 +18,12 @@ export interface Taint {
   secrets: SecretIndex
   /** where each address/host/channel first appeared in a tool result: value -> "tool (step n)" */
   origins: Map<string, string>
+  /** names listed by the organisation's own directory tools (get_channels, get_users…), for the '#*' allowlist entry */
+  directory: Set<string>
+  /** hosts already visited under R6 while private data was in play (one visit per host: link choice cannot spell out data) */
+  r6Hosts: Set<string>
 }
-export const emptyTaint = (): Taint => ({ privateSeen: false, untrustedSeen: false, secrets: secretsIndex(), origins: new Map() })
+export const emptyTaint = (): Taint => ({ privateSeen: false, untrustedSeen: false, secrets: secretsIndex(), origins: new Map(), directory: new Set(), r6Hosts: new Set() })
 
 export interface Context { instruction: string; allowlist: string[]; confirmed?: string[]; taint: Taint }
 export interface ProposedCall { tool: ToolSpec; args: Record<string, unknown> }
@@ -60,7 +64,14 @@ export function normalizeDestination(raw: string): Destination {
   return { kind: 'name', value: s.toLowerCase().replace(/^[#@]/, '') }
 }
 
+/** phoneNumber / channel-id / To.Account -> phone_number / channel_id / to_account */
+export const normKey = (k: string) => k.replace(/([a-z0-9])([A-Z])/g, '$1_$2').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
+const RECIPIENT_TOKENS = new Set(['to', 'cc', 'bcc', 'recipient', 'recipients', 'phone', 'number', 'account', 'iban', 'channel', 'chat', 'user', 'users', 'member', 'members', 'guest', 'guests', 'attendee', 'attendees', 'invitee', 'invitees', 'participant', 'participants', 'email', 'emails', 'address', 'target', 'destination', 'dest', 'webhook', 'url', 'uri', 'urls', 'endpoint', 'href', 'link', 'host', 'hostname', 'domain', 'ip', 'owner', 'repo', 'repository', 'org', 'organization', 'organisation', 'project', 'workspace', 'bucket', 'remote', 'team', 'username', 'handle', 'login', 'assignee', 'assignees', 'reviewer', 'reviewers', 'follower', 'followers', 'forward', 'forwarding', 'reply', 'share', 'shared', 'server', 'payee', 'beneficiary', 'contact', 'contacts'])
+/** a recipient-type argument: any key token names a recipient, address, account or place */
+export const isDestKey = (key: string) => DEST_KEY.test(key) || normKey(key).split('_').some((t) => RECIPIENT_TOKENS.has(t))
+
 function walk(v: unknown, key: string, out: Array<{ key: string; value: string }>): void {
+  key = normKey(key)
   if (typeof v === 'string') out.push({ key, value: v })
   else if (Array.isArray(v)) v.forEach((x) => walk(x, key, out))
   else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) walk(x, k, out)
@@ -88,7 +99,7 @@ export function extractDestinations(args: Record<string, unknown>): Destination[
   const ownerRepo = (() => { const o = vals.find((v) => /^(owner|org|organization|organisation)$/i.test(v.key))?.value; const r = vals.find((v) => /^(repo|repository|project)$/i.test(v.key))?.value; return o && r ? `${o}/${r}` : null })()
   if (ownerRepo) push({ kind: 'name', value: ownerRepo.toLowerCase() }, 'repo')
   for (const { key, value } of vals) {
-    if (DEST_KEY.test(key) && !(ownerRepo && /^(owner|org|organization|organisation|repo|repository|project)$/i.test(key))) for (const part of value.split(/[,;]\s*/).filter(Boolean)) push(normalizeDestination(part), key)
+    if (isDestKey(key) && !(ownerRepo && /^(owner|org|organization|organisation|repo|repository|project)$/i.test(key))) for (const part of value.split(/[,;]\s*/).filter(Boolean)) push(normalizeDestination(part), key)
     // links anywhere (message bodies included): previews, images and redirects fetch them; also //host and bare www.host links
     for (const m of value.match(URL_RE) ?? []) { push(normalizeDestination(m), key); for (const n of nestedUrls(m)) push(normalizeDestination(n), key) }
     for (const m of value.matchAll(SCHEMELESS)) push(normalizeDestination(`https://${m[1]}`), key)
@@ -101,7 +112,7 @@ export function extractDestinations(args: Record<string, unknown>): Destination[
     if (!CONTENT_KEY.test(key)) {
       for (const m of value.match(EMAIL) ?? []) push(normalizeDestination(m), key)
       // bare host names and IP addresses in non-content fields (target_host: evil.example, 203.0.113.7:8443)
-      if (!DEST_KEY.test(key)) for (const m of value.replace(URL_RE, ' ').replace(EMAIL, ' ').match(BARE_HOST) ?? []) {
+      if (!isDestKey(key)) for (const m of value.replace(URL_RE, ' ').replace(EMAIL, ' ').match(BARE_HOST) ?? []) {
         const tld = m.split(':')[0].split('.').pop() ?? ''
         if (/^\d+$/.test(tld) || !FILE_EXT.has(tld)) push(normalizeDestination(`https://${m}`), key)
       }
@@ -110,7 +121,7 @@ export function extractDestinations(args: Record<string, unknown>): Destination[
   return out
 }
 
-export interface Trusted { emails: Set<string>; hosts: Set<string>; urls: string[]; names: Set<string>; allow: string[]; confirmed: Set<string> }
+export interface Trusted { emails: Set<string>; hosts: Set<string>; urls: string[]; names: Set<string>; allow: string[]; confirmed: Set<string>; directory?: Set<string> }
 
 export function trustedFrom(instruction: string, allowlist: string[], confirmed: string[] = []): Trusted {
   const emails = new Set((instruction.match(EMAIL) ?? []).map((x) => x.toLowerCase()))
@@ -138,11 +149,11 @@ export function trustedFrom(instruction: string, allowlist: string[], confirmed:
 
 const underHost = (host: string, parent: string) => host === parent || host.endsWith(`.${parent}`)
 
-function allowMatches(d: Destination, allow: string[]): boolean {
+function allowMatches(d: Destination, allow: string[], directory?: Set<string>): boolean {
   for (const a of allow) {
     if (a.includes('@')) { if (d.kind === 'email' && d.value === a) return true; continue }
     // every channel/member of the organisation's own chat workspace: chat-type fields only, never payments, phones or repos
-    if (a === '#*') { if (d.kind === 'name' && /^(channel|channel_id|channel_name|recipient|recipients|user|users|member|members|chat|chat_id|invitees?|participants?)$/i.test(d.key ?? '') && !/^[A-Z]{2}\d{2}/i.test(d.value) && !/^\+?[\d ()-]{7,}$/.test(d.value)) return true; continue }
+    if (a === '#*') { if (d.kind === 'name' && !!directory && directory.has(d.value) && normKey(d.key ?? '').split('_').some((t) => ['channel', 'recipient', 'recipients', 'user', 'users', 'member', 'members', 'chat', 'invitee', 'invitees', 'participant', 'participants'].includes(t)) && !normKey(d.key ?? '').split('_').some((t) => ['phone', 'number', 'account', 'iban', 'email', 'address'].includes(t)) && !/^[A-Z]{2}\d{2}/i.test(d.value) && !/^\+?[\d ()-]{7,}$/.test(d.value)) return true; continue }
     if (a.startsWith('#')) { if (d.kind === 'name' && d.value === a.slice(1)) return true; continue }
     if (a.startsWith('*.')) { const p = a.slice(2); if (d.host && underHost(d.host, p)) return true; continue }
     if (d.host && d.host === a) return true
@@ -153,12 +164,12 @@ function allowMatches(d: Destination, allow: string[]): boolean {
 
 /** trusted only because the user named the bare host (weaker than an exact URL or the allowlist) */
 export function bareHostTrust(d: Destination, t: Trusted): boolean {
-  return d.kind === 'host' && t.hosts.has(d.value) && !/[?#]/.test(d.url ?? '') && !allowMatches(d, t.allow) && !t.urls.includes(d.url ?? '')
+  return d.kind === 'host' && t.hosts.has(d.value) && !/[?#]/.test(d.url ?? '') && !allowMatches(d, t.allow, t.directory) && !t.urls.includes(d.url ?? '')
 }
 
 export function provenanceOf(d: Destination, t: Trusted): Provenance {
   if (t.confirmed.has(d.url ?? d.value) || (d.kind !== 'host' && t.confirmed.has(d.value))) return 'user'
-  if (allowMatches(d, t.allow)) return 'user'
+  if (allowMatches(d, t.allow, t.directory)) return 'user'
   if (d.kind === 'email') return t.emails.has(d.value) ? 'user' : 'content'
   if (d.kind === 'host') {
     const u = d.url ?? ''
@@ -187,7 +198,7 @@ export function shownDestination(d: Destination, forLog = false): string {
 export function decide(call: ProposedCall, ctx: Context, legsOverride?: ReadonlySet<string>): Decision {
   const legs = legsOverride ?? classifyTool(call.tool).legs
   const dests0 = extractDestinations(call.args)
-  const trusted0 = trustedFrom(ctx.instruction, ctx.allowlist, ctx.confirmed)
+  const trusted0 = { ...trustedFrom(ctx.instruction, ctx.allowlist, ctx.confirmed), directory: ctx.taint.directory }
   const contentUrl = dests0.some((d) => d.kind === 'host' && provenanceOf(d, trusted0) === 'content')
   // fail closed: unlabelled tools act as outbound once private data is in play (or when they carry an address);
   // writes into someone's repository/project are outbound; any tool handed a link nobody named is outbound after a private read
@@ -197,10 +208,13 @@ export function decide(call: ProposedCall, ctx: Context, legsOverride?: Readonly
   const trusted = trusted0
   const dests = dests0.map((d) => ({ ...d, provenance: provenanceOf(d, trusted), origin: originOf(d, ctx.taint) }))
   const fromContent = dests.filter((d) => d.provenance === 'content')
-  const leak = ctx.taint.privateSeen ? ctx.taint.secrets.find(call.args) : null
+  const stripDest = (v: unknown): unknown => typeof v === 'string' ? v.replace(URL_RE, (u) => { try { const x = new URL(cleanUrl(u)); return ` ${x.pathname} ${x.search} ` } catch { return ' ' } }).replace(EMAIL, ' ') : Array.isArray(v) ? v.map(stripDest) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, isDestKey(k) && typeof x === 'string' && !/https?:\/\//i.test(x) ? '' : stripDest(x)])) : v
+  const leak = ctx.taint.privateSeen ? ctx.taint.secrets.find(stripDest(call.args) as Record<string, unknown>) : null
   const urlLeak = ctx.taint.privateSeen && dests.some((d) => bareHostTrust(d, trusted)) ? ctx.taint.secrets.find({ urls: dests.filter((d) => bareHostTrust(d, trusted)).map((d) => d.url ?? '') }) : null
-  if (dests.length > 0 && fromContent.length === 0 && urlLeak) {
-    return { action: 'block', rule: 'R4', reason: `the call carries private data (${leak}) in a URL path on a host the user only named in passing`, destinations: dests }
+  // a host the user only named in passing: fine to fetch, but data-carrying calls need the exact URL or the allowlist
+  const dataToBareHost = ctx.taint.privateSeen && !isFetchOnly(call.tool) && dests.some((d) => bareHostTrust(d, trusted) && (() => { try { return new URL(d.url ?? '').pathname.length > 1 } catch { return false } })())
+  if (dests.length > 0 && fromContent.length === 0 && (urlLeak || dataToBareHost)) {
+    return { action: 'block', rule: 'R4', reason: urlLeak ? `the call carries private data (${urlLeak}) in a URL path on a host the user only named in passing` : 'a host the user only named in passing receives data at a path the user did not write', destinations: dests }
   }
   if (dests.length > 0 && fromContent.length === 0) return { action: 'allow', rule: 'R1', reason: 'every destination came from the user, the allowlist or a confirmation', destinations: dests }
   const writesExisting = !/^(create|add|schedule|new|make)/i.test(call.tool.name)
@@ -209,9 +223,12 @@ export function decide(call: ProposedCall, ctx: Context, legsOverride?: Readonly
   // R6: a fetch-only tool visiting a link copied character for character from content (no query string, not a shared platform)
   // sends nothing the agent chose; any link the agent built itself goes to the user
   if (isFetchOnly(call.tool) && fromContent.length > 0 && fromContent.every((d) => d.kind === 'host' && d.url && !/[?#]/.test(d.url) && !isShared(d.value) && ctx.taint.origins.has(d.url))) {
-    return { action: 'allow', rule: 'R6', reason: 'visiting a link exactly as it appeared in content', destinations: dests }
+    if (fromContent.every((d) => !ctx.taint.r6Hosts.has(d.value))) {
+      fromContent.forEach((d) => ctx.taint.r6Hosts.add(d.value))
+      return { action: 'allow', rule: 'R6', reason: 'visiting a link exactly as it appeared in content', destinations: dests }
+    }
   }
-  const who = fromContent.length ? fromContent.map((d) => shownDestination(d)).join(', ') : 'an unnamed destination'
+  const who = fromContent.length ? fromContent.map((d) => shownDestination(d, true)).join(', ') : 'an unnamed destination'
   const where = fromContent.map((d) => d.origin).filter(Boolean)
   const confirmPrompt = fromContent.length
     ? `Your assistant wants to send data to ${who}. You did not name this address${where.length ? `; it first appeared in ${where.join(', ')}` : ''}. Allow it for this task?`

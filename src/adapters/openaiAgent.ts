@@ -39,7 +39,9 @@ export async function runAgent(instruction: string, world: ToolWorld, opts: { ga
     if (!m.tool_calls?.length) {
       const answer = m.content ?? ''
       const strippedLinks = opts.gate ? g.unsafeAnswerLinks(answer) : []
-      return { calls, answer: strippedLinks.reduce((a, u) => a.split(u).join('[link removed by Trifecta Gate]'), answer), strippedLinks, gateLog: g.log, turns: turn, usage }
+      const hosts = [...new Set(strippedLinks.map((u) => { try { return new URL(u).hostname.replace(/^www\./, '') } catch { return u } }))]
+      const cleaned = hosts.reduce((a, h) => a.replace(new RegExp(`\\S*${h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\S*`, 'gi'), '[link removed by Trifecta Gate]'), answer)
+      return { calls, answer: cleaned, strippedLinks, gateLog: g.log, turns: turn, usage }
     }
     for (const tc of m.tool_calls) {
       let args: Record<string, unknown> = {}

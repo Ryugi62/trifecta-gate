@@ -1,15 +1,18 @@
 # Using the audit log in a SIEM
 
-`scripts/mcp-proxy.ts --log audit.jsonl` writes one JSON event per gate decision (ECS-style field names). Each event carries
-`prev_hash`/`hash` (SHA-256, or HMAC-SHA-256 when `TRIFECTA_AUDIT_KEY` is set); `scripts/verify-audit.ts` checks the chain.
+`scripts/mcp-proxy.ts --log audit.jsonl` writes one JSON event per gate decision (ECS-style field names) with a sequence number
+`seq`, `prev_hash`/`hash` and a final `session_end` record. Set `TRIFECTA_AUDIT_KEY`: the chain is then HMAC-SHA-256 and a
+writer without the key cannot recompute it (without a key it is plain SHA-256 and the proxy warns). `scripts/verify-audit.ts`
+checks the chain and refuses a log without `session_end` (cut short). Ship events to the SIEM as they are written so the latest
+hash lives outside the machine.
 Destinations are logged with the e-mail local part and long channel names shortened; query strings and private text never
-appear. Blocked events carry `threat.framework: MITRE ATLAS` with `AML.T0051.001` (indirect prompt injection) and `AML.T0057`
-(LLM data leakage).
+appear. Blocked events carry `threat.framework.name: MITRE ATLAS` and `threat.technique.id: [AML.T0051.001, AML.T0057]` (indirect prompt
+injection, LLM data leakage).
 
 ## Sigma rule — an agent tried to send data to a destination nobody named
 ```yaml
 title: AI agent send blocked by Trifecta Gate
-id: 7b0c2f0e-4c1e-4c55-9d7e-trifecta-r2r4
+id: 70d34a34-8028-4538-9f10-e3c4f206b2d6
 status: experimental
 description: An AI agent tried to send private data to a destination that came from outside content (rules R2/R4).
 logsource:
@@ -27,17 +30,27 @@ falsepositives:
 level: high
 tags:
   - attack.exfiltration
-  - atlas.aml.t0051.001
-  - atlas.aml.t0057
 ```
 
-## Elastic / KQL
+## Elastic
+Kibana query (KQL):
 ```
 event.outcome : "block" and rule.id : ("R2" or "R4")
 ```
-Alert when the same tool is blocked three or more times in ten minutes (an agent repeatedly following a planted instruction):
+Three or more blocks on one tool in ten minutes (an agent repeatedly following a planted instruction), ES|QL:
 ```
-event.outcome : "block" | stats count() by tool, bin(@timestamp, 10m) | where count >= 3
+FROM trifecta-audit
+| WHERE event.outcome == "block"
+| STATS blocks = COUNT(*) BY tool, bucket = BUCKET(@timestamp, 10 minutes)
+| WHERE blocks >= 3
+```
+
+## Microsoft Sentinel (Kusto)
+```
+TrifectaAudit_CL
+| where event_outcome_s == "block"
+| summarize blocks = count() by tool_s, bin(TimeGenerated, 10m)
+| where blocks >= 3
 ```
 
 ## Who owns what (small office)

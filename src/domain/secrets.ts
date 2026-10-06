@@ -1,6 +1,6 @@
 /**
  * Private-data fingerprints without keeping the text.
- * - every 10-character window of the case-folded, letters-and-digits-only private text, as a 32-bit hash
+ * - every 12-character window of the NFKC-normalised, case-folded letters-and-digits (any script) private text, as a 53-bit hash
  * - short secrets (passwords, PINs, SSNs, card numbers, keys) found by pattern, kept as hashes too
  * Outgoing arguments are checked raw, URL-decoded, base64-decoded and hex-decoded, so case changes,
  * punctuation, encoding and splitting a secret across fields do not hide it.
@@ -13,7 +13,7 @@ const norm = (s: string) => s.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p
 /** 53-bit fingerprint (two independent 32-bit FNV-style hashes), so false matches stay negligible at megabyte scale */
 function hash(s: string, from: number, len: number): number {
   let a = 2166136261, b = 0x811c9dc5 ^ 0x5bd1e995
-  for (let i = from; i < from + len; i++) { const c = s.charCodeAt(i); a = Math.imul(a ^ c, 16777619); b = Math.imul(b ^ c, 0x01000193) + 0x9e3779b9 | 0 }
+  for (let i = from; i < from + len; i++) { const c = s.charCodeAt(i); a = Math.imul(a ^ c, 16777619); b = Math.imul(b + c, 0x5bd1e995) ^ (b >>> 15) }
   return (a >>> 0) * 2097152 + ((b >>> 0) & 0x1fffff)
 }
 

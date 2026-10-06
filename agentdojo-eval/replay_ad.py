@@ -64,4 +64,5 @@ for suite_name in ["workspace", "slack", "banking"]:
             if blocked_any: res["benign_runs_with_block"] += 1
     out[suite_name] = res
     print(suite_name, res, flush=True)
+out["policyCommit"] = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
 Path(sys.argv[2]).write_text(json.dumps(out, indent=1))

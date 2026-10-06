@@ -55,9 +55,9 @@ class GatedToolsExecutor(ToolsExecutor):
                     tc.args[k] = literal_eval(v)
             spec = {"name": f.name, "description": f.description, "params": list(f.parameters.model_fields.keys())}
             d = self.gate.call({"op": "check", "id": sid, "tool": spec, "args": json.loads(json.dumps(tc.args, default=str))})
-            if d.get("action") == "block":
+            if d.get("action") != "allow":  # fail closed on gate errors too
                 results.append(ChatToolResultMessage(role="tool", content=[text_content_block_from_string("")], tool_call_id=tc.id, tool_call=tc,
-                    error=f"BLOCKED by Trifecta Gate ({d['rule']}): {d['reason']}. The user will be asked separately; continue with the rest of the task."))
+                    error=f"BLOCKED by Trifecta Gate ({d.get('rule', 'error')}): {d.get('reason', d.get('error', 'gate error'))}. The user will be asked separately; continue with the rest of the task."))
                 continue
             res, error = runtime.run_function(env, tc.function, tc.args)
             text = self.output_formatter(res)

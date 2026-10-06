@@ -50,3 +50,20 @@ describe('MCP proxy confirmations', () => {
     expect(p.fromClient({ jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'send_email', arguments: { to: 'resident.lee@mailbox.example' } } }).toServer).toHaveLength(1)
   })
 })
+
+describe('MCP proxy reads annotations and every result type', () => {
+  it('openWorldHint from tools/list makes a tool outbound; resource text and structuredContent are fingerprinted', () => {
+    const p = new ProxyCore([])
+    p.fromClient({ jsonrpc: '2.0', id: 1, method: 'tools/list' })
+    p.fromServer({ jsonrpc: '2.0', id: 1, result: { tools: [
+      { name: 'get_chart', description: 'Get a patient chart', inputSchema: { properties: { id: {} } } },
+      { name: 'zap', description: 'Run automation', inputSchema: { properties: { payload: {} } }, annotations: { openWorldHint: true } },
+    ] } })
+    p.fromClient({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'get_chart', arguments: { id: '7' } } })
+    p.fromServer({ jsonrpc: '2.0', id: 2, result: { content: [{ type: 'resource', resource: { uri: 'chart://7', text: 'MRN 00412877 Jane Roe diagnosis on file' } }], structuredContent: { mrn: '00412877' } } })
+    expect(p.gate.taint.secrets.size).toBeGreaterThan(0)
+    expect(p.gate.legsOf({ name: 'zap', description: 'Run automation', params: ['payload'], annotations: { openWorldHint: true } }).has('outbound')).toBe(true)
+    const r = p.fromClient({ jsonrpc: '2.0', id: 3, method: 'tools/call', params: { name: 'zap', arguments: { payload: 'MRN 00412877 Jane Roe' } } })
+    expect(r.toServer).toHaveLength(0)
+  })
+})

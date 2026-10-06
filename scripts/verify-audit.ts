@@ -10,4 +10,8 @@ for (const l of readFileSync(process.argv[2], 'utf8').split('\n').filter(Boolean
   if (h !== hash) { console.error(`hash mismatch at line ${n + 1}`); process.exit(1) }
   prev = hash; n++
 }
-console.log(`audit log OK: ${n} events, chain intact`)
+const lines = readFileSync(process.argv[2], 'utf8').split('\n').filter(Boolean)
+const last = lines.length ? JSON.parse(lines[lines.length - 1]) : null
+if (!last || last.event?.action !== 'session_end') { console.error('audit log chain intact but NOT closed: no session_end record (cut short, or the proxy is still running)'); process.exit(2) }
+if (lines.some((l) => JSON.parse(l).keyed === false)) console.warn('note: unkeyed chain — set TRIFECTA_AUDIT_KEY so a writer cannot recompute it')
+console.log(`audit log OK: ${n} events, chain intact, closed`)

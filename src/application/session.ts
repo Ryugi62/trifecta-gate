@@ -69,6 +69,10 @@ export class GateSession {
     // a tool nobody could label is treated as returning private data (fail closed)
     if (legs.has('private') || legs.size === 0) { this.taint.privateSeen = true; this.taint.secrets.add(resultText) }
     if (legs.has('untrusted') || legs.size === 0) this.taint.untrustedSeen = true
+    // directory listings (get_channels, get_users_in_channel, list_members…) name the organisation's own channels and people
+    if (/^(get|list|search|lookup)_?.*(channels|users|members|contacts|directory|people|team)/i.test(tool.name) && !/message|post|comment|inbox|mail|web|page/i.test(tool.name)) {
+      for (const w of resultText.toLowerCase().match(/[\p{L}\p{N}_.-]{2,40}/gu) ?? []) if (this.taint.directory.size < 50_000) this.taint.directory.add(w.replace(/^#/, ''))
+    }
     const where = `${tool.name} (step ${this.step + 1})`
     for (const d of extractDestinations({ text: resultText, to: (resultText.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/gi) ?? []).join(','), channel: (resultText.match(/#[A-Za-z0-9][\w-]*/g) ?? []).join(',') })) {
       for (const k of [d.url, d.value, d.host]) if (k && !this.taint.origins.has(k)) this.taint.origins.set(k, where)

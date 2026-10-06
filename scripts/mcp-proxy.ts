@@ -30,14 +30,19 @@ const logPath = opt('--log')
 const key = process.env.TRIFECTA_AUDIT_KEY ?? ''
 const digest = (s: string) => (key ? createHmac('sha256', key) : createHash('sha256')).update(s).digest('hex')
 let prevHash = '0'.repeat(64)
-if (logPath && existsSync(logPath)) { const lines = readFileSync(logPath, 'utf8').trim().split('\n').filter(Boolean); if (lines.length) prevHash = JSON.parse(lines[lines.length - 1]).hash }
+let seq = 0
+if (logPath && existsSync(logPath)) { const lines = readFileSync(logPath, 'utf8').trim().split('\n').filter(Boolean); if (lines.length) { const last = JSON.parse(lines[lines.length - 1]); prevHash = last.hash; seq = last.seq ?? lines.length } }
+if (logPath && !key) console.error('trifecta-gate: TRIFECTA_AUDIT_KEY not set — audit chain is unkeyed (detects accidental edits, not a writer who recomputes it)')
+function writeEvent(event: Record<string, unknown>) {
+  const e = { ...event, seq: ++seq, keyed: !!key, prev_hash: prevHash }
+  prevHash = digest(prevHash + JSON.stringify(e))
+  appendFileSync(logPath, JSON.stringify({ ...e, hash: prevHash }) + '\n')
+}
 let logged = 0
 function audit() {
   if (!logPath) return
   for (const e of core.gate.log.slice(logged)) {
-    const event = { '@timestamp': new Date().toISOString(), event: { kind: 'event', category: ['intrusion_detection'], action: e.kind, outcome: e.decision?.action ?? 'n/a' }, rule: { id: e.decision?.rule }, session: { id: SESSION }, policy: { version: POLICY_VERSION, labels: Object.keys(labels).length }, tool: e.tool, reason: e.decision?.reason, destinations: e.decision?.destinations, threat: e.decision?.action === 'block' ? { framework: 'MITRE ATLAS', technique: ['AML.T0051.001', 'AML.T0057'] } : undefined, prev_hash: prevHash }
-    prevHash = digest(prevHash + JSON.stringify(event))
-    appendFileSync(logPath, JSON.stringify({ ...event, hash: prevHash }) + '\n')
+    writeEvent({ '@timestamp': new Date().toISOString(), event: { kind: 'event', category: ['intrusion_detection'], action: e.kind, outcome: e.decision?.action ?? 'n/a' }, rule: { id: e.decision?.rule }, session: { id: SESSION }, policy: { version: POLICY_VERSION, labels: Object.keys(labels).length }, tool: e.tool, reason: e.decision?.reason, destinations: e.decision?.destinations, threat: e.decision?.action === 'block' ? { framework: { name: 'MITRE ATLAS' }, technique: { id: ['AML.T0051.001', 'AML.T0057'] } } : undefined })
   }
   logged = core.gate.log.length
 }
@@ -71,6 +76,7 @@ createInterface({ input: child.stdout }).on('line', (l) => {
   audit()
   if (clientDone && core.idle()) child.stdin.end()
 })
-child.on('exit', (code) => process.exit(code ?? 0))
+// an end-of-session record: a log whose last line is not a session_end was cut short (or the proxy is still running)
+child.on('exit', (code) => { if (logPath) { audit(); writeEvent({ '@timestamp': new Date().toISOString(), event: { kind: 'event', action: 'session_end' }, session: { id: SESSION }, events: logged }) }; process.exit(code ?? 0) })
 let clientDone = false
 process.stdin.on('end', () => { clientDone = true; if (core.idle()) child.stdin.end() })

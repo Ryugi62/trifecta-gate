@@ -61,14 +61,17 @@ export class ProxyCore {
   fromServer(msg: Json): Routed {
     if (this.pendingList.has(msg.id)) {
       this.pendingList.delete(msg.id)
-      const tools = ((msg.result as Json | undefined)?.tools ?? []) as Array<{ name: string; description?: string; inputSchema?: { properties?: Json } }>
-      for (const t of tools) this.specs.set(t.name, { name: t.name, description: t.description ?? '', params: Object.keys(t.inputSchema?.properties ?? {}) })
+      const tools = ((msg.result as Json | undefined)?.tools ?? []) as Array<{ name: string; description?: string; inputSchema?: { properties?: Json }; annotations?: ToolSpec['annotations'] }>
+      for (const t of tools) this.specs.set(t.name, { name: t.name, description: t.description ?? '', params: Object.keys(t.inputSchema?.properties ?? {}), annotations: t.annotations })
     }
     const spec = this.pendingCall.get(msg.id)
     if (spec) {
       this.pendingCall.delete(msg.id)
-      const content = ((msg.result as Json | undefined)?.content ?? []) as Array<{ type: string; text?: string }>
-      this.gate.record(spec, content.map((c) => c.text ?? '').join('\n'))
+      const result = (msg.result ?? {}) as Json
+      const content = (result.content ?? []) as Array<{ type: string; text?: string; resource?: { text?: string; uri?: string } }>
+      // text blocks, embedded resources and structured content all count as what the tool returned
+      const text = [...content.map((c) => c.text ?? c.resource?.text ?? c.resource?.uri ?? ''), result.structuredContent ? JSON.stringify(result.structuredContent) : ''].join('\n')
+      this.gate.record(spec, text)
     }
     const r = this.release()
     return { toServer: r.toServer, toClient: [msg, ...r.toClient] }
