@@ -8,6 +8,7 @@ export interface GateEvent { step: number; tool: string; kind: 'result' | 'call'
 export class GateSession {
   readonly taint: Taint = emptyTaint()
   readonly log: GateEvent[] = []
+  private readonly confirmed: string[] = []
   private step = 0
   private readonly legCache = new Map<string, Set<Leg>>()
 
@@ -22,10 +23,13 @@ export class GateSession {
 
   check(tool: ToolSpec, args: Record<string, unknown>): Decision {
     const t0 = this.now()
-    const d = decide({ tool, args }, { instruction: this.instruction, allowlist: this.allowlist, taint: this.taint }, this.legsOf(tool))
+    const d = decide({ tool, args }, { instruction: this.instruction, allowlist: [...this.allowlist, ...this.confirmed], taint: this.taint }, this.legsOf(tool))
     this.log.push({ step: ++this.step, tool: tool.name, kind: 'call', legs: [...this.legsOf(tool)], decision: d, ms: this.now() - t0 })
     return d
   }
+
+  /** The user approved a blocked destination (e-mail, host or channel) for the rest of this run. */
+  confirm(destination: string): void { this.confirmed.push(destination.toLowerCase().replace(/^#/, '')) }
 
   record(tool: ToolSpec, resultText: string): void {
     const legs = this.legsOf(tool)

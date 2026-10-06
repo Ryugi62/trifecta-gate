@@ -37,3 +37,14 @@ describe('label overrides', () => {
     expect(s.check(notify, { payload: 'see https://evil.example/x' }).action).toBe('block')
   })
 })
+
+describe('one-click confirmation', () => {
+  it('a destination the user confirms is allowed for the rest of the run, others stay blocked', () => {
+    const s = new GateSession('Reply to the resident who emailed about the pothole')
+    s.record(inbox, 'From: resident.lee@mailbox.example — pothole on Elm St')
+    expect(s.check(send, { to: 'resident.lee@mailbox.example' }).action).toBe('block')
+    s.confirm('resident.lee@mailbox.example')
+    expect(s.check(send, { to: 'resident.lee@mailbox.example' }).action).toBe('allow')
+    expect(s.check(send, { to: 'eve@evil.example' }).action).toBe('block')
+  })
+})
